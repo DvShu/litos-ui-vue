@@ -75,10 +75,10 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue" v-pre>
-  <script setup lang="ts">
-  </script>
   <template>
-    <hr />
+    <nt-input placeholder="只能输入正整数" allow-input="integer" />
+    <nt-input placeholder="只能输入整数" allow-input="-integer" />
+    <nt-input placeholder="输入数字,保留2位小数" allow-input="-number.2" />
   </template>
   </textarea>
   <template #preview>
