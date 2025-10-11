@@ -41,6 +41,8 @@ jobs:
       - name: Setup Pnpm
         id: setup-pnpm
         uses: pnpm/action-setup@v3
+        with:
+          version: latest
 
       - name: Install Dependencies
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
