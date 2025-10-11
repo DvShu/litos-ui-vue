@@ -1,5 +1,5 @@
 <template>
-  <div class="nt-virtual-list" ref="$list" @scroll.passive="handleScroll">
+  <div class="l-virtual-list" ref="$list" @scroll.passive="handleScroll">
     <div :style="{ height: `${totalSize}px` }">
       <div :style="{ transform: `translate3d(0px, ${startOffset}px, 0px)` }">
         <slot name="render" :data="visibleData">
@@ -8,7 +8,7 @@
             v-for="(item, index) in visibleData"
             :style="{ height: props.itemSize + 'px' }"
             :key="keyField != null ? (item as any)[keyField] : index"
-            :class="['nt-virtual-item', itemClass]"
+            :class="['l-virtual-item', itemClass]"
           >
             <slot :item="item"></slot>
           </div>

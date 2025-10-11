@@ -1,21 +1,21 @@
 <template>
   <button
     :class="[
-      'nt-btn',
-      type ? 'nt-btn-' + type : '',
-      block ? 'nt-btn-block' : '',
-      round ? 'nt-btn-round' : '',
-      circle ? 'nt-btn-circle' : '',
-      loading ? 'nt-btn-loading' : '',
-      ghost ? 'nt-btn-ghost' : '',
-      text ? 'nt-btn-text' : '',
+      'l-btn',
+      type ? 'l-btn-' + type : '',
+      block ? 'l-btn-block' : '',
+      round ? 'l-btn-round' : '',
+      circle ? 'l-btn-circle' : '',
+      loading ? 'l-btn-loading' : '',
+      ghost ? 'l-btn-ghost' : '',
+      text ? 'l-btn-text' : '',
     ]"
     :disabled="disabled || loading"
     :type="htmlType"
     :style="colorStyle"
   >
     <template v-if="loading">
-      <LoadingIcon class="nt-rotate-anim"></LoadingIcon>
+      <LoadingIcon class="l-rotate-anim"></LoadingIcon>
       <span>{{ loadingText }}</span>
     </template>
     <template v-else>
@@ -75,21 +75,20 @@ const colorStyle = computed(() => {
     const lighten = adjust(props.color, 1, true);
     const darken = adjust(props.color, 3, false);
     const cssVars = {
-      '--nt-btn-border-color': props.text ? 'transparent' : props.color,
-      '--nt-btn-text-color':
-        props.ghost || props.text ? props.color : '#ffffff',
-      '--nt-btn-hover-text-color':
+      '--l-btn-border-color': props.text ? 'transparent' : props.color,
+      '--l-btn-text-color': props.ghost || props.text ? props.color : '#ffffff',
+      '--l-btn-hover-text-color':
         props.ghost || props.text ? lighten : '#ffffff',
-      '--nt-btn-background':
+      '--l-btn-background':
         props.ghost || props.text ? 'transparent' : props.color,
-      '--nt-btn-active-text-color':
+      '--l-btn-active-text-color':
         props.ghost || props.text ? darken : '#ffffff',
-      '--nt-btn-hover-border-color': props.text ? 'transparent' : lighten,
-      '--nt-btn-hover-background':
+      '--l-btn-hover-border-color': props.text ? 'transparent' : lighten,
+      '--l-btn-hover-background':
         props.ghost || props.text ? 'transparent' : lighten,
-      '--nt-btn-active-background':
+      '--l-btn-active-background':
         props.ghost || props.text ? 'transparent' : darken,
-      '--nt-btn-active-border-color': props.text ? 'transparent' : darken,
+      '--l-btn-active-border-color': props.text ? 'transparent' : darken,
     };
     return cssVars;
   }

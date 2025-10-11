@@ -9,7 +9,7 @@ export default defineComponent({
     return () => {
       return h(
         Popover,
-        { ...props, ...attrs, class: ['nt-tooltip', attrs.class] },
+        { ...props, ...attrs, class: ['l-tooltip', attrs.class] },
         {
           trigger: () => (slots.default != null ? slots.default() : null),
           content: () => (slots.content != null ? slots.content() : null),

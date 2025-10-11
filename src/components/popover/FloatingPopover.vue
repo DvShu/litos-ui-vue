@@ -48,7 +48,7 @@ export default defineComponent({
     function handleTriggerClick(e: Event) {
       const $target = e.currentTarget as HTMLElement;
       // 点击的不是 popover 元素，才切换 popover
-      if (!$target.classList.contains('nt-popover')) {
+      if (!$target.classList.contains('l-popover')) {
         if (!show.value) {
           showFn(e.target as HTMLElement);
         } else {
@@ -81,7 +81,7 @@ export default defineComponent({
         return;
       }
       // 鼠标移动到悬浮内容上
-      if ($target.classList.contains('nt-popover')) return;
+      if ($target.classList.contains('l-popover')) return;
       show.value = true;
       nextTick(() => {
         if ($reference.value && $floating.value) {
@@ -127,7 +127,7 @@ export default defineComponent({
           { to: 'body' },
           h(
             Transition,
-            { name: 'nt-opacity' },
+            { name: 'l-opacity' },
             {
               default: () =>
                 withDirectives(
@@ -135,8 +135,8 @@ export default defineComponent({
                     'div',
                     {
                       class: [
-                        'nt-popover',
-                        `nt-popover-${place.value}`,
+                        'l-popover',
+                        `l-popover-${place.value}`,
                         attrs.class,
                       ],
                       style: popoverStyle.value,
@@ -146,7 +146,7 @@ export default defineComponent({
                     [
                       slots.default != null ? slots.default() : undefined,
                       props.showArrow
-                        ? h('span', { class: 'nt-popover-arrow' })
+                        ? h('span', { class: 'l-popover-arrow' })
                         : null,
                     ],
                   ),

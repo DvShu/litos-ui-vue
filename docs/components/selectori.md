@@ -29,7 +29,7 @@
     ]
   </script>
   <template>
-    <lt-select-ori :options="options"></lt-select-ori>
+    <lv-select-ori :options="options"></lv-select-ori>
   </template>
   </textarea>
   <template #preview>

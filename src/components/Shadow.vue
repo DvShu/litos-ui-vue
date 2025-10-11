@@ -1,12 +1,12 @@
 <template>
   <div
-    class="nt-shadow"
-    :class="{ 'nt-shadow_transparent': transparent }"
+    class="l-shadow"
+    :class="{ 'l-shadow_transparent': transparent }"
     :style="{ zIndex: 100 + id }"
-    nt-shadow
     @click="clickHandler"
+    l-shadow
   >
-    <div class="nt-shadow-main" :class="shadowClass" nt-shadow>
+    <div class="l-shadow-main" :class="shadowClass" l-shadow>
       <slot></slot>
     </div>
   </div>
@@ -36,7 +36,7 @@ withDefaults(
 
 function clickHandler(e: Event) {
   let $target = e.target as HTMLElement;
-  if ($target.hasAttribute('nt-shadow')) {
+  if ($target.hasAttribute('l-shadow')) {
     // 点击的是遮罩层
     emits('shadowClick', e);
   }

@@ -1,20 +1,17 @@
 <template>
   <div
     ref="Rel"
-    class="nt-tabbar"
-    :class="[
-      'nt-tabbar--' + type,
-      gap != null && gap > 0 ? 'nt-tabbar-gap' : '',
-    ]"
+    class="l-tabbar"
+    :class="['l-tabbar--' + type, gap != null && gap > 0 ? 'l-tabbar-gap' : '']"
   >
-    <div class="nt-tabbar-wrapper" :style="styles">
+    <div class="l-tabbar-wrapper" :style="styles">
       <slot></slot>
     </div>
-    <div v-if="type === 'card'" class="nt-tabbar-card-border"></div>
+    <div v-if="type === 'card'" class="l-tabbar-card-border"></div>
     <div
       v-if="type !== 'nav' && model != null"
       :style="lineStyles"
-      class="nt-tabbar--bar-line"
+      class="l-tabbar--bar-line"
     ></div>
   </div>
 </template>
@@ -56,12 +53,12 @@ const styles = computed(() => {
   const res: { [index: string]: string } = {};
   if (props.justifyContent != null) {
     if (props.justifyContent.startsWith('space-')) {
-      res['--nt-tabbar-bar-gap'] = '0';
+      res['--l-tabbar-bar-gap'] = '0';
     }
     res['justify-content'] = props.justifyContent;
   }
   if (props.gap != null) {
-    res['--nt-tabbar-item-gap'] = `${props.gap}px`;
+    res['--l-tabbar-item-gap'] = `${props.gap}px`;
   }
   return res;
 });
@@ -70,7 +67,7 @@ function calcItemPos(name: string) {
   nextTick(() => {
     if (Rel.value != null) {
       const $target = elem(
-        '.nt-tabbar-item[data-name="' + name + '"]',
+        '.l-tabbar-item[data-name="' + name + '"]',
         Rel.value,
       )[0];
       if ($target != null) {

@@ -1,10 +1,10 @@
 <template>
   <ul
-    :class="['nt-pagination', `nt-pagination-${align}`]"
+    :class="['l-pagination', `l-pagination-${align}`]"
     v-if="!hideOnSinglePage || totalPage > 1"
   >
     <!-- 上一页切换按钮 -->
-    <li class="nt-pagination-item">
+    <li class="l-pagination-item">
       <Button
         title="上一页"
         :disabled="currentPage === 1"
@@ -14,9 +14,9 @@
       </Button>
     </li>
     <template v-if="simple">
-      <li class="nt-pagination-item nt-pagination-simple-layout">
+      <li class="l-pagination-item l-pagination-simple-layout">
         <input
-          class="nt-input nt-pagination-simple-input"
+          class="l-input l-pagination-simple-input"
           :value="currentPage"
           type="text"
           inputmode="numeric"
@@ -24,17 +24,17 @@
           @keyup.enter="handlePageSure"
           @blur="handlePageSure"
         />
-        <span class="nt-pagination-simple-divide">/</span>
+        <span class="l-pagination-simple-divide">/</span>
         <span>{{ totalPage }}</span>
       </li>
     </template>
     <template v-else>
       <!-- 首页按钮 -->
-      <li :class="['nt-pagination-item', currentPage === 1 ? 'is-active' : '']">
+      <li :class="['l-pagination-item', currentPage === 1 ? 'is-active' : '']">
         <a href="javascript:void(0)" title="1" @click="handleTo(1)">1</a>
       </li>
       <!-- 向前5页 -->
-      <li class="nt-pagination-item" v-if="currentPage > 4">
+      <li class="l-pagination-item" v-if="currentPage > 4">
         <a
           href="javascript:void(0)"
           @mouseenter="handleMoreHover(1)"
@@ -50,14 +50,14 @@
       <li
         v-for="n in centerRange"
         :key="n"
-        :class="['nt-pagination-item', currentPage === n ? 'is-active' : '']"
+        :class="['l-pagination-item', currentPage === n ? 'is-active' : '']"
       >
         <a href="javascript:void(0)" :title="String(n)" @click="handleTo(n)">{{
           n
         }}</a>
       </li>
       <!-- 向后5页 -->
-      <li class="nt-pagination-item" v-if="currentPage < totalPage - 3">
+      <li class="l-pagination-item" v-if="currentPage < totalPage - 3">
         <a
           href="javascript:void(0)"
           @mouseenter="handleMoreHover(2)"
@@ -74,7 +74,7 @@
         v-if="totalPage > 1"
         @click="handleTo(totalPage)"
         :class="[
-          'nt-pagination-item',
+          'l-pagination-item',
           currentPage === totalPage ? 'is-active' : '',
         ]"
       >
@@ -83,7 +83,7 @@
     </template>
 
     <!-- 下一页切换按钮 -->
-    <li class="nt-pagination-item">
+    <li class="l-pagination-item">
       <Button
         title="下一页"
         :disabled="currentPage === totalPage"

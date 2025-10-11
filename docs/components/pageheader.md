@@ -15,17 +15,17 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-page-header title="标题" sub-title="副标题">
+  <lv-page-header title="标题" sub-title="副标题">
     <template #extra>
       <lt-more-icon />
     </template>
-  </lt-page-header>
+  </lv-page-header>
   <hr />
-  <lt-page-header title="标题" title-align="center" height="44px">
+  <lv-page-header title="标题" title-align="center" height="44px">
     <template #extra>
       <lt-more-icon />
     </template>
-  </lt-page-header>
+  </lv-page-header>
   </textarea>
   <template #preview>
     <PageHeader title="标题" sub-title="副标题">

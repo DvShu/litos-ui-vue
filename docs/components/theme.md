@@ -67,10 +67,10 @@ createApp(App).use(router).mount('#app');
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html" v-pre>
-  <lt-theme-button></lt-theme-button>
-  <lt-theme-select class="ml-10"></lt-theme-select>
-  <lt-theme-switch class="ml-10"></lt-theme-switch>
-  <lt-theme-radio class="mt-15"></lt-theme-radio>
+  <lv-theme-button></lv-theme-button>
+  <lv-theme-select class="ml-10"></lv-theme-select>
+  <lv-theme-switch class="ml-10"></lv-theme-switch>
+  <lv-theme-radio class="mt-15"></lv-theme-radio>
   </textarea>
   <template #preview>
     <ThemeButton></ThemeButton>
@@ -113,17 +113,17 @@ initTheme().then();
     });
   </script>
   <template>
-    <lt-radio-group v-model="theme">
-      <lt-radio value="auto" type="button">
-        <lt-theme-default-icon></lt-theme-default-icon>
-      </lt-radio>
-      <lt-radio value="light" type="button">
+    <lv-radio-group v-model="theme">
+      <lv-radio value="auto" type="button">
+        <lv-theme-default-icon></lv-theme-default-icon>
+      </lv-radio>
+      <lv-radio value="light" type="button">
         <lt-sun-icon></lt-sun-icon>
-      </lt-radio>
-      <lt-radio value="dark" type="button">
+      </lv-radio>
+      <lv-radio value="dark" type="button">
         <lt-moon-icon></lt-moon-icon>
-      </lt-radio>
-    </lt-radio-group>
+      </lv-radio>
+    </lv-radio-group>
   </template>
   </textarea>
   <template #preview>
@@ -149,7 +149,7 @@ initTheme().then();
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html" v-pre>
-  <lt-theme-color></lt-theme-color>
+  <lv-theme-color></lv-theme-color>
   </textarea>
   <template #preview>
     <ThemeColor @change='handleColorChange'></ThemeColor>
@@ -162,13 +162,13 @@ initTheme().then();
 <ClientOnly>
 <SourceCode :source-code="code"><textarea lang="css">
 :root {
-  --nt-primary-color: #722ed1;
-  --nt-primary-color-light1: #9254de;
-  --nt-primary-color-light2: #b37feb;
-  --nt-primary-color-light3: #d3adf7;
-  --nt-primary-color-light4: #efdbff;
-  --nt-primary-color-light5: #f9f0ff;
-  --nt-primary-color-dark1: #531dab;
+  --l-primary-color: #722ed1;
+  --l-primary-color-light1: #9254de;
+  --l-primary-color-light2: #b37feb;
+  --l-primary-color-light3: #d3adf7;
+  --l-primary-color-light4: #efdbff;
+  --l-primary-color-light5: #f9f0ff;
+  --l-primary-color-dark1: #531dab;
 }
 </textarea></SourceCode>
 </ClientOnly>

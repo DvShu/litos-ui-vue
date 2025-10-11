@@ -3,7 +3,7 @@
     :value="modelValue"
     :type="htmlType"
     :class="{
-      'nt-input': true,
+      'l-input': true,
       'is-autosize': autosize,
     }"
     :placeholder="placeholder"

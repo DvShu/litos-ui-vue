@@ -1,4 +1,4 @@
-.nt-shadow {
+.l-shadow {
   position: fixed;
   z-index: 100;
   left: 0;
@@ -7,7 +7,7 @@
   right: 0;
   background-color: rgba(0, 0, 0, 0.7);
 }
-.nt-shadow-main {
+.l-shadow-main {
   position: relative;
   width: 100%;
   height: 100%;
@@ -15,6 +15,6 @@
   justify-content: center;
   align-items: center;
 }
-.nt-shadow.nt-shadow_transparent {
+.l-shadow.l-shadow_transparent {
   background-color: transparent;
 }

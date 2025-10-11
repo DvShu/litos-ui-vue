@@ -14,11 +14,11 @@ import { Shadow } from '../../src'
 ### 基础使用
 
 ```vue
-<lt-shadow @shadow-click="">
+<lv-shadow @shadow-click="">
   <div style="width:100px;height:100px;background: #ccc">
     Hello World!!!
   </div>
-</lt-shadow>
+</lv-shadow>
 ```
 
 ## API

@@ -16,9 +16,9 @@ export default defineComponent({
   },
   setup(props, { slots }) {
     return () =>
-      h('div', { class: 'nt-card' }, [
+      h('div', { class: 'l-card' }, [
         props.showHeader
-          ? h('div', { class: ['nt-card__header', props.headerClass] }, [
+          ? h('div', { class: ['l-card__header', props.headerClass] }, [
               slots.header != null
                 ? slots.header()
                 : h('span', props.headerText),
@@ -27,13 +27,13 @@ export default defineComponent({
                 : undefined,
             ])
           : undefined,
-        h('div', { class: ['nt-card__body', props.bodyClass] }, [
+        h('div', { class: ['l-card__body', props.bodyClass] }, [
           slots.default != null ? slots.default() : undefined,
         ]),
         props.showFooter
           ? h(
               'div',
-              { class: ['nt-card__footer', props.footerClass] },
+              { class: ['l-card__footer', props.footerClass] },
               slots.footer != null
                 ? slots.footer()
                 : h('span', props.footerText),

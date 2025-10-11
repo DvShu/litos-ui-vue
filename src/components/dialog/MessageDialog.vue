@@ -5,8 +5,8 @@
     :show-cancel="showCancel"
     :mask-closable="maskClosable"
     :before-close="handleClose"
-    main-class="nt-dialog-box-main"
-    container-class="nt-message-dialog-container"
+    main-class="l-dialog-box-main"
+    container-class="l-message-dialog-container"
     :to="to"
   >
     <component

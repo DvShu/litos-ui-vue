@@ -1,4 +1,4 @@
-.nt-tag {
+.l-tag {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -7,33 +7,33 @@
   padding: 0 8px;
   font-size: 12px;
   line-height: 1;
-  border: 1px solid var(--nt-tag-border-color, #999);
+  border: 1px solid var(--l-tag-border-color, #999);
   border-radius: 4px;
-  background: var(--nt-tag-bg, #fff);
+  background: var(--l-tag-bg, #fff);
   white-space: nowrap;
-  color: var(--nt-tag-color, #333);
+  color: var(--l-tag-color, #333);
 }
-.nt-tag--primary {
-  --nt-tag-border-color: var(--nt-primary-color-light3, #b7eb8f);
-  --nt-tag-bg: var(--nt-primary-color-light5, #f6ffed);
-  --nt-tag-color: var(--nt-primary-color-light3, #b7eb8f);
+.l-tag--primary {
+  --l-tag-border-color: var(--l-primary-color-light3, #b7eb8f);
+  --l-tag-bg: var(--l-primary-color-light5, #f6ffed);
+  --l-tag-color: var(--l-primary-color-light3, #b7eb8f);
 }
-.nt-tag--error {
-  --nt-tag-color: var(--nt-error-color, #ed3f13);
-  --nt-tag-bg: var(--nt-error-color-light5, #fff1f0);
-  --nt-tag-border-color: var(--nt-error-color, #ed3f13);
+.l-tag--error {
+  --l-tag-color: var(--l-error-color, #ed3f13);
+  --l-tag-bg: var(--l-error-color-light5, #fff1f0);
+  --l-tag-border-color: var(--l-error-color, #ed3f13);
 }
-.nt-tag--success {
-  --nt-tag-color: var(--nt-success-color, #a0d911);
-  --nt-tag-bg: var(--nt-success-color-light5, #fcffe6);
-  --nt-tag-border-color: var(--nt-success-color, #a0d911);
+.l-tag--success {
+  --l-tag-color: var(--l-success-color, #a0d911);
+  --l-tag-bg: var(--l-success-color-light5, #fcffe6);
+  --l-tag-border-color: var(--l-success-color, #a0d911);
 }
-.nt-tag--info {
-  --nt-tag-color: var(--nt-info-color, #999999);
-  --nt-tag-bg: var(--nt-info-color-light9, #f5f5f5);
-  --nt-tag-border-color: var(--nt-border-color, #dedede);
+.l-tag--info {
+  --l-tag-color: var(--l-info-color, #999999);
+  --l-tag-bg: var(--l-info-color-light9, #f5f5f5);
+  --l-tag-border-color: var(--l-border-color, #dedede);
 }
-.nt-tag--close {
+.l-tag--close {
   margin-left: 5px;
   font-size: 12px;
   width: 14px;
@@ -45,7 +45,7 @@
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
-.nt-tag--close:hover {
-  background-color: var(--nt-tag-color, #1890ff);
+.l-tag--close:hover {
+  background-color: var(--l-tag-color, #1890ff);
   color: #ffffff;
 }

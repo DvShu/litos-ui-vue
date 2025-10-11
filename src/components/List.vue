@@ -1,9 +1,9 @@
 <template>
-  <div class="nt-list">
+  <div class="l-list">
     <slot></slot>
-    <div ref="Rloadmore" class="nt-list-loadmore" v-if="infinite">
-      <LoadingIcon v-if="!finish" class="nt-list-icon nt-rotate-anim" />
-      <span class="nt-list-loadmore-text">
+    <div ref="Rloadmore" class="l-list-loadmore" v-if="infinite">
+      <LoadingIcon v-if="!finish" class="l-list-icon l-rotate-anim" />
+      <span class="l-list-loadmore-text">
         {{ finish ? '已经到底啦！' : '加载中……' }}</span
       >
     </div>

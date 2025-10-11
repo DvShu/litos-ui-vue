@@ -1,10 +1,10 @@
 <template>
   <div
-    class="nt-collapse"
+    class="l-collapse"
     :class="{
-      'nt-collapse--background': props.background,
-      'nt-collapse--space': props.gap != null,
-      'nt-collapse--grid': props.grid,
+      'l-collapse--background': props.background,
+      'l-collapse--space': props.gap != null,
+      'l-collapse--grid': props.grid,
     }"
     :style="styles"
   >
@@ -56,10 +56,10 @@ const actives = ref<(string | number)[]>(props.modelValue);
 const styles = computed(() => {
   const styleRes: { [index: string]: string } = {};
   if (props.gap != null) {
-    styleRes['--nt-collapse-gap'] = props.gap;
+    styleRes['--l-collapse-gap'] = props.gap;
   }
   if (props.borderRadius != null) {
-    styleRes['--nt-collapse-border-radius'] = props.borderRadius;
+    styleRes['--l-collapse-border-radius'] = props.borderRadius;
   }
   return styleRes;
 });

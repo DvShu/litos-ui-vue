@@ -32,9 +32,9 @@
   <textarea lang="vue">
   <template>
   <div style="height: 300px">
-    <lt-list :finish="finish" @load-more="handleLoadmore">
+    <lv-list :finish="finish" @load-more="handleLoadmore">
       <div style="padding: 10px; border-bottom: 1px solid #dedede;" v-for="i in max" :key="i">{{ i }}</div>
-    </lt-list>
+    </lv-list>
   </div>
   </template>
   <script setup>

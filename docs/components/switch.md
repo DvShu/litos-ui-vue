@@ -23,7 +23,7 @@
     const open = ref(true);
   </script>
   <template>
-    <lt-switch v-model="open"></lt-switch>
+    <lv-switch v-model="open"></lv-switch>
   </template>
   </textarea>
   <template #preview>
@@ -40,7 +40,7 @@
   <CodePreview>
   <textarea lang="vue">
   <template>
-    <lt-switch v-model="open" checked-text="Y" unchecked-text="N"></lt-switch>
+    <lv-switch v-model="open" checked-text="Y" unchecked-text="N"></lv-switch>
   </template>
   </textarea>
   <template #preview>
@@ -57,12 +57,12 @@
   <CodePreview>
   <textarea lang="vue-html">
   <template>
-    <lt-switch v-model="open">
+    <lv-switch v-model="open">
       <template #action="slotProp">
         <lt-moon-icon v-if="slotProp.checked"></lt-moon-icon>
         <lt-sun-icon v-else></lt-sun-icon>
       </template>
-    </lt-switch>
+    </lv-switch>
   </template>
   </textarea>
   <template #preview>
@@ -94,10 +94,10 @@
 
 ### Switch CSS Variables
 
-| 变量名               | 默认值                        | 描述         |
-| -------------------- | ----------------------------- | ------------ |
-| `--nt-switch-height` | `20px`                        | 开关按钮高度 |
-| `--nt-switch-width`  | `var(--nt-switch-height) * 2` | 开关按钮宽度 |
+| 变量名              | 默认值                       | 描述         |
+| ------------------- | ---------------------------- | ------------ |
+| `--l-switch-height` | `20px`                       | 开关按钮高度 |
+| `--l-switch-width`  | `var(--l-switch-height) * 2` | 开关按钮宽度 |
 
 ### Switch Slots
 

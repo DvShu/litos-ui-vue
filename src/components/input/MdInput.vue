@@ -1,14 +1,14 @@
 <template>
   <div
     :class="{
-      'nt-md-input': true,
-      'nt-focused': focused,
-      'nt-has-value': hasValue,
-      'nt-md-input-outline': outline,
+      'l-md-input': true,
+      'l-focused': focused,
+      'l-has-value': hasValue,
+      'l-md-input-outline': outline,
     }"
   >
     <input
-      class="nt-md-input__inner"
+      class="l-md-input__inner"
       :id="elId"
       ref="el"
       :type="htmlType"
@@ -19,8 +19,8 @@
       @blur="handleInputBlur"
       v-model="modelValue"
     />
-    <label v-if="label != null" class="nt-md-input__label" :for="elId">
-      <span class="nt-md-label-text">{{ label }}</span>
+    <label v-if="label != null" class="l-md-input__label" :for="elId">
+      <span class="l-md-label-text">{{ label }}</span>
     </label>
   </div>
 </template>
@@ -53,7 +53,7 @@ const props = withDefaults(
 );
 
 const elId = ref(
-  props.id || `nt-md-input-${random({ length: 8, hasLetter: true })}`,
+  props.id || `l-md-input-${random({ length: 8, hasLetter: true })}`,
 );
 
 function focus() {

@@ -69,12 +69,12 @@ const registRules = [
     const active = ref('1');
   </script>
   <template>
-  <div class="nt-tabs">
-    <lt-tabbar v-model="active" type="bar">
-      <lt-tabbar-item name="1">标签一</lt-tabbar-item>
-      <lt-tabbar-item name="2">标签二</lt-tabbar-item>
-    </lt-tabbar>
-    <div class="nt-tabs-content">
+  <div class="l-tabs">
+    <lv-tabbar v-model="active" type="bar">
+      <lv-tabbar-item name="1">标签一</lv-tabbar-item>
+      <lv-tabbar-item name="2">标签二</lv-tabbar-item>
+    </lv-tabbar>
+    <div class="l-tabs-content">
       <div v-if="active === '1'">标签一</div>
       <div v-if="active === '2'">标签二</div>
     </div>
@@ -82,12 +82,12 @@ const registRules = [
   </template>
   </textarea>
   <template #preview>
-  <div class="nt-tabs">
+  <div class="l-tabs">
     <Tabbar v-model="active" type="bar">
       <TabbarItem name="1">标签一</TabbarItem>
       <TabbarItem name="2">标签二</TabbarItem>
     </Tabbar>
-    <div class="nt-tabs-content">
+    <div class="l-tabs-content">
       <div v-if="active === '1'">标签一</div>
       <div v-if="active === '2'">标签二</div>
     </div>
@@ -146,39 +146,39 @@ const registRules = [
   </script>
   <template>
     <div class="login-form-wrapper">
-      <div class="nt-tabs">
-        <lt-tabbar v-model="templateType" type="bar" justify-content="space-evenly">
-          <lt-tabbar-item name="login">登录</lt-tabbar-item>
-          <lt-tabbar-item name="regist">注册</lt-tabbar-item>
-        </lt-tabbar>
-        <div class="nt-tabs-content">
+      <div class="l-tabs">
+        <lv-tabbar v-model="templateType" type="bar" justify-content="space-evenly">
+          <lv-tabbar-item name="login">登录</lv-tabbar-item>
+          <lv-tabbar-item name="regist">注册</lv-tabbar-item>
+        </lv-tabbar>
+        <div class="l-tabs-content">
           <!-- 登录 -->
-          <lt-form v-if="templateType === 'login'" :model="loginParams" :rules="loginRules">
-            <lt-form-item label="用户名" required name="username">
-              <lt-input placeholder="请输入用户名" v-model="loginParams.username"></lt-input>
-            </lt-form-item>
-            <lt-form-item label="密码" required name="password">
-              <lt-input placeholder="请输入密码" v-model="loginParams.password" html-type="password"></lt-input>
-            </lt-form-item>
-            <lt-form-item label="">
-              <lt-button html-type="submit">提交</lt-button>
-            </lt-form-item>
-          </lt-form>
+          <lv-form v-if="templateType === 'login'" :model="loginParams" :rules="loginRules">
+            <lv-form-item label="用户名" required name="username">
+              <lv-input placeholder="请输入用户名" v-model="loginParams.username"></lv-input>
+            </lv-form-item>
+            <lv-form-item label="密码" required name="password">
+              <lv-input placeholder="请输入密码" v-model="loginParams.password" html-type="password"></lv-input>
+            </lv-form-item>
+            <lv-form-item label="">
+              <lv-button html-type="submit">提交</lv-button>
+            </lv-form-item>
+          </lv-form>
           <!-- 注册 -->
-          <lt-form v-if="templateType === 'regist'" :model="registParams" :rules="registRules">
-            <lt-form-item label="用户名" required name="username">
-              <lt-input placeholder="请输入用户名" v-model="registParams.username"></lt-input>
-            </lt-form-item>
-            <lt-form-item label="密码" required name="password">
-              <lt-input placeholder="请输入密码" v-model="registParams.password" html-type="password"></lt-input>
-            </lt-form-item>
-            <lt-form-item label="确认密码" required name="password2">
-              <lt-input placeholder="再次输入密码" v-model="registParams.password2" html-type="password"></lt-input>
-            </lt-form-item>
-            <lt-form-item label="">
-              <lt-button html-type="submit">提交</lt-button>
-            </lt-form-item>
-          </lt-form>
+          <lv-form v-if="templateType === 'regist'" :model="registParams" :rules="registRules">
+            <lv-form-item label="用户名" required name="username">
+              <lv-input placeholder="请输入用户名" v-model="registParams.username"></lv-input>
+            </lv-form-item>
+            <lv-form-item label="密码" required name="password">
+              <lv-input placeholder="请输入密码" v-model="registParams.password" html-type="password"></lv-input>
+            </lv-form-item>
+            <lv-form-item label="确认密码" required name="password2">
+              <lv-input placeholder="再次输入密码" v-model="registParams.password2" html-type="password"></lv-input>
+            </lv-form-item>
+            <lv-form-item label="">
+              <lv-button html-type="submit">提交</lv-button>
+            </lv-form-item>
+          </lv-form>
         </div>
       </div>
     </div>
@@ -186,12 +186,12 @@ const registRules = [
   </textarea>
   <template #preview>
     <div class="login-form-wrapper">
-      <div class="nt-tabs">
+      <div class="l-tabs">
         <Tabbar v-model="templateType" type="bar" justify-content="space-evenly">
           <TabbarItem name="login">登录</TabbarItem>
           <TabbarItem name="regist">注册</TabbarItem>
         </Tabbar>
-        <div class="nt-tabs-content">
+        <div class="l-tabs-content">
           <!-- 登录 -->
           <Form v-if="templateType === 'login'" :model="loginParams" :rules="loginRules">
             <FormItem label="用户名" required name="username">
@@ -238,12 +238,12 @@ const registRules = [
     const active = ref('1');
   </script>
   <template>
-  <div class="nt-tabs">
-    <lt-tabbar v-model="active" type="card">
-      <lt-tabbar-item name="1">标签一</lt-tabbar-item>
-      <lt-tabbar-item name="2">标签二</lt-tabbar-item>
-    </lt-tabbar>
-    <div class="nt-tabs-content">
+  <div class="l-tabs">
+    <lv-tabbar v-model="active" type="card">
+      <lv-tabbar-item name="1">标签一</lv-tabbar-item>
+      <lv-tabbar-item name="2">标签二</lv-tabbar-item>
+    </lv-tabbar>
+    <div class="l-tabs-content">
       <div v-if="active === '1'">标签一</div>
       <div v-if="active === '2'">标签二</div>
     </div>
@@ -251,12 +251,12 @@ const registRules = [
   </template>
   </textarea>
   <template #preview>
-  <div class="nt-tabs">
+  <div class="l-tabs">
     <Tabbar v-model="active" type="card">
       <TabbarItem name="1">标签一</TabbarItem>
       <TabbarItem name="2">标签二</TabbarItem>
     </Tabbar>
-    <div class="nt-tabs-content">
+    <div class="l-tabs-content">
       <div v-if="active === '1'">标签一</div>
       <div v-if="active === '2'">标签二</div>
     </div>
@@ -268,9 +268,9 @@ const registRules = [
 ## 基本结构
 
 ```html
-<div class="nt-tabs">
-  <lt-tabbar></lt-tabbar>
-  <div class="nt-tabs-content">
+<div class="l-tabs">
+  <lv-tabbar></lv-tabbar>
+  <div class="l-tabs-content">
     <!-- 内容区域-->
   </div>
 </div>

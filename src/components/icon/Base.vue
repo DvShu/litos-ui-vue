@@ -2,7 +2,7 @@
   <svg
     :viewBox="!useLink ? viewBox : undefined"
     aria-hidden="true"
-    class="nt-icon"
+    class="l-icon"
   >
     <slot></slot>
   </svg>

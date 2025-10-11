@@ -1,6 +1,6 @@
 /** 加载框 */
 .nt-loading-inner {
-  --nt-loading-color: var(--nt-primary-color, #722ed1);
+  --nt-loading-color: var(--l-primary-color, #722ed1);
   display: inline-block;
   position: absolute;
   top: 0;

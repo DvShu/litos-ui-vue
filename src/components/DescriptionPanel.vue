@@ -1,21 +1,21 @@
 <template>
   <div
-    class="nt-desc-panel"
+    class="l-desc-panel"
     :class="{
       collapse: collapse,
     }"
     :style="styles"
   >
     <div ref="$content"><slot></slot></div>
-    <div class="nt-desc-panel-operator" v-if="showMore">
+    <div class="l-desc-panel-operator" v-if="showMore">
       <Button
         type="primary"
-        class="nt-desc-panel-btnmore"
+        class="l-desc-panel-btnmore"
         text
         @click="collapse = !collapse"
       >
         <span>{{ collapse ? '查看更多' : '收起' }}</span>
-        <ArrowDown class="nt-desc-panel-arrow"></ArrowDown>
+        <ArrowDown class="l-desc-panel-arrow"></ArrowDown>
       </Button>
     </div>
   </div>
@@ -42,12 +42,12 @@ const props = withDefaults(
 
 const styles = computed(() => {
   const res: { [index: string]: string } = {};
-  res['--nt-desc-panel-min-height'] = `${props.collapseHeight}px`;
+  res['--l-desc-panel-min-height'] = `${props.collapseHeight}px`;
   if (props.fontSize != null) {
-    res['--nt-desc-panel-font-size'] = props.fontSize;
+    res['--l-desc-panel-font-size'] = props.fontSize;
   }
-  if (panelMaxHeight != null) {
-    res['--nt-desc-panel-max-height'] = `${panelMaxHeight.value}px`;
+  if (panelMaxHeight.value != null) {
+    res['--l-desc-panel-max-height'] = `${panelMaxHeight.value}px`;
   }
   return res;
 });

@@ -1,7 +1,7 @@
 {
   "name": "litos-ui-vue",
   "description": "基于 Vue3 的 UI 组件库",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "g:c": "node scripts/index.js template",
@@ -13,28 +13,36 @@
     "publish:version": "node scripts/publish.js"
   },
   "devDependencies": {
-    "@eslint/js": "^9.14.0",
-    "@eslint/markdown": "^6.2.1",
-    "@floating-ui/dom": "^1.6.12",
-    "@floating-ui/vue": "^1.1.5",
-    "@tanstack/vue-table": "^8.20.5",
-    "@types/node": "^22.9.0",
-    "@vitejs/plugin-vue": "^5.1.5",
-    "eslint": "^9.14.0",
-    "eslint-plugin-vue": "^9.31.0",
-    "globals": "^15.12.0",
-    "less": "^4.2.0",
-    "prettier": "^3.3.3",
-    "shiki": "^1.22.2",
-    "typescript": "^5.6.3",
-    "typescript-eslint": "^8.14.0",
-    "vite": "^5.4.11",
-    "vite-plugin-dts": "4.3.0",
-    "vitepress": "^1.5.0",
-    "vue-tsc": "^2.1.10"
+    "@eslint/js": "^9.37.0",
+    "@eslint/markdown": "^7.4.0",
+    "@floating-ui/dom": "^1.7.4",
+    "@floating-ui/vue": "^1.1.9",
+    "@tanstack/vue-table": "^8.21.3",
+    "@types/node": "^24.7.1",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "eslint": "^9.37.0",
+    "eslint-plugin-vue": "^10.5.0",
+    "globals": "^16.4.0",
+    "less": "^4.4.2",
+    "ph-utils": "^0.16.3",
+    "prettier": "^3.6.2",
+    "qrcode-generator-es": "^1.1.4",
+    "shiki": "^3.13.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.0",
+    "unplugin-dts": "1.0.0-beta.6",
+    "vite": "^7.1.9",
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.22",
+    "vue-router": "^4.5.1",
+    "vue-tsc": "^3.1.1"
   },
   "peerDependencies": {
-    "vue": "^3.3.11"
+    "@tanstack/vue-table": "^8.21.3",
+    "ph-utils": "^0.16.3",
+    "qrcode-generator-es": "^1.1.4",
+    "vue": "^3.5.22",
+    "vue-router": "^4.5.1"
   },
   "files": [
     "lib",
@@ -58,7 +66,6 @@
   },
   "keywords": [
     "litos-ui-vue",
-    "neatui",
     "vue",
     "ui framework",
     "component library"
@@ -67,11 +74,5 @@
   "bugs": {
     "url": "https://github.com/DvShu/litos-ui-vue/issues"
   },
-  "license": "MulanPSL-2.0",
-  "dependencies": {
-    "ph-utils": "^0.9.15",
-    "qrcode-generator-es": "^1.0.3",
-    "vue-router": "^4.4.5"
-  },
-  "packageManager": "pnpm@9.0.2"
+  "license": "MulanPSL-2.0"
 }

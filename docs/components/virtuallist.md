@@ -32,11 +32,11 @@
     }));
   </script>
   <template>
-    <lt-virtual-list :items="items" :item-size="42" key-field="id">
+    <lv-virtual-list :items="items" :item-size="42" key-field="id">
       <template  #default="{ item }">
         <span>{{ item.value }}</span>
       </template>
-    </lt-virtual-list>
+    </lv-virtual-list>
   </template>
   </textarea>
   <template #preview>

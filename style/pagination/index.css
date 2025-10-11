@@ -1,4 +1,4 @@
-.nt-pagination {
+.l-pagination {
   white-space: nowrap;
   font-size: 14px;
   display: flex;
@@ -7,29 +7,29 @@
   color: #333333;
   list-style: none;
 }
-.nt-pagination.nt-pagination-start {
+.l-pagination.l-pagination-start {
   justify-content: flex-start;
 }
-.nt-pagination.nt-pagination-end {
+.l-pagination.l-pagination-end {
   justify-content: flex-end;
 }
-.nt-pagination.nt-pagination-center {
+.l-pagination.l-pagination-center {
   justify-content: center;
 }
-.nt-pagination-item {
+.l-pagination-item {
   height: 30px;
 }
-.nt-pagination-item:not(:first-child) {
+.l-pagination-item:not(:first-child) {
   margin-left: 5px;
 }
 
-.nt-pagination-item .nt-btn {
+.l-pagination-item .l-btn {
   padding: 0;
   width: 30px;
   height: 100%;
 }
 
-.nt-pagination-item a {
+.l-pagination-item a {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -43,27 +43,27 @@
   color: #666;
 }
 
-.nt-pagination-item a:hover {
-  color: var(--nt-primary-color-light1, #73d13d);
+.l-pagination-item a:hover {
+  color: var(--l-primary-color-light1, #73d13d);
 }
-.nt-pagination-item a:active {
-  color: var(--nt-primary-color-dark1, #389e0d);
-}
-
-.nt-pagination-item.is-active a {
-  color: var(--nt-primary-color, #52c41a);
-  border-color: var(--nt-primary-color, #52c41a);
+.l-pagination-item a:active {
+  color: var(--l-primary-color-dark1, #389e0d);
 }
 
-.nt-pagination .nt-pagination-simple-input {
-  --nt-input-width: 60px;
-  --nt-form-edit-height: 100%;
+.l-pagination-item.is-active a {
+  color: var(--l-primary-color, #52c41a);
+  border-color: var(--l-primary-color, #52c41a);
+}
+
+.l-pagination .l-pagination-simple-input {
+  --l-input-width: 60px;
+  --l-form-control-height: 100%;
   text-align: center;
 }
-.nt-pagination-simple-layout {
+.l-pagination-simple-layout {
   display: inline-flex;
   align-items: center;
 }
-.nt-pagination-simple-divide {
+.l-pagination-simple-divide {
   margin: 0 5px;
 }

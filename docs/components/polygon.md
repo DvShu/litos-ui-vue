@@ -95,7 +95,7 @@
 
 ### 自定义菱形
 
-传递 `shape` 为 `rhombus`。然后自己定义 `nt-polygon-rhombus` 样式即可。同时可以通过 `background` 设置图形颜色
+传递 `shape` 为 `rhombus`。然后自己定义 `l-polygon-rhombus` 样式即可。同时可以通过 `background` 设置图形颜色
 
 <ClientOnly>
   <CodePreview>
@@ -104,7 +104,7 @@
     <lt-polygon shape="rhombus" background="red"></lt-polygon>
   </template>
   <style>
-    .nt-polygon-rhombus {
+    .l-polygon-rhombus {
       clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
     }
   </style>
@@ -126,9 +126,9 @@
 
 ### 样式变量
 
-| 变量名                    | 默认值                   | 说明         |
-| ------------------------- | ------------------------ | ------------ |
-| `--nt-polygen-size`       | `10px`                   | 多边形大小   |
-| `--nt-polygen-width`      | `var(--nt-polygen-size)` | 多边形宽度   |
-| `--nt-polygen-height`     | `var(--nt-polygen-size)` | 多边形高度   |
-| `--nt-polygen-background` | `#666`                   | 多边形背景色 |
+| 变量名                   | 默认值                  | 说明         |
+| ------------------------ | ----------------------- | ------------ |
+| `--l-polygen-size`       | `10px`                  | 多边形大小   |
+| `--l-polygen-width`      | `var(--l-polygen-size)` | 多边形宽度   |
+| `--l-polygen-height`     | `var(--l-polygen-size)` | 多边形高度   |
+| `--l-polygen-background` | `#666`                  | 多边形背景色 |

@@ -1,5 +1,5 @@
 <template>
-  <Button class="nt-theme-btn" @click="toggleTheme">
+  <Button class="l-theme-btn" @click="toggleTheme">
     <SunIcon v-if="theme === 'auto'"></SunIcon>
     <MoonIcon v-else></MoonIcon>
   </Button>

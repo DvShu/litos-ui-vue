@@ -28,9 +28,9 @@
     const datetime = ref('')
   </script>
   <template>
-    <lt-date-picker-ori v-model="date" type="date" null-default="current"></lt-date-picker-ori>
-    <lt-date-picker-ori v-model="time" type="time" class="ml-10" null-default="current"></lt-date-picker-ori>
-    <lt-date-picker-ori v-model="datetime" type="datetime" class="ml-10" null-default="current"></lt-date-picker-ori>
+    <lv-date-picker-ori v-model="date" type="date" null-default="current"></lv-date-picker-ori>
+    <lv-date-picker-ori v-model="time" type="time" class="ml-10" null-default="current"></lv-date-picker-ori>
+    <lv-date-picker-ori v-model="datetime" type="datetime" class="ml-10" null-default="current"></lv-date-picker-ori>
   </template>
   </textarea>
   <template #preview>

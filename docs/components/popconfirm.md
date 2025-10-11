@@ -15,11 +15,11 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-popconfirm title="确认要删除吗？">
+  <lv-popconfirm title="确认要删除吗？">
     <template #trigger>
-      <lt-button>删除</lt-button>
+      <lv-button>删除</lv-button>
     </template>
-  </lt-popconfirm>
+  </lv-popconfirm>
   </textarea>
   <template #preview>
     <Popconfirm title="确认要删除吗？">

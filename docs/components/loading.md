@@ -104,7 +104,7 @@
   </script>
   <template>
     <div v-loading.fullscreen="loading2">
-      <lt-button @click="handleOpenLoading">加载</lt-button>
+      <lv-button @click="handleOpenLoading">加载</lv-button>
     </div>
   </template>
   </textarea>
@@ -134,8 +134,8 @@
   </script>
   <template>
     <div class="loading-demo" v-loading:bar.fullscreen.unlock="loading3">
-      <lt-button @click="handleBarOpen">开始</lt-button>
-      <lt-button @click="handleBarClose">结束</lt-button>
+      <lv-button @click="handleBarOpen">开始</lv-button>
+      <lv-button @click="handleBarClose">结束</lv-button>
     </div>
   </template>
   </textarea>
@@ -188,7 +188,7 @@ loadingInstance2.close();
     }
   </script>
   <template>
-    <lt-button @click="handleApiOpen">开始</lt-button>
+    <lv-button @click="handleApiOpen">开始</lv-button>
   </template>
   </textarea>
   <template #preview>

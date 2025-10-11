@@ -2,7 +2,7 @@
 
 `Material Design` 风格的输入框; `Material Design` 是由 `Google` 设计的视觉语言。
 
-> 组件使用名称为: `nt-md-input`
+> 组件使用名称为: `lv-md-input`
 
 ## 演示
 
@@ -26,7 +26,7 @@
     const value = ref('')
   </script>
   <template>
-    <lt-md-input v-model="value" label="姓名"></lt-md-input>
+    <lv-md-input v-model="value" label="姓名"></lv-md-input>
   </template>
   </textarea>
   <template #preview>
@@ -42,7 +42,7 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-md-input v-model="value" label="姓名" outline></lt-md-input>
+  <lv-md-input v-model="value" label="姓名" outline></lv-md-input>
   </textarea>
   <template #preview>
     <MdInput v-model="value" label="姓名" outline></MdInput>

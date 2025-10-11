@@ -1,7 +1,7 @@
 <template>
   <div
     :class="{
-      'nt-checkbox-group': true,
+      'l-checkbox-group': true,
     }"
   >
     <slot></slot>
@@ -26,7 +26,7 @@ function updateCheck(val: any) {
   emits('change', [...oldValues]);
 }
 
-provide('nt-checkbox-group-check', {
+provide('l-checkbox-group-check', {
   checkList: checkList,
   updateCheck,
 });

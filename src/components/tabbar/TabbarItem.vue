@@ -23,7 +23,7 @@ export default defineComponent({
         'div',
         {
           class:
-            'nt-tabbar-item' +
+            'l-tabbar-item' +
             (tabbarCtx?.active.value === props.name ? ' active' : ''),
           onClick: handleToggle,
           'data-name': props.name,
@@ -33,7 +33,7 @@ export default defineComponent({
             ? h(
                 'div',
                 {
-                  class: 'nt-tabbar-item-icon',
+                  class: 'l-tabbar-item-icon',
                 },
                 [slots.icon()],
               )

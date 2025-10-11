@@ -1,7 +1,7 @@
 <template>
   <div
-    :class="['nt-polygon', shape ? `nt-polygon-${shape}` : '']"
-    :style="[background ? `--nt-polygen-background: ${background}` : '']"
+    :class="['l-polygon', shape ? `l-polygon-${shape}` : '']"
+    :style="[background ? `--l-polygen-background: ${background}` : '']"
   ></div>
 </template>
 

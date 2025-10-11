@@ -2,7 +2,6 @@
 import { defineComponent, h, PropType, ref, toRaw, watch } from 'vue';
 import type { VNode, CSSProperties } from 'vue';
 import { isBlank, random } from 'ph-utils';
-import { format } from 'ph-utils/date';
 
 export interface ColumnOption {
   /** 排序时，如果传递了 key，则会将此 key 回传，便于排序, 如果不传此 key，则排序无效 */
@@ -87,7 +86,6 @@ function getRightStart(id: string, right: [string, number][]) {
 /** 通过配置的 columns 计算表头跨行，跨列 */
 function calculateSpan(
   headers: ColumnOption[],
-  level = 0,
   leftFixed: [string, number][],
   rightFixed: [string, number][],
 ): ColumnOption[] {
@@ -113,7 +111,6 @@ function calculateSpan(
       let titleColspan = header.titleColspan;
       const childrenSpans = calculateSpan(
         header.children,
-        level + 1,
         leftFixed,
         rightFixed,
       );
@@ -225,12 +222,7 @@ export default defineComponent({
     /** 右边固定列 */
     const fixedRight: [string, number][] = [];
     const isFixedColumn = ref(false);
-    const parsedColumns = calculateSpan(
-      props.columns,
-      0,
-      fixedLeft,
-      fixedRight,
-    );
+    const parsedColumns = calculateSpan(props.columns, fixedLeft, fixedRight);
     isFixedColumn.value = fixedLeft.length > 0 || fixedRight.length > 0;
 
     function getCommonStyle(
@@ -334,7 +326,7 @@ export default defineComponent({
           'sort-desc':
             sortInfo.value.key === column.key &&
             sortInfo.value.order === 'desc',
-          'nt-fixed': column.fixed,
+          'l-fixed': column.fixed,
         },
         style: getCommonStyle(column, fixedLeft, fixedRight),
         colspan: column.titleColspan,
@@ -415,7 +407,7 @@ export default defineComponent({
           if (rowspan !== 0 && colspan !== 0) {
             const tdAttr: any = {
               style: getCommonStyle(column, fixedLeft, fixedRight),
-              class: [column.fixed ? 'nt-fixed' : undefined, column.class],
+              class: [column.fixed ? 'l-fixed' : undefined, column.class],
               colspan,
               rowspan,
             };
@@ -444,7 +436,6 @@ export default defineComponent({
 
     function renderBody() {
       const bodies: VNode[] = [];
-      format();
       const selectionName = `${random(3)}${String(Date.now()).substring(8)}`;
       for (let i = 0, len = sourceData.value.length; i < len; i++) {
         const dataItem = sourceData.value[i];
@@ -458,17 +449,17 @@ export default defineComponent({
     return () =>
       h(
         'div',
-        { class: 'nt-table-wrapper' },
+        { class: 'l-table-wrapper' },
         h(
           'table',
           {
             class: [
-              'nt-table',
-              props.stripe ? 'nt-table-stripe' : '',
+              'l-table',
+              props.stripe ? 'l-table-stripe' : '',
               isFixedColumn.value || props.tableLayout === 'fixed'
-                ? 'nt-table-fixed'
+                ? 'l-table-fixed'
                 : '',
-              props.border ? 'nt-table-border' : '',
+              props.border ? 'l-table-border' : '',
             ],
           },
           [
@@ -476,7 +467,7 @@ export default defineComponent({
               'thead',
               {
                 class: {
-                  'nt-fixed': props.fixedHead,
+                  'l-fixed': props.fixedHead,
                 },
                 style: {
                   top: props.fixedHead ? '0' : undefined,
@@ -490,7 +481,7 @@ export default defineComponent({
                 ? h(
                     'td',
                     {
-                      class: 'nt-table__none-col',
+                      class: 'l-table__none-col',
                       colspan: props.columns.length,
                     },
                     '暂无数据记录!',
@@ -500,7 +491,7 @@ export default defineComponent({
             props.renderSummary
               ? h(
                   'tfoot',
-                  { class: 'nt-fixed', style: { bottom: '0' } },
+                  { class: 'l-fixed', style: { bottom: '0' } },
                   props.renderSummary(),
                 )
               : null,

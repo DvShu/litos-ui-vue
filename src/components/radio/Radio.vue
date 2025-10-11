@@ -33,7 +33,7 @@ export default defineComponent({
     const { checkedValue, updateCheck } = inject<{
       checkedValue: Ref<any> | null;
       updateCheck: null | ((value: any) => void);
-    }>('nt-radio-group-check', {
+    }>('l-radio-group-check', {
       checkedValue: null,
       updateCheck: null,
     });
@@ -67,9 +67,9 @@ export default defineComponent({
         'label',
         {
           class: {
-            'nt-radio': true,
-            'nt-radio--disabled': props.disabled,
-            'nt-radio--button': props.type === 'button',
+            'l-radio': true,
+            'l-radio--disabled': props.disabled,
+            'l-radio--button': props.type === 'button',
             'is-checked': isChecked.value,
           },
         },
@@ -78,17 +78,17 @@ export default defineComponent({
             ref: radio,
             type: 'radio',
             name: props.name,
-            class: 'nt-radio__input',
+            class: 'l-radio__input',
             value: props.value,
             disabled: props.disabled,
             checked: isChecked.value,
             onChange: handleChange,
           }),
           props.type !== 'button'
-            ? h('span', { class: 'nt-radio__inner' })
+            ? h('span', { class: 'l-radio__inner' })
             : null,
           slots.default != null || props.label != null
-            ? h('span', { class: 'nt-radio__label' }, [
+            ? h('span', { class: 'l-radio__label' }, [
                 slots.default != null ? slots.default() : props.label,
               ])
             : null,

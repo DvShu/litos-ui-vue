@@ -18,9 +18,8 @@ function parseAttributes(child: Element) {
 }
 
 const parseComponent = function (name: string) {
-  if (name.startsWith('lt-')) {
+  if (name.startsWith('lv-')) {
     let tagname = parseAsyncComponentName(name);
-    console.log(tagname);
     if (tagname in modules) {
       return modules[tagname];
     }
@@ -29,7 +28,7 @@ const parseComponent = function (name: string) {
 };
 
 function parseAsyncComponentName(tagName: string): string {
-  if (tagName.startsWith('lt-')) {
+  if (tagName.startsWith('lv-')) {
     let name = tagName.substring(3);
     let nameItmes = name.split('-');
     nameItmes = nameItmes.map(
@@ -46,19 +45,11 @@ function renderChildren(children: HTMLCollection) {
   for (const child of children) {
     const component = parseComponent(child.localName);
     if (child.children.length === 0) {
-      if (child.localName.startsWith('nt-')) {
-        renderCompts.push(
-          h(component, parseAttributes(child), {
-            default: () => child.textContent,
-          }),
-        );
-      } else {
-        renderCompts.push(
-          h(component, parseAttributes(child), {
-            default: () => child.textContent,
-          }),
-        );
+      const childChildren: any = {};
+      if (child.textContent) {
+        childChildren.default = () => child.textContent;
       }
+      renderCompts.push(h(component, parseAttributes(child), childChildren));
     } else {
       renderCompts.push(
         h(component, parseAttributes(child), {

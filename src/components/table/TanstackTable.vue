@@ -1,16 +1,16 @@
 <template>
-  <div class="nt-table-wrapper nt-scrollbar">
+  <div class="l-table-wrapper nt-scrollbar">
     <table
       :class="[
-        'nt-table',
-        props.stripe ? 'nt-table-stripe' : '',
-        isFixedLayout ? 'nt-table-fixed' : '',
-        props.border ? 'nt-table-border' : '',
+        'l-table',
+        props.stripe ? 'l-table-stripe' : '',
+        isFixedLayout ? 'l-table-fixed' : '',
+        props.border ? 'l-table-border' : '',
       ]"
     >
       <thead
         :class="{
-          'nt-fixed': props.fixedHead,
+          'l-fixed': props.fixedHead,
         }"
         :style="{
           top: props.fixedHead ? '0' : undefined,
@@ -272,10 +272,10 @@ function createColumns(
                 Button,
                 {
                   class: {
-                    'nt-table-expand-icon': true,
-                    'nt-table-expand-icon--expanded':
+                    'l-table-expand-icon': true,
+                    'l-table-expand-icon--expanded':
                       cellContext.row.getIsExpanded(),
-                    'nt-table-expand-placeholder':
+                    'l-table-expand-placeholder':
                       !cellContext.row.getCanExpand(),
                   },
                   onClick: cellContext.row.getToggleExpandedHandler(),
@@ -326,9 +326,9 @@ function createColumns(
           Button,
           {
             class: {
-              'nt-table-expand-icon': true,
-              'nt-table-expand-icon--expanded': cellContext.row.getIsExpanded(),
-              'nt-table-expand-placeholder': !cellContext.row.getCanExpand(),
+              'l-table-expand-icon': true,
+              'l-table-expand-icon--expanded': cellContext.row.getIsExpanded(),
+              'l-table-expand-placeholder': !cellContext.row.getCanExpand(),
             },
             onClick: cellContext.row.getToggleExpandedHandler(),
           },

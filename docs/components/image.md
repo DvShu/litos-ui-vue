@@ -22,7 +22,7 @@ const imgs = [
 <ClientOnly>
   <CodePreview class="mt-15">
     <textarea lang="vue-html">
-    <lt-image src="https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg" width="100px"></lt-image>
+    <lv-image src="https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg" width="100px"></lv-image>
     </textarea>
   </CodePreview>
 </ClientOnly>
@@ -34,11 +34,11 @@ const imgs = [
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-image src="/litos-ui-vue/img1.svg" width="100px" height="100px" fit="fill"></lt-image>
-  <lt-image src="/litos-ui-vue/img1.svg" width="100px" height="100px" fit="contain"></lt-image>
-  <lt-image src="/litos-ui-vue/img1.svg" width="100px" height="100px" fit="cover"></lt-image>
-  <lt-image src="/litos-ui-vue/img1.svg" width="100px" height="100px" fit="none"></lt-image>
-  <lt-image src="/litos-ui-vue/img1.svg" width="100px" height="100px" fit="scale-down"></lt-image>
+  <lv-image src="/litos-ui-vue/img1.svg" width="100px" height="100px" fit="fill"></lv-image>
+  <lv-image src="/litos-ui-vue/img1.svg" width="100px" height="100px" fit="contain"></lv-image>
+  <lv-image src="/litos-ui-vue/img1.svg" width="100px" height="100px" fit="cover"></lv-image>
+  <lv-image src="/litos-ui-vue/img1.svg" width="100px" height="100px" fit="none"></lv-image>
+  <lv-image src="/litos-ui-vue/img1.svg" width="100px" height="100px" fit="scale-down"></lv-image>
   </textarea>
     <template #preview>
       <div class="grid grid-cols-5">
@@ -84,7 +84,7 @@ const imgs = [
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-image src="/litos-ui-vue/img2.svg" width="100px" height="100px" placeholder="/litos-ui-vue/img_loading.png"></lt-image>
+  <lv-image src="/litos-ui-vue/img2.svg" width="100px" height="100px" placeholder="/litos-ui-vue/img_loading.png"></lv-image>
   </textarea>
   <template #preview>
     <Image src="/litos-ui-vue/img2.svg" width="100px" height="100px" placeholder="/litos-ui-vue/img_loading.png"></Image>
@@ -99,8 +99,8 @@ const imgs = [
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-image src="/litos-ui-vue/img3.svg" width="100px" height="100px" fallback="/litos-ui-vue/loading_error.png"></lt-image>
-  <lt-image
+  <lv-image src="/litos-ui-vue/img3.svg" width="100px" height="100px" fallback="/litos-ui-vue/loading_error.png"></lv-image>
+  <lv-image
     src="/litos-ui-vue/img3.svg"
     width="100px"
     height="100px"
@@ -110,7 +110,7 @@ const imgs = [
     <template #fallback>
       <div style="height: 100%;background-color: gray;display:flex;justify-content:center;align-items:center;color:#fff;">Error</div>
     </template>
-  </lt-image>
+  </lv-image>
   </textarea>
   <template #preview>
     <Image src="/litos-ui-vue/img3.svg" width="100px" height="100px" fallback="/litos-ui-vue/loading_error.png"></Image>
@@ -136,7 +136,7 @@ const imgs = [
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-image src="/litos-ui-vue/img2.svg" width="100px" height="100px" preview-disable></lt-image>
+  <lv-image src="/litos-ui-vue/img2.svg" width="100px" height="100px" preview-disable></lv-image>
   </textarea>
   <template #preview>
     <Image src="/litos-ui-vue/img2.svg" width="100px" height="100px" preview-disable></Image>
@@ -160,7 +160,7 @@ const imgs = [
   </script>
 
   <template>
-    <lt-image v-for="src,index in imgs" :key="index" :src="src" :preview-src-list="imgs" :initial-index="index" width="100px"></lt-image>
+    <lv-image v-for="src,index in imgs" :key="index" :src="src" :preview-src-list="imgs" :initial-index="index" width="100px"></lv-image>
   </template>
   </textarea>
   <template #preview>
@@ -176,7 +176,7 @@ const imgs = [
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-image src="/litos-ui-vue/img2.svg" width="100px" height="100px" loading="lazy"></lt-image>
+  <lv-image src="/litos-ui-vue/img2.svg" width="100px" height="100px" loading="lazy"></lv-image>
   </textarea>
   <template #preview>
     <Image src="/litos-ui-vue/img2.svg" width="100px" height="100px" loading="lazy"></Image>
@@ -210,11 +210,11 @@ const imgs = [
       class="demo-img"
       @click="show = true"
     />
-    <lt-image-preview
+    <lv-image-preview
       v-model:show="show"
       :url-list="imgs"
       :initial-index="0"
-    ></lt-image-preview>
+    ></lv-image-preview>
   </template>
   <style>
     .demo-img {

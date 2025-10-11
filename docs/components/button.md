@@ -15,8 +15,8 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-button type="normal">Default</lt-button>
-  <lt-button type="primary" class="ml-10">Primary</lt-button>
+  <lv-button type="normal">Default</lv-button>
+  <lv-button type="primary" class="ml-10">Primary</lv-button>
   </textarea>
   </CodePreview>
 </ClientOnly>
@@ -28,8 +28,8 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-button type="normal" text>Default</lt-button>
-  <lt-button type="primary" text class="ml-10">Primary</lt-button>
+  <lv-button type="normal" text>Default</lv-button>
+  <lv-button type="primary" text class="ml-10">Primary</lv-button>
   </textarea>
   </CodePreview>
 </ClientOnly>
@@ -40,8 +40,8 @@
 
 <ClientOnly><CodePreview>
 <textarea lang="vue-html">
-<lt-button disabled type="normal">Default</lt-button>
-<lt-button type="text" class="ml-10" disabled>Text</lt-button>
+<lv-button disabled type="normal">Default</lv-button>
+<lv-button type="text" class="ml-10" disabled>Text</lv-button>
 </textarea>
 </CodePreview></ClientOnly>
 
@@ -51,8 +51,8 @@
 
 <ClientOnly><CodePreview>
 <textarea lang="vue-html">
-<lt-button loading type="normal">Default</lt-button>
-<lt-button type="primary" loading class="ml-10">Primary</lt-button>
+<lv-button loading type="normal">Default</lv-button>
+<lv-button type="primary" loading class="ml-10">Primary</lv-button>
 </textarea>
 </CodePreview></ClientOnly>
 
@@ -62,8 +62,8 @@
 
 <ClientOnly><CodePreview>
 <textarea lang="vue-html">
-<lt-button block type="normal">Default</lt-button>
-<lt-button type="primary" block class="mt-15">Text</lt-button>
+<lv-button block type="normal">Default</lv-button>
+<lv-button type="primary" block class="mt-15">Text</lv-button>
 </textarea>
 </CodePreview></ClientOnly>
 
@@ -73,8 +73,8 @@
 
 <ClientOnly><CodePreview>
 <textarea lang="vue-html">
-<lt-button circle type="normal">D</lt-button>
-<lt-button type="primary" round class="ml-10">Text</lt-button>
+<lv-button circle type="normal">D</lv-button>
+<lv-button type="primary" round class="ml-10">Text</lv-button>
 </textarea>
 </CodePreview></ClientOnly>
 
@@ -84,13 +84,13 @@
 
 <ClientOnly><CodePreview>
 <textarea lang="vue-html">
-<lt-button circle type="normal">
-<lt-search-icon></lt-search-icon>
-</lt-button>
-<lt-button type="primary" round class="ml-10">
-<lt-search-icon></lt-search-icon>
+<lv-button circle type="normal">
+<lv-search-icon></lv-search-icon>
+</lv-button>
+<lv-button type="primary" round class="ml-10">
+<lv-search-icon></lv-search-icon>
 <span>Search</span>
-</lt-button>
+</lv-button>
 </textarea>
 </CodePreview></ClientOnly>
 
@@ -101,7 +101,7 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-button type="primary" ghost>透明按钮</lt-button>
+  <lv-button type="primary" ghost>透明按钮</lv-button>
   </textarea>
   </CodePreview>
 </ClientOnly>
@@ -111,37 +111,37 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-button color="#722ed1">按钮</lt-button>
-  <lt-button color="#eb2f96" ghost class="ml-10">按钮</lt-button>
-  <lt-button color="#4998f4" text class="ml-10">按钮</lt-button>
+  <lv-button color="#722ed1">按钮</lv-button>
+  <lv-button color="#eb2f96" ghost class="ml-10">按钮</lv-button>
+  <lv-button color="#4998f4" text class="ml-10">按钮</lv-button>
   </textarea>
   </CodePreview>
 </ClientOnly>
 
 ### 扩展 `type`
 
-通过给 `type` 设置一个非预设的值，然后定义 `.nt-btn-x` 的样式。
+通过给 `type` 设置一个非预设的值，然后定义 `.l-btn-x` 的样式。
 
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue">
   <template>
-    <lt-button type="blue">蓝色按钮</lt-button>
-    <lt-button type="gradient" class="ml-10">渐变按钮</lt-button>
+    <lv-button type="blue">蓝色按钮</lv-button>
+    <lv-button type="gradient" class="ml-10">渐变按钮</lv-button>
   </template>
   <style>
-    .nt-btn-blue {
-      --nt-btn-border-color: #1677ff;
-      --nt-btn-hover-border-color: #4096ff;
-      --nt-btn-active-border-color: #0958d9;
+    .l-btn-blue {
+      --l-btn-border-color: #1677ff;
+      --l-btn-hover-border-color: #4096ff;
+      --l-btn-active-border-color: #0958d9;
     }
-    .nt-btn-gradient {
+    .l-btn-gradient {
       border: none;
-      --nt-btn-color: #389e0d;
-      --nt-btn-active-color: #0fd850;
-      --nt-btn-background: linear-gradient(90deg, #0fd850 0%, #f9f047 100%);
-      --nt-btn-hover-background: linear-gradient(90deg, #2af06a 0%, #fbf478 100%);
-      --nt-btn-active-background: linear-gradient(90deg, #0a9036 0%, #ece008 100%);
+      --l-btn-color: #389e0d;
+      --l-btn-active-color: #0fd850;
+      --l-btn-background: linear-gradient(90deg, #0fd850 0%, #f9f047 100%);
+      --l-btn-hover-background: linear-gradient(90deg, #2af06a 0%, #fbf478 100%);
+      --l-btn-active-background: linear-gradient(90deg, #0a9036 0%, #ece008 100%);
     }
   </style>
   </textarea>
@@ -175,18 +175,18 @@
 
 ### 样式变量
 
-| 名称                             | 描述                     | 默认值                       |
-| -------------------------------- | ------------------------ | ---------------------------- |
-| `--nt-btn-text-color`            | 按钮的文字颜色           | `rgba(0, 0, 0, 0.65)`        |
-| `--nt-btn-background`            | 按钮的背景颜色           | `	#fff`                       |
-| `--nt-btn-border-color`          | 按钮的边框颜色           | `#d9d9d9`                    |
-| `--nt-form-edit-height`          | 按钮的高度               | `32px`                       |
-| `--nt-btn-hover-text-color`      | 鼠标悬浮时按钮的文字颜色 | `#79b3f7`                    |
-| `--nt-btn-hover-border-color`    | 鼠标悬浮时按钮的边框颜色 | `var(--nt-btn-hover-color)`  |
-| `--nt-btn-hover-background`      | 鼠标悬浮时按钮的背景颜色 | `var(--nt-btn-background)`   |
-| `--nt-btn-active-text-color`     | 点击时按钮的颜色         | `#197df1`                    |
-| `--nt-btn-active-background`     | 点击时按钮的背景颜色     | `var(--nt-btn-background)`   |
-| `--nt-btn-active-border-color`   | 点击时按钮的边框颜色     | `var(--nt-btn-active-color)` |
-| `--nt-btn-disabled-color`        | 禁用时按钮的文字颜色     | `#c9c9c9`                    |
-| `--nt-btn-disabled-background`   | 禁用时按钮的背景颜色     | `#fbfbfb`                    |
-| `--nt-btn-disabled-border-color` | 禁用时按钮的边框颜色     | `#e6e6e6`                    |
+| 名称                            | 描述                     | 默认值                      |
+| ------------------------------- | ------------------------ | --------------------------- |
+| `--l-btn-text-color`            | 按钮的文字颜色           | `rgba(0, 0, 0, 0.65)`       |
+| `--l-btn-background`            | 按钮的背景颜色           | `	#fff`                      |
+| `--l-btn-border-color`          | 按钮的边框颜色           | `#d9d9d9`                   |
+| `--l-form-control-height`       | 按钮的高度               | `32px`                      |
+| `--l-btn-hover-text-color`      | 鼠标悬浮时按钮的文字颜色 | `#79b3f7`                   |
+| `--l-btn-hover-border-color`    | 鼠标悬浮时按钮的边框颜色 | `var(--l-btn-hover-color)`  |
+| `--l-btn-hover-background`      | 鼠标悬浮时按钮的背景颜色 | `var(--l-btn-background)`   |
+| `--l-btn-active-text-color`     | 点击时按钮的颜色         | `#197df1`                   |
+| `--l-btn-active-background`     | 点击时按钮的背景颜色     | `var(--l-btn-background)`   |
+| `--l-btn-active-border-color`   | 点击时按钮的边框颜色     | `var(--l-btn-active-color)` |
+| `--l-btn-disabled-color`        | 禁用时按钮的文字颜色     | `#c9c9c9`                   |
+| `--l-btn-disabled-background`   | 禁用时按钮的背景颜色     | `#fbfbfb`                   |
+| `--l-btn-disabled-border-color` | 禁用时按钮的边框颜色     | `#e6e6e6`                   |

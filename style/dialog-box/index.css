@@ -1,8 +1,8 @@
-.nt-dialog-box-main {
+.l-dialog-box-main {
   width: 340px;
 }
 
-.nt-message-dialog-container {
+.l-message-dialog-container {
   display: flex;
   align-items: center;
 }
@@ -11,16 +11,16 @@
   margin-right: 5px;
 }
 .nt-confirm-icon--info {
-  color: var(--nt-success-color, #999999);
+  color: var(--l-success-color, #999999);
 }
 .nt-confirm-icon--success {
-  color: var(--nt-success-color, #19bf6c);
+  color: var(--l-success-color, #19bf6c);
 }
 .nt-confirm-icon--error {
-  color: var(--nt-error-color, #ed3f13);
+  color: var(--l-error-color, #ed3f13);
 }
 .nt-confirm-icon--warn {
-  color: var(--nt-warn-color, #f90);
+  color: var(--l-warn-color, #f90);
 }
 
 .nt-prompt-tip {
@@ -28,6 +28,6 @@
   margin: 0 0 5px 0;
 }
 
-.nt-prompt-dialog-container .nt-input {
+.nt-prompt-dialog-container .l-input {
   width: 100%;
 }

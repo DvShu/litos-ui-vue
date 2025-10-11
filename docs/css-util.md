@@ -19,69 +19,69 @@ const show2 = ref(true)
 
 ### 1.2 使用
 
-所有的渐变都支持传递 `--nt-transition-times` 控制时长, 默认为 `0.3s`；只需要简单的添加相应的 `Transition-name` 属性即可。
+所有的渐变都支持传递 `--l-transition-times` 控制时长, 默认为 `0.3s`；只需要简单的添加相应的 `Transition-name` 属性即可。
 
-#### 1.2.1 `nt-opacity`
+#### 1.2.1 `l-opacity`
 
 普通渐变进入/退出
 
 <ClientOnly><CodePreview class="mb-15">
 <textarea lang="vue-html">
-<lt-button @click="show = !show">Toggle</lt-button>
-<Transition name="nt-opacity">
+<lv-button @click="show = !show">Toggle</lv-button>
+<Transition name="l-opacity">
 
 <p v-if="show">Hello world</p>
 </Transition>
 </textarea>
 <template #preview>
 <Button @click="show = !show">Toggle</Button>
-<Transition name="nt-opacity">
+<Transition name="l-opacity">
 <span v-if="show" class="ml-10">Hello World</span>
 </Transition>
 </template>
 </CodePreview></ClientOnly>
 
-#### 1.2.2 `nt-fadein`
+#### 1.2.2 `l-fadein`
 
-从顶部往下移动渐变的进入/退出; 支持通过 `--nt-fadein-offset` 控制距离, 默认为 `-20px`
+从顶部往下移动渐变的进入/退出; 支持通过 `--l-fadein-offset` 控制距离, 默认为 `-20px`
 
 <ClientOnly><CodePreview class="mb-15">
 <textarea lang="vue-html">
-<lt-button @click="show = !show">Toggle</lt-button>
-<Transition name="nt-fadein">
+<lv-button @click="show = !show">Toggle</lv-button>
+<Transition name="l-fadein">
 
 <p v-if="show">Hello world</p>
 </Transition>
-<Transition name="nt-fadein">
-<p v-if="show" style="--nt-fadein-offset:-50px;">Hello world</p>
+<Transition name="nl-fadein">
+<p v-if="show" style="--l-fadein-offset:-50px;">Hello world</p>
 </Transition>
 </textarea>
 <template #preview>
 <Button @click="show1 = !show1" >Toggle</Button>
-<Transition name="nt-fadein">
+<Transition name="l-fadein">
 <div v-if="show1" class="inline ml-10">Hello World</div>
 </Transition>
-<Transition name="nt-fadein">
-<div v-if="show1" class="inline ml-10" style="--nt-fadein-offset:-50px;">Hello World</div>
+<Transition name="l-fadein">
+<div v-if="show1" class="inline ml-10" style="--l-fadein-offset:-50px;">Hello World</div>
 </Transition>
 </template>
 </CodePreview></ClientOnly>
 
-#### 1.2.3 `nt-scale`
+#### 1.2.3 `l-scale`
 
 缩放进入/退出
 
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-button @click="show = !show">Toggle</lt-button>
-    <Transition name="nt-opacity">
-  <p v-if="show">Hello world</p>
+  <lv-button @click="show = !show">Toggle</lv-button>
+  <Transition name="l-scale">
+    <p v-if="show">Hello world</p>
   </Transition>
   </textarea>
   <template #preview>
     <Button @click="show2 = !show2">Toggle</Button>
-    <Transition name="nt-scale" appear>
+    <Transition name="l-scale" appear>
       <div class="inline ml-10" v-if="show2">Hello world</div>
     </Transition>
   </template>
@@ -92,10 +92,10 @@ const show2 = ref(true)
 
 组件提供了下列 CSS 变量，可用于自定义样式
 
-| 名称                    | 描述                                | 默认值  |
-| ----------------------- | ----------------------------------- | ------- |
-| `--nt-transition-times` | 渐变时长, 所有渐变都支持            | `0.3s`  |
-| `--nt-fadein-offset`    | 渐变距离, 支持的渐变有: `nt-fadein` | `-20px` |
+| 名称                   | 描述                                | 默认值  |
+| ---------------------- | ----------------------------------- | ------- |
+| `--l-transition-times` | 渐变时长, 所有渐变都支持            | `0.3s`  |
+| `--l-fadein-offset`    | 渐变距离, 支持的渐变有: `nt-fadein` | `-20px` |
 
 ## 2. `CSS Animation` 动画
 
@@ -111,19 +111,19 @@ import 'litos-ui-vue/style/util/animation.css';
 
 #### 添加 `css class`
 
-所有的动画的 `class` 规则为: `nt-` + 动画名称 + `-anim`；例如旋转动画为: `nt-rotate-anim`
+所有的动画的 `class` 规则为: `l-` + 动画名称 + `-anim`；例如旋转动画为: `l-rotate-anim`
 
 ```html
-<lt-loading-icon class="nt-rotate-anim" />
+<lv-loading-icon class="l-rotate-anim" />
 ```
 
 #### 通过 `css animation` 使用动画名称
 
-所有的动画的 `animation` 名称规则为：`nt-` + 动画名称 + `-frame`；例如旋转动画为: `nt-rotate-frame`
+所有的动画的 `animation` 名称规则为：`l-` + 动画名称 + `-frame`；例如旋转动画为: `l-rotate-frame`
 
 ```vue
 <template>
-  <lt-loading-icon class="custome-rotate" />
+  <lv-loading-icon class="custome-rotate" />
 </template>
 
 <style>
@@ -137,7 +137,7 @@ import 'litos-ui-vue/style/util/animation.css';
 
 <div class="icon-list mt-15">
   <div class="icon-item center">
-    <LoadingIcon class="nt-rotate-anim" />
+    <LoadingIcon class="l-rotate-anim" />
     <span class="icon-name">rotate</span>
   </div>
 </div>

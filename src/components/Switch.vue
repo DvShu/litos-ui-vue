@@ -1,16 +1,16 @@
 <template>
   <div
     :class="{
-      'nt-switch': true,
-      'nt-switch--disabled': disabled,
-      'nt-switch--checked': checked,
+      'l-switch': true,
+      'l-switch--disabled': disabled,
+      'l-switch--checked': checked,
     }"
     @click="handleChange"
   >
-    <div class="nt-switch-action">
+    <div class="l-switch-action">
       <slot name="action" :checked="checked"></slot>
     </div>
-    <span v-if="checked || uncheckedText" class="nt-switch-text">
+    <span v-if="checked || uncheckedText" class="l-switch-text">
       {{ checked ? checkedText || '' : uncheckedText || '' }}
     </span>
   </div>

@@ -185,9 +185,9 @@ const LoadingDirective = (el: HTMLElement, binding: DirectiveBinding) => {
   const { value, modifiers, arg } = binding;
   const $el = modifiers.fullscreen ? document.body : el;
   if (value) {
-    addLoading($el, modifiers, arg);
+    addLoading($el, modifiers as any, arg);
   } else {
-    removeLoading($el, modifiers, arg);
+    removeLoading($el, modifiers as any, arg);
   }
 };
 

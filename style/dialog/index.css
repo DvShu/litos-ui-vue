@@ -2,18 +2,18 @@ body.nt-body-lock {
   overflow: hidden;
 }
 
-.nt-dialog {
-  --nt-dialog-line-color: rgba(0, 0, 0, 0.06);
+.l-dialog {
+  --l-dialog-line-color: rgba(0, 0, 0, 0.06);
   display: block;
 }
 
-.nt-dialog-align-center {
+.l-dialog-align-center {
   display: flex;
 }
-.nt-dialog-align-center .nt-dialog-main {
+.l-dialog-align-center .l-dialog-main {
   transform: translate3d(0, 0, 0) scale(1);
 }
-.nt-dialog-main {
+.l-dialog-main {
   background-color: white;
   border-radius: 5px;
   width: 30%;
@@ -27,24 +27,24 @@ body.nt-body-lock {
     transform 0.3s ease-in-out;
 }
 
-.nt-dialog-header {
+.l-dialog-header {
   padding: 10px;
   font-size: 16px;
-  border-bottom: 1px solid var(--nt-dialog-line-color);
+  border-bottom: 1px solid var(--l-dialog-line-color);
   font-weight: 600;
 }
 
 /* 右上角关闭按钮 */
-.nt-dialog-close1,
-.nt-dialog-close2 {
-  --nt-form-edit-height: auto;
+.l-dialog-close1,
+.l-dialog-close2 {
+  --l-form-control-height: auto;
   font-size: 16px;
   position: absolute;
   padding: 5px;
   background-color: white;
 }
 
-.nt-dialog-close1 {
+.l-dialog-close1 {
   right: 5px;
   width: auto;
   height: auto;
@@ -54,53 +54,53 @@ body.nt-body-lock {
 }
 
 /* 内容区域 */
-.nt-dialog-container {
+.l-dialog-container {
   padding: 15px 10px;
   font-size: 14px;
 }
 
 /* 底部按钮区域 */
-.nt-dialog-footer {
+.l-dialog-footer {
   padding: 10px;
   text-align: right;
-  border-top: 1px solid var(--nt-dialog-line-color);
+  border-top: 1px solid var(--l-dialog-line-color);
 }
 
-.nt-dialog-close2 {
+.l-dialog-close2 {
   right: -12px;
   width: 24px;
   height: 24px;
   top: -12px;
 }
 
-.nt-dialog-enter-active,
-.nt-dialog-leave-active {
+.l-dialog-enter-active,
+.l-dialog-leave-active {
   transition: opacity 0.3s ease;
 }
 
-.nt-dialog-enter-from,
-.nt-dialog-leave-to {
+.l-dialog-enter-from,
+.l-dialog-leave-to {
   opacity: 0;
-  .nt-dialog-main {
+  .l-dialog-main {
     opacity: 0;
     transform: translate3d(0, 0, 0) scale(0);
   }
 }
 
 /* theme: mobile */
-.nt-dialog-mobile {
+.l-dialog-mobile {
   border-radius: 10px;
 }
-.nt-dialog-mobile .nt-dialog-header {
+.l-dialog-mobile .l-dialog-header {
   text-align: center;
   border-bottom-color: transparent;
   padding: 20px 10px 5px;
 }
-.nt-dialog-mobile .nt-dialog-container {
+.l-dialog-mobile .l-dialog-container {
   padding: 5px 15px 20px;
   text-align: center;
 }
-.nt-dialog-mobile .nt-dialog-footer {
+.l-dialog-mobile .l-dialog-footer {
   display: flex;
   justify-content: stretch;
   align-items: stretch;
@@ -108,16 +108,16 @@ body.nt-body-lock {
   text-align: center;
   height: 50px;
 }
-.nt-dialog-mobile .nt-btn {
+.l-dialog-mobile .l-btn {
   flex-grow: 1;
 }
 
-.nt-dialog-mobile .nt-btn + .nt-btn {
-  border-left: 1px solid var(--nt-dialog-line-color);
+.l-dialog-mobile .l-btn + .l-btn {
+  border-left: 1px solid var(--l-dialog-line-color);
 }
 
 @media screen and (max-width: 768px) {
-  .nt-dialog .nt-dialog-main {
+  .l-dialog .l-dialog-main {
     width: 80%;
     max-width: 300px;
   }

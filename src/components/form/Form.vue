@@ -1,13 +1,13 @@
 <template>
   <form
     :class="[
-      'nt-form',
-      inline ? 'nt-form-inline' : undefined,
-      `nt-form--${labelPosition}`,
+      'l-form',
+      inline ? 'l-form-inline' : undefined,
+      `l-form--${labelPosition}`,
     ]"
     @submit="handleSubmit"
     :style="{
-      '--nt-form-label-width': labelWidth ? labelWidth : undefined,
+      '--l-form-label-width': labelWidth ? labelWidth : undefined,
     }"
   >
     <slot></slot>

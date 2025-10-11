@@ -71,18 +71,18 @@
     }
   </script>
   <template>
-    <lt-form :model="formFields" :rules="rules" >
-      <lt-form-item label="用户名" required name="username" >
-        <lt-input placeholder="请输入用户名" v-model="formFields.username"></lt-input>
-      </lt-form-item>
-      <lt-form-item label="密码" required name="password">
-        <lt-input placeholder="请输入密码" v-model="formFields.password"></lt-input>
-      </lt-form-item>
-      <lt-form-item label="">
-        <lt-button html-type="submit">提交</lt-button>
-        <lt-button type="normal" @click="handleReset">重置</lt-button>
-      </lt-form-item>
-    </lt-form>
+    <lv-form :model="formFields" :rules="rules" >
+      <lv-form-item label="用户名" required name="username" >
+        <lv-input placeholder="请输入用户名" v-model="formFields.username"></lv-input>
+      </lv-form-item>
+      <lv-form-item label="密码" required name="password">
+        <lv-input placeholder="请输入密码" v-model="formFields.password"></lv-input>
+      </lv-form-item>
+      <lv-form-item label="">
+        <lv-button html-type="submit">提交</lv-button>
+        <lv-button type="normal" @click="handleReset">重置</lv-button>
+      </lv-form-item>
+    </lv-form>
   </template>
   </textarea>
   <template #preview>
@@ -111,17 +111,17 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-form inline>
-    <lt-form-item label="用户名" required name="username">
-      <lt-input placeholder="请输入用户名"></lt-input>
-    </lt-form-item>
-    <lt-form-item label="密码" required name="password">
-      <lt-input placeholder="请输入密码"></lt-input>
-    </lt-form-item>
-    <lt-form-item>
-      <lt-button html-type="submit">提交</lt-button>
-    </lt-form-item>
-  </lt-form>
+  <lv-form inline>
+    <lv-form-item label="用户名" required name="username">
+      <lv-input placeholder="请输入用户名"></lv-input>
+    </lv-form-item>
+    <lv-form-item label="密码" required name="password">
+      <lv-input placeholder="请输入密码"></lv-input>
+    </lv-form-item>
+    <lv-form-item>
+      <lv-button html-type="submit">提交</lv-button>
+    </lv-form-item>
+  </lv-form>
   </textarea>
   <template #preview>
     <Form inline>
@@ -152,9 +152,9 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-form-item label="开关">
-    <lt-switch />
-  </lt-form-item>
+  <lv-form-item label="开关">
+    <lv-switch />
+  </lv-form-item>
   </textarea>
   </CodePreview>
 </ClientOnly>
@@ -163,22 +163,22 @@
 
 通过设置 `label-position` 来应用标签和内容的对齐方式。
 
-您可以分别设置 `nt-form-item` 的 `label-position`. 如果值为空, 则会使用 `nt-form` 的 `label-position`。
+您可以分别设置 `l-form-item` 的 `label-position`. 如果值为空, 则会使用 `l-form` 的 `label-position`。
 
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html" v-pre>
-  <lt-form label-position="right">
-    <lt-form-item label="用户名">
-      <lt-input placeholder="请输入用户名"></lt-input>
-    </lt-form-item>
-    <lt-form-item label="密码">
-      <lt-input placeholder="请输入密码"></lt-input>
-    </lt-form-item>
-    <lt-form-item label="">
-      <lt-button html-type="submit">提交</lt-button>
-    </lt-form-item>
-  </lt-form>
+  <lv-form label-position="right">
+    <lv-form-item label="用户名">
+      <lv-input placeholder="请输入用户名"></lv-input>
+    </lv-form-item>
+    <lv-form-item label="密码">
+      <lv-input placeholder="请输入密码"></lv-input>
+    </lv-form-item>
+    <lv-form-item label="">
+      <lv-button html-type="submit">提交</lv-button>
+    </lv-form-item>
+  </lv-form>
   </textarea>
   <template #preview>
     <Form :label-position="formAlign">

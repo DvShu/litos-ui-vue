@@ -1,23 +1,23 @@
-.nt-popconfirm {
+.l-popconfirm {
   min-width: 200px;
 }
 
-.nt-popconfirm-container {
+.l-popconfirm-container {
   display: flex;
   align-items: center;
 }
-.nt-popconfirm-icon-wrapper {
+.l-popconfirm-icon-wrapper {
   margin-right: 10px;
-  color: var(--nt-warn-color, #f90);
+  color: var(--l-warn-color, #f90);
 }
-.nt-popconfirm-footer {
+.l-popconfirm-footer {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   margin-top: 7px;
 }
 
-.nt-popconfirm-footer .nt-btn {
+.l-popconfirm-footer .l-btn {
   height: 24px;
   padding: 0 6px;
   font-size: 13px;

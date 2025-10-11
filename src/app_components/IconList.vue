@@ -9,7 +9,7 @@
       <component
         :is="item.component"
         :class="{
-          'nt-rotate-anim': item.name.includes('loading'),
+          'l-rotate-anim': item.name.includes('loading'),
         }"
       ></component>
       <span class="icon-name">{{ item.name }}</span>
@@ -31,7 +31,7 @@ for (const path in modules) {
     let name = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
     if (name !== 'IconFont' && name !== 'Base') {
       name = snakeCaseStyle(name);
-      if (name !== '' && name !== '') {
+      if (name) {
         components.push({
           name,
           component: defineAsyncComponent(modules[path] as any),
@@ -42,7 +42,7 @@ for (const path in modules) {
 }
 
 async function handleCopyIcon(name: string) {
-  await copy(`<lt-${name}-icon />`);
+  await copy(`<lv-${name}-icon />`);
   Message.success('复制成功');
 }
 </script>

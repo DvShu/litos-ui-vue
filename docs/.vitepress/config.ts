@@ -3,9 +3,9 @@ import { defineConfig } from 'vitepress';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh-CN',
-  title: 'NeatUI',
+  title: 'LitosUIVue',
   description:
-    'Neat UI 是一个基于 Vue3 的轻量级的 UI 组件库，提供基础的 UI 组件，方便开发。',
+    'Litos UI Vue 是一个基于 Vue3 的轻量级的 UI 组件库，提供基础的 UI 组件，方便开发。',
   base: '/litos-ui-vue/',
   cleanUrls: true,
   lastUpdated: true,
@@ -15,6 +15,7 @@ export default defineConfig({
       {
         rel: 'icon',
         href: '/litos-ui-vue/logo.svg',
+        type: 'image/svg+xml',
       },
     ],
   ],

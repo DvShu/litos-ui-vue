@@ -1,29 +1,29 @@
 <template>
   <div
-    class="nt-collapse-item"
+    class="l-collapse-item"
     :class="{
-      'nt-collapse-item--active': (collapseCtx as any).actives.value.includes(
+      'l-collapse-item--active': (collapseCtx as any).actives.value.includes(
         props.name,
       ),
     }"
   >
     <div
-      :class="['nt-collapse-item__header', headerClass]"
+      :class="['l-collapse-item__header', headerClass]"
       :style="headerStyleObj"
       @click="toggle"
     >
       <ArrowRightIcon
-        class="nt-collapse-arrow-icon"
+        class="l-collapse-arrow-icon"
         v-if="(collapseCtx as any).arrowPlacement === 'left'"
-        :class="['nt-collapse-arrow__' + (collapseCtx as any).arrowPlacement]"
+        :class="['l-collapse-arrow__' + (collapseCtx as any).arrowPlacement]"
       />
       <slot name="title">
-        <span class="nt-collapse-item__title">{{ title }}</span>
+        <span class="l-collapse-item__title">{{ title }}</span>
       </slot>
       <ArrowRightIcon
-        class="nt-collapse-arrow-icon"
+        class="l-collapse-arrow-icon"
         v-if="(collapseCtx as any).arrowPlacement === 'right'"
-        :class="['nt-collapse-arrow__' + (collapseCtx as any).arrowPlacement]"
+        :class="['l-collapse-arrow__' + (collapseCtx as any).arrowPlacement]"
       />
     </div>
     <Transition
@@ -35,10 +35,10 @@
       @leave="onLeave"
     >
       <div
-        class="nt-collapse-item--content"
+        class="l-collapse-item--content"
         v-if="(collapseCtx as any).actives.value.includes(props.name)"
       >
-        <div class="nt-collapse-content--box">
+        <div class="l-collapse-content--box">
           <slot></slot>
         </div>
       </div>

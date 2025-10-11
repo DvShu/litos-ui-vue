@@ -1,5 +1,5 @@
 <template>
-  <div class="nt-radio-group">
+  <div class="l-radio-group">
     <slot></slot>
   </div>
 </template>
@@ -15,7 +15,7 @@ function updateCheck(val: any) {
   emits('change', checkedValue.value);
 }
 
-provide('nt-radio-group-check', {
+provide('l-radio-group-check', {
   checkedValue,
   updateCheck,
 });

@@ -1,16 +1,16 @@
-.nt-image,
-.nt-image--inner {
+.l-image,
+.l-image--inner {
   vertical-align: middle;
   display: inline-block;
 }
-.nt-image {
+.l-image {
   box-sizing: border-box;
 }
 
-.nt-image--preview {
+.l-image--preview {
   cursor: pointer;
 }
 
-.nt-image-hide {
+.l-image-hide {
   display: none;
 }

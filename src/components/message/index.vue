@@ -1,6 +1,6 @@
 <template>
   <Transition
-    name="nt-message-fade"
+    name="l-message-fade"
     appear
     @before-leave="onClose"
     @after-leave="$emit('destroy')"
@@ -9,11 +9,11 @@
       v-show="visible"
       :id="id"
       :style="bindStyle"
-      :class="['nt-message', `nt-message-${type}`, customClass]"
+      :class="['l-message', `l-message-${type}`, customClass]"
     >
-      <div class="nt-message-container">
-        <component :is="icon" class="nt-message-icon"></component>
-        <span class="nt-message-content">{{ message }}</span>
+      <div class="l-message-container">
+        <component :is="icon" class="l-message-icon"></component>
+        <span class="l-message-content">{{ message }}</span>
       </div>
     </div>
   </Transition>

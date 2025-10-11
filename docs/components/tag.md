@@ -19,11 +19,11 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-tag type="primary" class="ml-10">标签</lt-tag>
-  <lt-tag type="info" class="ml-10">标签</lt-tag>
-  <lt-tag type="success" class="ml-10">标签</lt-tag>
-  <lt-tag type="error" class="ml-10">标签</lt-tag>
-  <lt-tag class="ml-10" color="#409eff">标签</lt-tag>
+  <lv-tag type="primary" class="ml-10">标签</lv-tag>
+  <lv-tag type="info" class="ml-10">标签</lv-tag>
+  <lv-tag type="success" class="ml-10">标签</lv-tag>
+  <lv-tag type="error" class="ml-10">标签</lv-tag>
+  <lv-tag class="ml-10" color="#409eff">标签</lv-tag>
   </textarea>
   </CodePreview>
 </ClientOnly>
@@ -41,7 +41,7 @@
     }
   </script>
   <template>
-    <lt-tag closable @close="handleTagClose">标签</lt-tag>
+    <lv-tag closable @close="handleTagClose">标签</lv-tag>
   </template>
   </textarea>
   <template #preview>
@@ -61,7 +61,7 @@
   <textarea lang="vue">
   <template>
     <Transition appear name="nt-scale">
-      <lt-tag type="primary">标签</lt-tag>
+      <lv-tag type="primary">标签</lv-tag>
     </Transition>
   </template>
   </textarea>
@@ -89,6 +89,6 @@
 <!-- prettier-ignore -->
 | 变量 | 默认值 | 说明 |
 | --- | --- | --- |
-| `--nt-tag-bg` | `var(--nt-primary-color-light5, #f6ffed)` | 标签背景色 |
-| `--nt-tag-color` | `var(--nt-primary-color, #52c41a)` | 标签文本颜色 |
-| `--nt-tag-border-color` | `var(--nt-primary-color, #52c41a)` | 标签边框颜色 |
+| `--l-tag-bg` | `var(--l-primary-color-light5, #f6ffed)` | 标签背景色 |
+| `--l-tag-color` | `var(--l-primary-color, #52c41a)` | 标签文本颜色 |
+| `--l-tag-border-color` | `var(--l-primary-color, #52c41a)` | 标签边框颜色 |

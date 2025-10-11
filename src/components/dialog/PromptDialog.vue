@@ -4,7 +4,7 @@
     :title="title"
     :to="to"
     :before-close="handleClose"
-    main-class="nt-dialog-box-main"
+    main-class="l-dialog-box-main"
     container-class="nt-prompt-dialog-container"
   >
     <p class="nt-prompt-tip">{{ tip }}</p>

@@ -1,13 +1,13 @@
 <template>
   <Teleport to="body">
-    <Transition name="nt-opacity">
+    <Transition name="l-opacity">
       <Shadow
         v-if="show"
         @shadow-click="handleClose"
-        shadow-class="nt-image-preview-container"
+        shadow-class="l-image-preview-container"
       >
         <span
-          class="nt-image-preview__btn nt-image-preview__close"
+          class="l-image-preview__btn l-image-preview__close"
           aria-label="close"
           @click="handleClose"
         >
@@ -15,49 +15,49 @@
         </span>
         <template v-if="urlList.length > 1">
           <span
-            class="nt-image-preview__btn nt-image-preview__prev"
+            class="l-image-preview__btn l-image-preview__prev"
             @click="toggleImage('prev')"
           >
             <ArrowLeft></ArrowLeft>
           </span>
           <span
-            class="nt-image-preview__btn nt-image-preview__next"
+            class="l-image-preview__btn l-image-preview__next"
             @click="toggleImage('next')"
           >
             <ArrowRight></ArrowRight>
           </span>
         </template>
-        <div class="nt-image-preview__btn nt-image-preview__actions">
+        <div class="l-image-preview__btn l-image-preview__actions">
           <span
-            class="nt-image-preview__btn"
+            class="l-image-preview__btn"
             aria-label="zoom-out"
             @click="transformScale('out')"
           >
             <ZoomOut></ZoomOut>
           </span>
           <span
-            class="nt-image-preview__btn"
+            class="l-image-preview__btn"
             aria-label="zoom-int"
             @click="transformScale('in')"
           >
             <ZoomIn></ZoomIn>
           </span>
           <span
-            class="nt-image-preview__btn"
+            class="l-image-preview__btn"
             aria-label="reset-transform"
             @click="resetTransform"
           >
             <Reduction></Reduction>
           </span>
           <span
-            class="nt-image-preview__btn"
+            class="l-image-preview__btn"
             aria-label="refresh-left"
             @click="transformRotate('left')"
           >
             <RefreshLeft></RefreshLeft>
           </span>
           <span
-            class="nt-image-preview__btn"
+            class="l-image-preview__btn"
             aria-label="refresh-right"
             @click="transformRotate('right')"
           >
@@ -65,7 +65,7 @@
           </span>
         </div>
         <img
-          class="nt-image-preview-img"
+          class="l-image-preview-img"
           :src="urlList[currIndex]"
           :style="{
             transform: transformStyleValue,
@@ -173,6 +173,7 @@ function resetTransform() {
 
 function handleClose() {
   show.value = false;
+  emits('close');
 }
 
 function handleWheel(e: WheelEvent) {

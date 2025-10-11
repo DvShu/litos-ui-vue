@@ -122,7 +122,7 @@ export default defineComponent({
           Transition,
           {
             appear: true,
-            name: 'nt-dialog',
+            name: 'l-dialog',
           },
           {
             default: () =>
@@ -131,8 +131,8 @@ export default defineComponent({
                     Shadow,
                     {
                       shadowClass: [
-                        'nt-dialog',
-                        props.alignCenter ? 'nt-dialog-align-center' : '',
+                        'l-dialog',
+                        props.alignCenter ? 'l-dialog-align-center' : '',
                       ]
                         .join(' ')
                         .trim(),
@@ -145,7 +145,7 @@ export default defineComponent({
                           h(
                             'header',
                             {
-                              class: 'nt-dialog-header',
+                              class: 'l-dialog-header',
                             },
                             slots.header != null ? slots.header() : props.title,
                           ),
@@ -158,7 +158,7 @@ export default defineComponent({
                               {
                                 circle: true,
                                 type: 'normal',
-                                class: `nt-dialog-close${props.showClose}`,
+                                class: `l-dialog-close${props.showClose}`,
                                 onClick: () => close('close'),
                               },
                               {
@@ -172,7 +172,7 @@ export default defineComponent({
                             'div',
                             {
                               class: [
-                                'nt-dialog-container',
+                                'l-dialog-container',
                                 props.containerClass,
                               ],
                             },
@@ -182,7 +182,7 @@ export default defineComponent({
                         $contents.push(
                           h(
                             'footer',
-                            { class: 'nt-dialog-footer' },
+                            { class: 'l-dialog-footer' },
                             slots.footer
                               ? (slots.footer() as any)
                               : [
@@ -215,8 +215,8 @@ export default defineComponent({
                           'div',
                           {
                             class: [
-                              'nt-dialog-main',
-                              'nt-dialog-' + props.theme,
+                              'l-dialog-main',
+                              'l-dialog-' + props.theme,
                               props.mainClass,
                             ],
                             style: {

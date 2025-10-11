@@ -132,7 +132,7 @@ export default defineComponent({
       if (props.multiple) {
         // 多选且点击的是下拉框则不关闭下拉框
         do {
-          if ($target.classList.contains('nt-select-popover')) {
+          if ($target.classList.contains('l-select-popover')) {
             needClose = false;
             break;
           }
@@ -330,9 +330,9 @@ export default defineComponent({
           'li',
           {
             class: [
-              'nt-select-option',
+              'l-select-option',
               option.class,
-              isSelect ? 'nt-select-option--selected' : undefined,
+              isSelect ? 'l-select-option--selected' : undefined,
             ],
             onClick: (e: Event) => handleOptionClick(e, option),
           },
@@ -346,7 +346,7 @@ export default defineComponent({
       });
       if (children == null || children.length === 0) {
         children.push(
-          h('li', { class: 'nt-select-option nt-select-option--empty' }, [
+          h('li', { class: 'l-select-option l-select-option--empty' }, [
             h('span', '无数据'),
           ]),
         );
@@ -395,7 +395,7 @@ export default defineComponent({
             handleDeleteSelect(index);
             e.stopPropagation();
           },
-          class: 'nt-select-item',
+          class: 'l-select-item',
         },
         { default: () => value },
       );
@@ -439,7 +439,7 @@ export default defineComponent({
         if (!props.multiple) {
           if (!props.filterable) {
             chidren.push(
-              h('span', { class: 'nt-select-item' }, selectedLabels.value[0]),
+              h('span', { class: 'l-select-item' }, selectedLabels.value[0]),
             );
           }
         } else {
@@ -460,7 +460,7 @@ export default defineComponent({
           chidren.push(
             h(
               'span',
-              { class: 'nt-select-item nt-select-placeholder' },
+              { class: 'l-select-item l-select-placeholder' },
               props.placeholder,
             ),
           );
@@ -470,9 +470,9 @@ export default defineComponent({
         chidren.push(
           h(
             'div',
-            { class: 'nt-select-item nt-select-search' },
+            { class: 'l-select-item l-select-search' },
             h('input', {
-              class: 'nt-select--input',
+              class: 'l-select--input',
               placeholder: props.placeholder,
               ref: searchInput,
               onFocus: onSearchFocus,
@@ -494,8 +494,8 @@ export default defineComponent({
           {
             ...attrs,
             class: [
-              'nt-select',
-              expand.value ? 'nt-select--active' : undefined,
+              'l-select',
+              expand.value ? 'l-select--active' : undefined,
               attrs.class,
             ],
             id: id,
@@ -504,22 +504,22 @@ export default defineComponent({
             onMouseleave: unvislbleClear,
           },
           [
-            h('div', { class: 'nt-select-main' }, renderSelectedLabels()),
+            h('div', { class: 'l-select-main' }, renderSelectedLabels()),
             h(ArrowDown, {
               class: [
-                'nt-select--arrow',
+                'l-select--arrow',
                 expand.value ? 'nt-expanded' : undefined,
               ],
             }),
             showClear.value
               ? h(MaskClose, {
-                  class: 'nt-select--clear',
+                  class: 'l-select--clear',
                   onClick: handleClearSelect,
                 })
               : undefined,
             props.loading
               ? h(LoadingIcon, {
-                  class: 'nt-select--loading nt-rotate-anim',
+                  class: 'l-select--loading l-rotate-anim',
                 })
               : undefined,
           ],
@@ -536,13 +536,13 @@ export default defineComponent({
           placement: 'bottom',
           showArrow: false,
           offset: 2,
-          class: 'nt-select-popover',
+          class: 'l-select-popover',
         },
         {
           default: () =>
             h(
               'div',
-              { class: 'nt-select-list nt-scrollbar' },
+              { class: 'l-select-list nt-scrollbar' },
               h('ul', optionNodes()),
             ),
         },

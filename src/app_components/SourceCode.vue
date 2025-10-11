@@ -129,7 +129,7 @@ onMounted(async () => {
     padding: 0;
     color: #999;
     &:hover {
-      color: var(--nt-primary-color);
+      color: var(--l-primary-color);
     }
   }
 

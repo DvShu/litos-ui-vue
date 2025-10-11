@@ -1,17 +1,17 @@
 <template>
   <div
     :class="[
-      'nt-form-item',
+      'l-form-item',
       isRequired ? 'is-required' : undefined,
       errorMsg != null ? 'is-error' : undefined,
     ]"
   >
-    <label class="nt-form-item__label" v-if="label != null">
+    <label class="l-form-item__label" v-if="label != null">
       {{ label }}
     </label>
-    <div class="nt-form-item__content">
+    <div class="l-form-item__content">
       <slot></slot>
-      <div class="nt-form-item__error" v-if="errorMsg != null">
+      <div class="l-form-item__error" v-if="errorMsg != null">
         {{ errorMsg }}
       </div>
     </div>

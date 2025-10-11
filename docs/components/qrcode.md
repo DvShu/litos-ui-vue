@@ -12,7 +12,7 @@
 
 <ClientOnly><CodePreview>
 <textarea lang="vue-html">
-<lt-qrcode text="Hello World"></lt-qrcode>
+<lv-qrcode text="Hello World"></lv-qrcode>
 </textarea>
 </CodePreview></ClientOnly>
 
@@ -22,7 +22,7 @@
 
 <ClientOnly><CodePreview>
 <textarea lang="vue-html">
-<lt-qrcode text="Hello World" fill="#4998f4" :size="120"></lt-qrcode>
+<lv-qrcode text="Hello World" fill="#4998f4" :size="120"></lv-qrcode>
 </textarea>
 </CodePreview></ClientOnly>
 
@@ -33,7 +33,7 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-    <lt-qrcode text="Hello World" icon-src="/litos-ui-vue/img_loading.png"></lt-qrcode>
+    <lv-qrcode text="Hello World" icon-src="/litos-ui-vue/img_loading.png"></lv-qrcode>
   </textarea>
   </CodePreview>
 </ClientOnly>

@@ -1,29 +1,29 @@
-.nt-opacity-enter-active,
-.nt-opacity-leave-active {
-  transition: opacity var(--nt-transition-times, 0.3s) ease;
+.l-opacity-enter-active,
+.l-opacity-leave-active {
+  transition: opacity var(--l-transition-times, 0.3s) ease;
 }
 
-.nt-opacity-enter-from,
-.nt-opacity-leave-to {
+.l-opacity-enter-from,
+.l-opacity-leave-to {
   opacity: 0;
 }
 
-.nt-fadein-enter-active,
-.nt-fadein-leave-active {
-  transition: all var(--nt-transition-times, 0.3s) ease-in-out;
+.l-fadein-enter-active,
+.l-fadein-leave-active {
+  transition: all var(--l-transition-times, 0.3s) ease-in-out;
 }
-.nt-fadein-enter-from,
-.nt-fadein-leave-to {
+.l-fadein-enter-from,
+.l-fadein-leave-to {
   opacity: 0;
-  transform: translateY(var(--nt-fadein-offset, -20px));
+  transform: translateY(var(--l-fadein-offset, -20px));
 }
 
-.nt-scale-enter-from,
-.nt-scale-leave-to {
+.l-scale-enter-from,
+.l-scale-leave-to {
   opacity: 0;
   transform: scale(0);
 }
-.nt-scale-enter-active,
-.nt-scale-leave-active {
-  transition: all var(--nt-transition-times, 0.3s) ease-in-out;
+.l-scale-enter-active,
+.l-scale-leave-active {
+  transition: all var(--l-transition-times, 0.3s) ease-in-out;
 }

@@ -1,4 +1,3 @@
-<template></template>
 <script lang="ts">
 import { inject, computed, defineComponent, h } from 'vue';
 import type { ModelRef, PropType } from 'vue';
@@ -34,7 +33,7 @@ export default defineComponent({
     const { checkList, updateCheck } = inject<{
       checkList: null | ModelRef<(string | number)[], string>;
       updateCheck: null | ((value: any) => void);
-    }>('nt-checkbox-group-check', {
+    }>('l-checkbox-group-check', {
       checkList: null,
       updateCheck: null,
     });
@@ -67,16 +66,16 @@ export default defineComponent({
         'label',
         {
           class: [
-            'nt-checkbox',
-            props.indeterminate ? 'nt-checkbox--indeterminate' : '',
-            props.disabled ? 'nt-checkbox--disabled' : '',
-            props.type === 'button' ? 'nt-checkbox--button' : '',
+            'l-checkbox',
+            props.indeterminate ? 'l-checkbox--indeterminate' : '',
+            props.disabled ? 'l-checkbox--disabled' : '',
+            props.type === 'button' ? 'l-checkbox--button' : '',
           ],
         },
         [
           h('input', {
             type: 'checkbox',
-            class: 'nt-checkbox__input',
+            class: 'l-checkbox__input',
             name: props.name,
             checked: isChecked.value,
             onChange: handleChange,
@@ -84,13 +83,13 @@ export default defineComponent({
             value: props.value,
           }),
           props.type !== 'button'
-            ? h('span', { class: 'nt-checkbox__inner' })
+            ? h('span', { class: 'l-checkbox__inner' })
             : null,
-          slots.default != null || props.label != null
+          slots.default || props.label
             ? h(
                 'span',
-                { class: 'nt-checkbox__label' },
-                slots.default != null ? slots.default() : props.label,
+                { class: 'l-checkbox__label' },
+                slots.default ? slots.default() : props.label,
               )
             : null,
         ],

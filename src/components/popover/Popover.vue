@@ -185,7 +185,7 @@ export default defineComponent({
     function handleClick(e: Event) {
       const $target = e.currentTarget as HTMLElement;
       // 点击的不是 popover 元素，才切换 popover
-      if (!$target.classList.contains('nt-popover')) {
+      if (!$target.classList.contains('l-popover')) {
         if (!show.value) {
           showFn(e.target as HTMLElement);
         } else {
@@ -235,7 +235,7 @@ export default defineComponent({
           'div',
           {
             ...attrs,
-            class: ['nt-popover', `nt-popover-${place.value}`, attrs.class],
+            class: ['l-popover', `l-popover-${place.value}`, attrs.class],
             style: [attrs.style, posStyle.value],
             ref: $popover,
             ...prop,
@@ -246,7 +246,7 @@ export default defineComponent({
               : props.content != null
                 ? h('span', props.content)
                 : null,
-            props.showArrow ? h('span', { class: 'nt-popover-arrow' }) : null,
+            props.showArrow ? h('span', { class: 'l-popover-arrow' }) : null,
           ],
         );
         if (props.destroyOnHide) {
@@ -268,7 +268,7 @@ export default defineComponent({
           { to: 'body' },
           h(
             Transition,
-            { name: 'nt-opacity' },
+            { name: 'l-opacity' },
             {
               default: () => renderPopover(),
             },

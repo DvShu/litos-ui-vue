@@ -1,20 +1,20 @@
-.nt-desc-panel {
-  --nt-desc-panel-min-height: 100px;
-  --nt-desc-panel-font-size: 12px;
-  --nt-desc-panel-textindent: calc(var(--nt-desc-panel-font-size) * 2);
-  max-height: var(--nt-desc-panel-max-height, max-content);
+.l-desc-panel {
+  --l-desc-panel-min-height: 100px;
+  --l-desc-panel-font-size: 12px;
+  --l-desc-panel-textindent: calc(var(--l-desc-panel-font-size) * 2);
+  max-height: var(--l-desc-panel-max-height, max-content);
   color: rgb(31 41 55);
-  font-size: var(--nt-desc-panel-font-size);
+  font-size: var(--l-desc-panel-font-size);
   position: relative;
   transition: all 0.15s linear;
 }
 
-.nt-desc-panel p {
-  text-indent: var(--nt-desc-panel-textindent);
+.l-desc-panel p {
+  text-indent: var(--l-desc-panel-textindent);
   margin: 0;
   font-size: inherit;
 }
-.nt-desc-panel-operator {
+.l-desc-panel-operator {
   width: 100%;
   padding-top: 0;
   padding-bottom: 0;
@@ -23,20 +23,20 @@
   display: flex;
   justify-content: center;
 }
-.nt-desc-panel-btnmore {
-  font-size: var(--nt-desc-panel-font-size);
+.l-desc-panel-btnmore {
+  font-size: var(--l-desc-panel-font-size);
 }
-.nt-desc-panel-arrow {
+.l-desc-panel-arrow {
   margin-left: 5px;
   transition: transform 0.3s ease-in-out;
   transform: rotate3d(0, 0, 1, 180deg);
 }
 
-.nt-desc-panel.collapse {
-  max-height: var(--nt-desc-panel-min-height);
+.l-desc-panel.collapse {
+  max-height: var(--l-desc-panel-min-height);
   overflow-y: hidden;
 }
-.nt-desc-panel.collapse .nt-desc-panel-operator {
+.l-desc-panel.collapse .l-desc-panel-operator {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -48,6 +48,6 @@
   );
 }
 
-.nt-desc-panel.collapse .nt-desc-panel-arrow {
+.l-desc-panel.collapse .l-desc-panel-arrow {
   transform: rotate3d(1, 0, 0, 0deg);
 }

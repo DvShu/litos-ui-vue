@@ -1,5 +1,5 @@
 <template>
-  <Switch v-model="isDark" class="nt-theme-switch">
+  <Switch v-model="isDark" class="l-theme-switch">
     <template #action="slotProp">
       <MoonIcon v-if="slotProp.checked"></MoonIcon>
       <SunIcon v-else></SunIcon>

@@ -1,21 +1,21 @@
-.nt-table-expand-icon {
-  --nt-form-edit-height: auto;
-  --nt-btn-background: transparent;
-  --nt-btn-hover-background: transparent;
-  --nt-btn-active-background: transparent;
+.l-table-expand-icon {
+  --l-form-control-height: auto;
+  --l-btn-background: transparent;
+  --l-btn-hover-background: transparent;
+  --l-btn-active-background: transparent;
   border: none;
   padding: 0 3px;
   margin-right: 5px;
   margin-bottom: 3px;
 }
 
-.nt-table-expand-icon .nt-icon {
+.l-table-expand-icon .l-icon {
   transition: transform 0.3s ease-in-out;
   transform: rotate3d(0, 0, 1, 0deg);
 }
-.nt-table-expand-icon.nt-table-expand-icon--expanded .nt-icon {
+.l-table-expand-icon.l-table-expand-icon--expanded .l-icon {
   transform: rotate3d(0, 0, 1, 90deg);
 }
-.nt-table-expand-icon.nt-table-expand-placeholder {
+.l-table-expand-icon.l-table-expand-placeholder {
   visibility: hidden;
 }

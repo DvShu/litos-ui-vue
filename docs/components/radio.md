@@ -25,12 +25,12 @@
     const allowService = ref(false);
   </script>
   <template>
-    <lt-radio v-model="allowService">
+    <lv-radio v-model="allowService">
       <span>
         <span>同意</span>
         <a href='#'>隐私协议</a>
       </span>
-    </lt-radio>
+    </lv-radio>
   </template>
   </textarea>
   <template #preview>
@@ -51,7 +51,7 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-radio label="禁用" disabled></lt-radio>
+  <lv-radio label="禁用" disabled></lv-radio>
   </textarea>
   <template #preview>
     <Radio label="禁用" disabled />
@@ -61,7 +61,7 @@
 
 ### 单选框组
 
-结合 `nt-radio-group` 组件实现单选框组
+结合 `l-radio-group` 组件实现单选框组
 
 <ClientOnly>
   <CodePreview>
@@ -71,10 +71,10 @@
     const sex = ref('0');
   </script>
   <template>
-    <lt-radio-group v-model="sex">
-      <lt-radio label="男" value="0" />
-      <lt-radio label="女" value="1" />
-    </lt-radio-group>
+    <lv-radio-group v-model="sex">
+      <lv-radio label="男" value="0" />
+      <lv-radio label="女" value="1" />
+    </lv-radio-group>
   </template>
   </textarea>
   <template #preview>
@@ -88,16 +88,16 @@
 
 ### 按钮样式
 
-在单选框组基础上，设置 `nt-radio` 的 `type` 属性为 `button` 即可。
+在单选框组基础上，设置 `l-radio` 的 `type` 属性为 `button` 即可。
 
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
   <template>
-    <lt-radio-group v-model="sex">
-      <lt-radio label="男" value="0" type="button" />
-      <lt-radio label="女" value="1" type="button" />
-    </lt-radio-group>
+    <lv-radio-group v-model="sex">
+      <lv-radio label="男" value="0" type="button" />
+      <lv-radio label="女" value="1" type="button" />
+    </lv-radio-group>
   </template>
   </textarea>
   <template #preview>

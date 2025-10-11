@@ -1,7 +1,7 @@
-.nt-popover.nt-tooltip {
-  --nt-popover-color: #fff;
-  --nt-popover-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-  --nt-popover-background: #383838;
+.l-popover.l-tooltip {
+  --l-popover-color: #fff;
+  --l-popover-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  --l-popover-background: #383838;
   border-radius: 5px;
   padding: 8px;
   font-size: 12px;

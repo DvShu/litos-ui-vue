@@ -1,12 +1,12 @@
 <template>
-  <div class="nt-image" v-bind="$attrs">
+  <div class="l-image" v-bind="$attrs">
     <img
       :loading="loading"
       :src="actualSrc"
       :class="[
-        'nt-image',
-        previewDisable ? '' : 'nt-image--preview',
-        customFallback && isError ? 'nt-image-hide' : '',
+        'l-image',
+        previewDisable ? '' : 'l-image--preview',
+        customFallback && isError ? 'l-image-hide' : '',
       ]"
       :style="computedStyle"
       :alt="alt"
@@ -16,7 +16,7 @@
     />
     <div
       v-if="customFallback && isError"
-      class="nt-image"
+      class="l-image"
       :style="computedStyle"
     >
       <slot name="fallback"></slot>

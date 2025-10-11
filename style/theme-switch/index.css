@@ -1,9 +1,9 @@
-.nt-theme-switch.nt-switch--checked {
+.l-theme-switch.l-switch--checked {
   background-color: rgba(101, 117, 113, 0.16);
   border-color: #3c3f44;
 }
 
-.nt-theme-switch.nt-switch--checked .nt-switch-action {
+.l-theme-switch.l-switch--checked .l-switch-action {
   background-color: #000000;
   color: #ffffff;
 }

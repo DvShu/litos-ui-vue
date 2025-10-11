@@ -1,29 +1,29 @@
-.nt-collapse {
+.l-collapse {
   /* 边框颜色 */
-  --nt-collapse-border-color: #dedede;
+  --l-collapse-border-color: #dedede;
   /* 圆角 */
-  --nt-collapse-border-radius: 0px;
-  --nt-collapse-gap: 0px;
+  --l-collapse-border-radius: 0px;
+  --l-collapse-gap: 0px;
   display: grid;
-  gap: var(--nt-collapse-gap, 0px);
+  gap: var(--l-collapse-gap, 0px);
   grid-template-columns: 1fr;
 }
 
-.nt-collapse-item {
-  border-bottom: 1px solid var(--nt-collapse-border-color);
+.l-collapse-item {
+  border-bottom: 1px solid var(--l-collapse-border-color);
   color: #333;
   font-size: 14px;
 }
-.nt-collapse-item:first-child {
-  border-top-left-radius: var(--nt-collapse-border-radius, 0px);
-  border-top-right-radius: var(--nt-collapse-border-radius, 0px);
+.l-collapse-item:first-child {
+  border-top-left-radius: var(--l-collapse-border-radius, 0px);
+  border-top-right-radius: var(--l-collapse-border-radius, 0px);
 }
-.nt-collapse-item:last-child {
-  border-bottom-left-radius: var(--nt-collapse-border-radius, 0px);
-  border-bottom-right-radius: var(--nt-collapse-border-radius, 0px);
+.l-collapse-item:last-child {
+  border-bottom-left-radius: var(--l-collapse-border-radius, 0px);
+  border-bottom-right-radius: var(--l-collapse-border-radius, 0px);
 }
 
-.nt-collapse-item__header {
+.l-collapse-item__header {
   display: flex;
   align-items: center;
   padding: 10px 0;
@@ -31,48 +31,48 @@
   justify-content: flex-start;
 }
 
-.nt-collapse-item--content {
+.l-collapse-item--content {
   overflow-y: hidden;
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
 }
 
-.nt-collapse-content--box {
+.l-collapse-content--box {
   padding-bottom: 15px;
 }
 
-.nt-collapse-arrow-icon {
+.l-collapse-arrow-icon {
   transform: rotate3d(0, 0, 1, 0deg);
   transition: transform 0.3s ease-in-out;
 }
-.nt-collapse-arrow__left {
+.l-collapse-arrow__left {
   margin-right: 5px;
 }
-.nt-collapse-arrow__right {
+.l-collapse-arrow__right {
   margin-left: 5px;
 }
 
-.nt-collapse-item--active .nt-collapse-arrow-icon {
+.l-collapse-item--active .l-collapse-arrow-icon {
   transform: rotate3d(0, 0, 1, 90deg);
 }
 
-.nt-collapse--background .nt-collapse-item {
-  border-left: 1px solid var(--nt-collapse-border-color);
-  border-right: 1px solid var(--nt-collapse-border-color);
+.l-collapse--background .l-collapse-item {
+  border-left: 1px solid var(--l-collapse-border-color);
+  border-right: 1px solid var(--l-collapse-border-color);
   background-color: rgba(0, 0, 0, 0.02);
 }
-.nt-collapse--background .nt-collapse-item:first-child {
-  border-top: 1px solid var(--nt-collapse-border-color);
+.l-collapse--background .l-collapse-item:first-child {
+  border-top: 1px solid var(--l-collapse-border-color);
 }
-.nt-collapse--background .nt-collapse-item__header {
+.l-collapse--background .l-collapse-item__header {
   padding: 10px 15px;
 }
 
-.nt-collapse--background .nt-collapse-item--content {
-  border-top: 1px solid var(--nt-collapse-border-color);
+.l-collapse--background .l-collapse-item--content {
+  border-top: 1px solid var(--l-collapse-border-color);
   background-color: #ffffff;
 }
-.nt-collapse--background .nt-collapse-content--box {
+.l-collapse--background .l-collapse-content--box {
   padding: 15px;
 }
 
@@ -81,15 +81,15 @@
   transition: height 0.15s linear;
 }
 
-.nt-collapse--space.nt-collapse--background .nt-collapse-item {
-  border-top: 1px solid var(--nt-collapse-border-color);
+.l-collapse--space.l-collapse--background .l-collapse-item {
+  border-top: 1px solid var(--l-collapse-border-color);
 }
-.nt-collapse--space .nt-collapse-item {
-  border-radius: var(--nt-collapse-border-radius, 0px);
+.l-collapse--space .l-collapse-item {
+  border-radius: var(--l-collapse-border-radius, 0px);
 }
 
 /* 网格模式 */
-.nt-collapse--grid {
+.l-collapse--grid {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   align-items: start;
 }

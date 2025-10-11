@@ -1,7 +1,7 @@
 <template>
-  <div :class="['nt-tag', `nt-tag--${type}`]" :style="styleObj">
-    <div class="nt-tag--content"><slot></slot></div>
-    <i v-if="closable" class="nt-tag--close" @click="handleClose">
+  <div :class="['l-tag', `l-tag--${type}`]" :style="styleObj">
+    <div class="l-tag--content"><slot></slot></div>
+    <i v-if="closable" class="l-tag--close" @click="handleClose">
       <Close></Close>
     </i>
   </div>
@@ -35,9 +35,9 @@ const styleObj = computed(() => {
   let obj: any = {};
   if (!isBlank(props.color)) {
     obj = {
-      '--nt-tag-color': props.color,
-      '--nt-tag-border-color': props.color,
-      '--nt-tag-bg': adjust(props.color, 5, true),
+      '--l-tag-color': props.color,
+      '--l-tag-border-color': props.color,
+      '--l-tag-bg': adjust(props.color as string, 5, true),
     };
   }
   return obj;

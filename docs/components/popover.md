@@ -32,11 +32,11 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-popover content="悬浮提示">
+  <lv-popover content="悬浮提示">
     <template #trigger>
       <span>悬浮</span>
     </template>
-  </lt-popover>
+  </lv-popover>
   </textarea>
   <template #preview>
     <Popover content="悬浮提示">
@@ -55,16 +55,16 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-popover content="悬浮提示" trigger='hover'>
+  <lv-popover content="悬浮提示" trigger='hover'>
     <template #trigger>
-      <lt-button>悬浮</lt-button>
+      <lv-button>悬浮</lv-button>
     </template>
-  </lt-popover>
-  <lt-popover content="点击提示" trigger='click'>
+  </lv-popover>
+  <lv-popover content="点击提示" trigger='click'>
     <template #trigger>
-      <lt-button>点击</lt-button>
+      <lv-button>点击</lv-button>
     </template>
-  </lt-popover>
+  </lv-popover>
   </textarea>
   <template #preview>
     <Popover content="悬浮提示" trigger='hover'>
@@ -89,72 +89,72 @@
   <CodePreview>
   <textarea lang="vue-html">
   <div class="popover-p-row">
-    <lt-popover content="提示内容" placement="top-start">
+    <lv-popover content="提示内容" placement="top-start">
       <template #trigger>
-        <lt-button>top-start</lt-button>
+        <lv-button>top-start</lv-button>
       </template>
-    </lt-popover>
-    <lt-popover content="提示内容" placement="top">
+    </lv-popover>
+    <lv-popover content="提示内容" placement="top">
       <template #trigger>
-        <lt-button>top</lt-button>
+        <lv-button>top</lv-button>
       </template>
-    </lt-popover>
-    <lt-popover content="提示内容" placement="top-end">
+    </lv-popover>
+    <lv-popover content="提示内容" placement="top-end">
       <template #trigger>
-        <lt-button>top-end</lt-button>
+        <lv-button>top-end</lv-button>
       </template>
-    </lt-popover>
+    </lv-popover>
   </div>
   <div class="popover-p-row">
-    <lt-popover content="提示内容" placement="left-start">
+    <lv-popover content="提示内容" placement="left-start">
       <template #trigger>
-        <lt-button>left-start</lt-button>
+        <lv-button>left-start</lv-button>
       </template>
-    </lt-popover>
-    <lt-popover content="提示内容" placement="left">
+    </lv-popover>
+    <lv-popover content="提示内容" placement="left">
       <template #trigger>
-        <lt-button>left</lt-button>
+        <lv-button>left</lv-button>
       </template>
-    </lt-popover>
-    <lt-popover content="提示内容" placement="left-end">
+    </lv-popover>
+    <lv-popover content="提示内容" placement="left-end">
       <template #trigger>
-        <lt-button>left-end</lt-button>
+        <lv-button>left-end</lv-button>
       </template>
-    </lt-popover>
+    </lv-popover>
   </div>
   <div class="popover-p-row">
-    <lt-popover content="提示内容" placement="right-start">
+    <lv-popover content="提示内容" placement="right-start">
       <template #trigger>
-        <lt-button>right-start</lt-button>
+        <lv-button>right-start</lv-button>
       </template>
-    </lt-popover>
-    <lt-popover content="提示内容" placement="right">
+    </lv-popover>
+    <lv-popover content="提示内容" placement="right">
       <template #trigger>
-        <lt-button>right</lt-button>
+        <lv-button>right</lv-button>
       </template>
-    </lt-popover>
-    <lt-popover content="提示内容" placement="right-end">
+    </lv-popover>
+    <lv-popover content="提示内容" placement="right-end">
       <template #trigger>
-        <lt-button>right-end</lt-button>
+        <lv-button>right-end</lv-button>
       </template>
-    </lt-popover>
+    </lv-popover>
   </div>
   <div class="popover-p-row">
-    <lt-popover content="提示内容" placement="bottom-start">
+    <lv-popover content="提示内容" placement="bottom-start">
       <template #trigger>
-        <lt-button>bottom-start</lt-button>
+        <lv-button>bottom-start</lv-button>
       </template>
-    </lt-popover>
-    <lt-popover content="提示内容" placement="bottom">
+    </lv-popover>
+    <lv-popover content="提示内容" placement="bottom">
       <template #trigger>
-        <lt-button>bottom</lt-button>
+        <lv-button>bottom</lv-button>
       </template>
-    </lt-popover>
-    <lt-popover content="提示内容" placement="bottom-end">
+    </lv-popover>
+    <lv-popover content="提示内容" placement="bottom-end">
       <template #trigger>
-        <lt-button>bottom-end</lt-button>
+        <lv-button>bottom-end</lv-button>
       </template>
-    </lt-popover>
+    </lv-popover>
   </div>
   </textarea>
   <template #preview>
@@ -246,8 +246,8 @@
   </script>
   <template>
     <span id="popoverTo">对标元素</span>
-    <lt-button @click='toggleShow' class="ml-10">弹出/隐藏</lt-button>
-    <lt-popover reference="#popoverTo" ref="$popover" content="提示内容" trigger="manual"></lt-popover>
+    <lv-button @click='toggleShow' class="ml-10">弹出/隐藏</lv-button>
+    <lv-popover reference="#popoverTo" ref="$popover" content="提示内容" trigger="manual"></lv-popover>
   </template>
   </textarea>
   <template #preview>
@@ -265,11 +265,11 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-popover content="悬浮提示" :show-arrow="false">
+  <lv-popover content="悬浮提示" :show-arrow="false">
     <template #trigger>
       <span>悬浮</span>
     </template>
-  </lt-popover>
+  </lv-popover>
   </textarea>
   <template #preview>
     <Popover content="悬浮提示" :show-arrow="false">

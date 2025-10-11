@@ -347,7 +347,7 @@
     }]
   </script>
   <template>
-    <lt-table :data="dataSource" :columns="columns"></lt-table>
+    <lv-table :data="dataSource" :columns="columns"></lv-table>
   </template>
   </textarea>
   <template #preview>
@@ -364,7 +364,7 @@
   <CodePreview>
   <textarea lang="vue">
   <template>
-    <lt-table :data="dataSource" :columns="columns" :stripe="false"></lt-table>
+    <lv-table :data="dataSource" :columns="columns" :stripe="false"></lv-table>
   </template>
   </textarea>
   <template #preview>
@@ -381,7 +381,7 @@
   <CodePreview>
   <textarea lang="vue">
   <template>
-    <lt-table :data="dataSource" :columns="columns" border></lt-table>
+    <lv-table :data="dataSource" :columns="columns" border></lv-table>
   </template>
   </textarea>
   <template #preview>
@@ -398,7 +398,7 @@
   <CodePreview>
   <textarea lang="vue">
   <template>
-    <lt-table :data="[]" :columns="columns"></lt-table>
+    <lv-table :data="[]" :columns="columns"></lv-table>
   </template>
   </textarea>
   <template #preview>
@@ -461,7 +461,7 @@
     }]
   </script>
   <template>
-    <lt-table :data="dataSource2" :columns="columns" fixed-head style="max-height:200px;" class="nt-scrollbar"></lt-table>
+    <lv-table :data="dataSource2" :columns="columns" fixed-head style="max-height:200px;" class="nt-scrollbar"></lv-table>
   </template>
   </textarea>
   <template #preview>
@@ -471,7 +471,7 @@
 </ClientOnly>
 
 > 1. 设置 `max-height` 可以通过直接设置 `style`；也可以通过 [tailwindcss-max-height](https://www.tailwindcss.cn/docs/max-height#setting-the-maximum-height)
-> 2. 如果想改变滚动条样式，参考 [工具样式-滚动条](../css-util#_2-滚动条样式)；引入样式表，然后给 `Table` 组件, 添加 `nt-scrollbar` 的类名: `<lt-table ... fixed-head class="max-h-24 nt-scrollbar"></lt-table>`
+> 2. 如果想改变滚动条样式，参考 [工具样式-滚动条](../css-util#_2-滚动条样式)；引入样式表，然后给 `Table` 组件, 添加 `nt-scrollbar` 的类名: `<lv-table ... fixed-head class="max-h-24 nt-scrollbar"></lv-table>`
 
 ### 排序
 
@@ -502,7 +502,7 @@
   const defaultSort = { key: 'age', order: 'desc' }
   </script>
   <template>
-    <lt-table :data="dataSource1" :columns="columns3" :default-sort="defaultSort"></lt-table>
+    <lv-table :data="dataSource1" :columns="columns3" :default-sort="defaultSort"></lv-table>
   </template>
   </textarea>
   <template #preview>
@@ -527,7 +527,7 @@
     }
   </script>
   <template>
-    <lt-table :data="dataSource1" :columns="columns3" :render-summary="renderSummary"></lt-table>
+    <lv-table :data="dataSource1" :columns="columns3" :render-summary="renderSummary"></lv-table>
   </template>
   </textarea>
   <template #preview>
@@ -567,7 +567,7 @@
     }]
   </script>
   <template>
-    <lt-table :data="dataSource1" :columns="columns4" border></lt-table>
+    <lv-table :data="dataSource1" :columns="columns4" border></lv-table>
   </template>
   </textarea>
   <template #preview>
@@ -584,7 +584,7 @@
   <CodePreview>
   <textarea lang="vue-html">
   <template>
-    <lt-table :data="dataSource3" :columns="columns5" border></lt-table>
+    <lv-table :data="dataSource3" :columns="columns5" border></lv-table>
   </template>
   </textarea>
   <template #preview>
@@ -648,7 +648,7 @@
     }]
   </script>
   <template>
-    <lt-table :data="dataSource4" :columns="columns6" border></lt-table>
+    <lv-table :data="dataSource4" :columns="columns6" border></lv-table>
   </template>
   </textarea>
   <template #preview>
@@ -665,18 +665,18 @@
 
 ```vue-html
 <!-- 外层容器, 当需要固定行滚动时, 以及后续需要处理虚拟滚动操作 -->
-<div class="nt-table-wrapper" style="max-height:300px;">
-  <table class="nt-table nt-table-stripe nt-table-fixed">
-    <thead class="nt-fixed">
-      <th class="nt-fixed" style="left: 0"></th>
+<div class="l-table-wrapper" style="max-height:300px;">
+  <table class="l-table l-table-stripe l-table-fixed">
+    <thead class="l-fixed">
+      <th class="l-fixed" style="left: 0"></th>
       <th></th>
-      <th class="nt-fixed" style="right: 0"></th>
+      <th class="l-fixed" style="right: 0"></th>
     </thead>
     <tbody>
       <tr>
-        <td class="nt-fixed" style="left: 0"></td>
+        <td class="l-fixed" style="left: 0"></td>
         <td></td>
-        <td class="nt-fixed" style="right: 0"></td>
+        <td class="l-fixed" style="right: 0"></td>
       </tr>
     </tbody>
   </table>
@@ -685,10 +685,10 @@
 
 说明:
 
-- `div.nt-table-wrapper`: 外层容器, 当需要固定行滚动时, 以及后续需要处理虚拟滚动操作; 如果需要固定表头, 则添加 `max-height` 样式.
-- `table.nt-table`: 表格容器; 如果需要为表格添加斑马纹则添加 `nt-table-stripe` 类; 如果需要固定列则添加 `nt-table-fixed` 类用于改变表格的 `table-layout` 布局.
-- `thead`: 如果需要固定表头, 则添加 `nt-fixed` 类否则不用添加.
-- `th.fixed,td.fixed`: 如果需要固定列则给列添加 `nt-fixed` 类, 然后设置 `left` 或者 `right` 样式.
+- `div.l-table-wrapper`: 外层容器, 当需要固定行滚动时, 以及后续需要处理虚拟滚动操作; 如果需要固定表头, 则添加 `max-height` 样式.
+- `table.l-table`: 表格容器; 如果需要为表格添加斑马纹则添加 `l-table-stripe` 类; 如果需要固定列则添加 `l-table-fixed` 类用于改变表格的 `table-layout` 布局.
+- `thead`: 如果需要固定表头, 则添加 `l-fixed` 类否则不用添加.
+- `th.fixed,td.fixed`: 如果需要固定列则给列添加 `l-fixed` 类, 然后设置 `left` 或者 `right` 样式.
 
 ## API
 

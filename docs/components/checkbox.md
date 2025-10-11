@@ -33,12 +33,12 @@
 
 ### 基础用法
 
-单独使用可以表示两种状态之间的切换；在 `nt-checkbox` 元素中定义 `v-model` 绑定变量，单一的 `checkbox` 中，默认绑定变量的值会是 `Boolean`，选中为 `true`。
+单独使用可以表示两种状态之间的切换；在 `lv-checkbox` 元素中定义 `v-model` 绑定变量，单一的 `checkbox` 中，默认绑定变量的值会是 `Boolean`，选中为 `true`。
 
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-checkbox label="Option1" v-model="isCheckOption"></lt-checkbox>
+  <lv-checkbox label="Option1" v-model="isCheckOption"></lv-checkbox>
   </textarea>
   <template #preview>
     <Checkbox label="Option1" v-model="isCheckOption"></Checkbox>
@@ -53,14 +53,14 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-checkbox label="Option1" disabled></lt-checkbox>
+  <lv-checkbox label="Option1" disabled></lv-checkbox>
   </textarea>
   </CodePreview>
 </ClientOnly>
 
 ### 选项框组
 
-使用 `nt-checkbox-group` 元素来包裹 `nt-checkbox` 元素，实现复选框组。使用时需要给 `nt-checkbox` 传递 `value` 属性。
+使用 `lv-checkbox-group` 元素来包裹 `lv-checkbox` 元素，实现复选框组。使用时需要给 `lv-checkbox` 传递 `value` 属性。
 
 <ClientOnly>
   <CodePreview>
@@ -71,9 +71,9 @@
     const checkedCities = ref(['CD', 'SZ']);
   </script>
   <template>
-    <lt-checkbox-group v-model="checkedCities">
-      <lt-checkbox v-for="city in cities" :key="city[0]" :value="city[0]" :label="city[1]"></lt-checkbox>
-    </lt-checkbox-group>
+    <lv-checkbox-group v-model="checkedCities">
+      <lv-checkbox v-for="city in cities" :key="city[0]" :value="city[0]" :label="city[1]"></lv-checkbox>
+    </lv-checkbox-group>
   </template>
   </textarea>
   <template #preview>
@@ -109,23 +109,23 @@
     }
   </script>
   <template>
-    <lt-checkbox
+    <lv-checkbox
       v-model="checkAll"
       label="全选"
       :indeterminate="isIndeterminate"
       @change="handleCheckAllChange"
     />
-    <lt-checkbox-group
+    <lv-checkbox-group
       v-model="checkedCities"
       @change="handleGroupChange"
     >
-      <lt-checkbox
+      <lv-checkbox
         v-for="city in cities"
         :key="city[0]"
         :value="city[0]"
         :label="city[1]"
-      ></lt-checkbox>
-    </lt-checkbox-group>
+      ></lv-checkbox>
+    </lv-checkbox-group>
   </template>
   </textarea>
   <template #preview>
@@ -163,15 +163,15 @@
     const checkedCities = ref(['CD', 'SZ']);
   </script>
   <template>
-    <lt-checkbox-group v-model="checkedCities">
-      <lt-checkbox
+    <lv-checkbox-group v-model="checkedCities">
+      <lv-checkbox
         v-for="city in cities"
         :key="city[0]"
         :value="city[0]"
         :label="city[1]"
         type="button"
-      ></lt-checkbox>
-    </lt-checkbox-group>
+      ></lv-checkbox>
+    </lv-checkbox-group>
   </template>
   </textarea>
   <template #preview>

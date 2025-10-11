@@ -1,10 +1,10 @@
 /* table 表格 */
-.nt-table-wrapper {
+.l-table-wrapper {
   display: inline-block;
   width: 100%;
   overflow: auto;
 }
-.nt-table {
+.l-table {
   width: 100%;
   background-color: #fff;
   color: #666;
@@ -12,16 +12,16 @@
   border-collapse: collapse;
   border-spacing: 0;
 }
-.nt-table-fixed {
+.l-table-fixed {
   table-layout: fixed;
 }
-.nt-table tbody tr {
+.l-table tbody tr {
   transition: all 0.25s ease-out;
 }
-.nt-table tbody tr:hover td {
+.l-table tbody tr:hover td {
   background-color: #f2f2f2;
 }
-.nt-table .caret-wrapper {
+.l-table .caret-wrapper {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -30,15 +30,15 @@
   width: 20px;
   position: relative;
 }
-.nt-table .caret-wrapper .ascending {
+.l-table .caret-wrapper .ascending {
   border-bottom-color: #c0c4cc;
   top: -5px;
 }
-.nt-table .caret-wrapper .descending {
+.l-table .caret-wrapper .descending {
   border-top-color: #c0c4cc;
   bottom: -3px;
 }
-.nt-table .sort-caret {
+.l-table .sort-caret {
   display: inline-block;
   width: 0;
   height: 0;
@@ -46,56 +46,56 @@
   position: absolute;
   border-radius: 3px;
 }
-.nt-table .sort-column {
+.l-table .sort-column {
   cursor: pointer;
 }
-.nt-table .sort-asc .ascending {
-  border-bottom-color: var(--nt-primary-color, #52c41a);
+.l-table .sort-asc .ascending {
+  border-bottom-color: var(--l-primary-color, #52c41a);
 }
-.nt-table .sort-desc .descending {
-  border-top-color: var(--nt-primary-color, #52c41a);
+.l-table .sort-desc .descending {
+  border-top-color: var(--l-primary-color, #52c41a);
 }
-.nt-table td,
-.nt-table th {
+.l-table td,
+.l-table th {
   padding: 10px;
   border-bottom: 1px solid #e6e6e6;
 }
-.nt-table th,
-.nt-table tfoot td {
+.l-table th,
+.l-table tfoot td {
   text-align: left;
   background-color: #f2f2f2;
 }
-.nt-table td {
+.l-table td {
   background-color: #ffffff;
 }
-.nt-table-stripe tbody tr:nth-child(even) td {
+.l-table-stripe tbody tr:nth-child(even) td {
   background-color: #fafafa;
 }
-.nt-table-stripe tbody tr:nth-child(even):hover td {
+.l-table-stripe tbody tr:nth-child(even):hover td {
   background-color: #f2f2f2;
 }
 
-.nt-table-border tr,
-.nt-table-border td {
+.l-table-border tr,
+.l-table-border td {
   border: 1px solid #e6e6e6;
 }
 
-.nt-table__none-col {
+.l-table__none-col {
   color: #999999;
   text-align: center;
 }
 
-.nt-table .nt-fixed {
+.l-table .l-fixed {
   position: -webkit-sticky;
   position: sticky;
   z-index: 1;
   box-sizing: border-box;
 }
-.nt-table thead.nt-fixed,
-.nt-table tfoot.nt-fixed {
+.l-table thead.l-fixed,
+.l-table tfoot.l-fixed {
   z-index: 2;
 }
-.nt-table-selection-cell {
+.l-table-selection-cell {
   display: flex;
   justify-content: center;
   align-items: center;

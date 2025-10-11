@@ -30,38 +30,38 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-tabbar style="border: 1px solid #dedede">
-    <lt-tabbar-item name="Reduction">
+  <lv-tabbar style="border: 1px solid #dedede">
+    <lv-tabbar-item name="Reduction">
       <template #icon>
         <lt-reduction-icon />
       </template>
       <span>Reduction</span>
-    </lt-tabbar-item>
-    <lt-tabbar-item name="RefreshLeft">
+    </lv-tabbar-item>
+    <lv-tabbar-item name="RefreshLeft">
       <template #icon>
         <lt-refresh-left-icon />
       </template>
       <span>RefreshLeft</span>
-    </lt-tabbar-item>
-    <lt-tabbar-item name="Search">
+    </lv-tabbar-item>
+    <lv-tabbar-item name="Search">
       <template #icon>
-        <lt-search-icon />
+        <lv-search-icon />
       </template>
       <span>Search</span>
-    </lt-tabbar-item>
-    <lt-tabbar-item name="RefreshRight">
+    </lv-tabbar-item>
+    <lv-tabbar-item name="RefreshRight">
       <template #icon>
         <lt-refresh-right-icon />
       </template>
       <span>RefreshRight</span>
-    </lt-tabbar-item>
-    <lt-tabbar-item name="Sort">
+    </lv-tabbar-item>
+    <lv-tabbar-item name="Sort">
       <template #icon>
         <lt-sort-icon />
       </template>
       <span>Sort</span>
-    </lt-tabbar-item>
-  </lt-tabbar>
+    </lv-tabbar-item>
+  </lv-tabbar>
   </textarea>
   <template #preview>
     <Tabbar style="border: 1px solid #dedede">
@@ -108,11 +108,11 @@
   <CodePreview>
   <textarea lang="vue">
   <template>
-  <lt-tabbar type="bar" v-model='active2'>
-    <lt-tabbar-item name="1">选项1</lt-tabbar-item>
-    <lt-tabbar-item name="2">选项2</lt-tabbar-item>
-    <lt-tabbar-item name="3">选项3</lt-tabbar-item>
-  </lt-tabbar>
+  <lv-tabbar type="bar" v-model='active2'>
+    <lv-tabbar-item name="1">选项1</lv-tabbar-item>
+    <lv-tabbar-item name="2">选项2</lv-tabbar-item>
+    <lv-tabbar-item name="3">选项3</lv-tabbar-item>
+  </lv-tabbar>
   </template>
   <script setup>
   import { ref } from 'vue';
@@ -136,29 +136,29 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-tabbar type="bar" justify-content="center">
-    <lt-tabbar-item name="1">选项1</lt-tabbar-item>
-    <lt-tabbar-item name="2">选项2</lt-tabbar-item>
-    <lt-tabbar-item name="3">选项3</lt-tabbar-item>
-  </lt-tabbar>
+  <lv-tabbar type="bar" justify-content="center">
+    <lv-tabbar-item name="1">选项1</lv-tabbar-item>
+    <lv-tabbar-item name="2">选项2</lv-tabbar-item>
+    <lv-tabbar-item name="3">选项3</lv-tabbar-item>
+  </lv-tabbar>
   <hr />
-  <lt-tabbar type="bar" justify-content="space-between">
-    <lt-tabbar-item name="1">选项1</lt-tabbar-item>
-    <lt-tabbar-item name="2">选项2</lt-tabbar-item>
-    <lt-tabbar-item name="3">选项3</lt-tabbar-item>
-  </lt-tabbar>
+  <lv-tabbar type="bar" justify-content="space-between">
+    <lv-tabbar-item name="1">选项1</lv-tabbar-item>
+    <lv-tabbar-item name="2">选项2</lv-tabbar-item>
+    <lv-tabbar-item name="3">选项3</lv-tabbar-item>
+  </lv-tabbar>
   <hr />
-  <lt-tabbar type="bar" justify-content="space-around">
-    <lt-tabbar-item name="1">选项1</lt-tabbar-item>
-    <lt-tabbar-item name="2">选项2</lt-tabbar-item>
-    <lt-tabbar-item name="3">选项3</lt-tabbar-item>
-  </lt-tabbar>
+  <lv-tabbar type="bar" justify-content="space-around">
+    <lv-tabbar-item name="1">选项1</lv-tabbar-item>
+    <lv-tabbar-item name="2">选项2</lv-tabbar-item>
+    <lv-tabbar-item name="3">选项3</lv-tabbar-item>
+  </lv-tabbar>
   <hr />
-  <lt-tabbar type="bar" justify-content="space-evenly">
-    <lt-tabbar-item name="1">选项1</lt-tabbar-item>
-    <lt-tabbar-item name="2">选项2</lt-tabbar-item>
-    <lt-tabbar-item name="3">选项3</lt-tabbar-item>
-  </lt-tabbar>
+  <lv-tabbar type="bar" justify-content="space-evenly">
+    <lv-tabbar-item name="1">选项1</lv-tabbar-item>
+    <lv-tabbar-item name="2">选项2</lv-tabbar-item>
+    <lv-tabbar-item name="3">选项3</lv-tabbar-item>
+  </lv-tabbar>
   </textarea>
   <template #preview>
     <Tabbar type="bar" justify-content="center">
@@ -196,17 +196,17 @@
 <ClientOnly>
   <CodePreview>
   <textarea lang="vue-html">
-  <lt-tabbar type="card">
-    <lt-tabbar-item name="1">选项1</lt-tabbar-item>
-    <lt-tabbar-item name="2">选项2</lt-tabbar-item>
-    <lt-tabbar-item name="3">选项3</lt-tabbar-item>
-  </lt-tabbar>
+  <lv-tabbar type="card">
+    <lv-tabbar-item name="1">选项1</lv-tabbar-item>
+    <lv-tabbar-item name="2">选项2</lv-tabbar-item>
+    <lv-tabbar-item name="3">选项3</lv-tabbar-item>
+  </lv-tabbar>
   <hr />
-  <lt-tabbar type="card" :gap="5">
-    <lt-tabbar-item name="1">选项1</lt-tabbar-item>
-    <lt-tabbar-item name="2">选项2</lt-tabbar-item>
-    <lt-tabbar-item name="3">选项3</lt-tabbar-item>
-  </lt-tabbar>
+  <lv-tabbar type="card" :gap="5">
+    <lv-tabbar-item name="1">选项1</lv-tabbar-item>
+    <lv-tabbar-item name="2">选项2</lv-tabbar-item>
+    <lv-tabbar-item name="3">选项3</lv-tabbar-item>
+  </lv-tabbar>
   </textarea>
   <template #preview>
     <Tabbar type="card">
@@ -237,7 +237,9 @@
 
 ### Tabbar Events
 
+<!-- prettier-ignore -->
 | 事件名 | 说明 | 参数 |
+| --- | ---- | ---- |
 | `change` | 选项卡切换时触发 | `(active: string) => void` |
 
 ### TabbarItem Props
@@ -255,12 +257,12 @@
 
 ### Tabbar Css Vars
 
-| 变量名                           | 说明                     | 默认值                           |
-| -------------------------------- | ------------------------ | -------------------------------- |
-| `--nt-tabbar-hover-color`        | 选项卡的鼠标悬浮时的颜色 | `var(--nt-primary-color-light1)` |
-| `--nt-tabbar-active-color`       | 选项卡的选中时的颜色     | `var(--nt-primary-color)`        |
-| `--nt-tabbar-item-gap`           | 选项卡之间的间距         | `0`                              |
-| `--nt-tabbar-height`             | 选项卡的高度             | `38px`[`nav`时默认为: `50px`]    |
-| `--nt-tabbar-line-color`         | 下划线的颜色             | `var(--nt-primary-color)`        |
-| `--nt-tabbar-card-border-color`  | 卡片选项卡的边框颜色     | `#f5f7fa`                        |
-| `--nt-tabbar-card-border-radius` | 卡片选项卡的边框圆角     | `5px`                            |
+| 变量名                          | 说明                     | 默认值                          |
+| ------------------------------- | ------------------------ | ------------------------------- |
+| `--l-tabbar-hover-color`        | 选项卡的鼠标悬浮时的颜色 | `var(--l-primary-color-light1)` |
+| `--l-tabbar-active-color`       | 选项卡的选中时的颜色     | `var(--l-primary-color)`        |
+| `--l-tabbar-item-gap`           | 选项卡之间的间距         | `0`                             |
+| `--l-tabbar-height`             | 选项卡的高度             | `38px`[`nav`时默认为: `50px`]   |
+| `--l-tabbar-line-color`         | 下划线的颜色             | `var(--l-primary-color)`        |
+| `--l-tabbar-card-border-color`  | 卡片选项卡的边框颜色     | `#f5f7fa`                       |
+| `--l-tabbar-card-border-radius` | 卡片选项卡的边框圆角     | `5px`                           |

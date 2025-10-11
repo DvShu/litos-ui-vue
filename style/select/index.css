@@ -1,8 +1,8 @@
-.nt-select {
+.l-select {
   display: inline-flex;
-  min-height: var(--nt-form-edit-height, 32px);
+  min-height: var(--l-form-control-height, 32px);
   width: 100%;
-  border: 1px solid var(--nt-border-color, #dedede);
+  border: 1px solid var(--l-border-color, #dedede);
   transition: all 0.3s ease-in-out;
   font-size: 14px;
   position: relative;
@@ -13,35 +13,35 @@
   border-radius: 4px;
   gap: 5px;
 }
-.nt-select--active,
-.nt-select:hover {
-  border-color: var(--nt-primary-color-light1, #9254de);
+.l-select--active,
+.l-select:hover {
+  border-color: var(--l-primary-color-light1, #9254de);
 }
-.nt-select--arrow,
-.nt-select-placeholder {
+.l-select--arrow,
+.l-select-placeholder {
   color: #a8abb2;
 }
-.nt-select--clear,
-.nt-select--loading {
+.l-select--clear,
+.l-select--loading {
   position: absolute;
   right: 10px;
   top: 50%;
 }
-.nt-select--loading {
+.l-select--loading {
   background-color: #ffffff;
   transform: translate3d(0, -50%, 0);
-  color: var(--nt-primary-color, #9254de);
-  animation: nt-select-loading 1.5s infinite linear;
+  color: var(--l-primary-color, #9254de);
+  animation: l-select-loading 1.5s infinite linear;
 }
-.nt-select--clear {
+.l-select--clear {
   color: #afafaf;
   transform: translate3d(0, -50%, 0);
   transition: color 0.3s ease-in-out;
 }
-.nt-select--clear:hover {
+.l-select--clear:hover {
   color: #929292;
 }
-.nt-select-main {
+.l-select-main {
   display: flex;
   gap: 5px;
   flex-flow: row wrap;
@@ -50,33 +50,33 @@
   flex-grow: 1;
   overflow: hidden;
 }
-.nt-select-item {
+.l-select-item {
   flex-shrink: 0;
 }
-.nt-select-search {
+.l-select-search {
   flex-grow: 1;
   display: inline-flex;
 }
-.nt-select--arrow {
+.l-select--arrow {
   flex-shrink: 0;
   transition: transform 0.3s ease-in-out;
   transform: rotate3d(0, 0, 1, 0deg);
 }
-.nt-select--arrow.nt-expanded {
+.l-select--arrow.nt-expanded {
   transform: rotate3d(0, 0, 1, 180deg);
 }
-.nt-select-list {
+.l-select-list {
   max-height: 190px;
   overflow: auto;
 }
-.nt-select-popover {
-  --nt-select-option-hover-color: var(--nt-primary-color-light4, #efdbff);
+.l-select-popover {
+  --l-select-option-hover-color: var(--l-primary-color-light4, #efdbff);
   padding: 0;
 }
-.nt-select-option {
+.l-select-option {
   box-sizing: border-box;
-  height: var(--nt-form-edit-height, 32px);
-  line-height: var(--nt-form-edit-height, 32px);
+  height: var(--l-form-control-height, 32px);
+  line-height: var(--l-form-control-height, 32px);
   padding: 0 10px;
   cursor: pointer;
   color: #333;
@@ -86,19 +86,19 @@
   justify-content: space-between;
   align-items: center;
 }
-.nt-select-option--empty {
-  --nt-select-option-hover-color: #ffffff;
+.l-select-option--empty {
+  --l-select-option-hover-color: #ffffff;
   justify-content: center;
   cursor: default;
-  color: var(--nt-info-color, #999);
+  color: var(--l-info-color, #999);
 }
-.nt-select-option:hover {
-  background-color: var(--nt-select-option-hover-color);
+.l-select-option:hover {
+  background-color: var(--l-select-option-hover-color);
 }
-.nt-select-option--selected {
-  color: var(--nt-primary-color-light1, #9254de);
+.l-select-option--selected {
+  color: var(--l-primary-color-light1, #9254de);
 }
-.nt-select--input {
+.l-select--input {
   min-width: 15px;
   background-color: transparent;
   border: none;
@@ -109,12 +109,12 @@
   width: 0;
   flex-grow: 1;
 }
-.nt-select--input::placeholder {
+.l-select--input::placeholder {
   color: #a8abb2;
 }
 
 /* 旋转动画 */
-@keyframes nt-select-loading {
+@keyframes l-select-loading {
   from {
     transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, 0);
   }

@@ -1,6 +1,6 @@
 # 使用介绍
 
-UI库除了依赖于 Vue3 外，还依赖于 [ph-utils](https://gitee.com/towardly/ph/wikis/Home)
+UI库除了依赖于 `Vue` 外，还依赖于 [ph-utils](https://gitee.com/towardly/ph/wikis/Home)
 
 ## 使用
 
@@ -12,17 +12,17 @@ npm install ph-utils litos-ui-vue
 
 ### 2. 按需引入
 
-当前按需引入只支持在 `Vite` 中配合自动导入实现；[unplugin-vue-components](https://www.npmjs.com/package/unplugin-vue-components)、[unplugin-auto-import](https://www.npmjs.com/package/unplugin-auto-import)、[litos-ui-vue-resolver](https://www.npmjs.com/package/litos-ui-resolver)。
+当前按需引入只支持在 `Vite` 中配合自动导入实现；[unplugin-vue-components](https://www.npmjs.com/package/unplugin-vue-components)、[unplugin-auto-import](https://www.npmjs.com/package/unplugin-auto-import)、[litosui-unplugin-resolver](https://www.npmjs.com/package/litosui-unplugin-resolver)。
 
 ```sh
-npm install unplugin-vue-components unplugin-auto-import litos-ui-resolver -D
+npm install unplugin-vue-components unplugin-auto-import litosui-unplugin-resolver -D
 ```
 
 在 `vite.config.ts` 的 `plugins` 添加如下代码：
 
 ```ts
 import Components from 'unplugin-vue-components/vite';
-import LitosUiResolver from 'litos-ui-resolver/vue';
+import LitosUiResolver from 'litosui-unplugin-resolver';
 
 plugins: [
   // ...
@@ -75,7 +75,7 @@ import './style.css';
 
 ```css
 :root {
-  --nt-border-color: red;
+  --l-border-color: red;
 }
 ```
 
@@ -83,17 +83,17 @@ import './style.css';
 
 ### 修改主题色
 
-通常只需要覆盖 `--nt-primary-color` 相关 `CSS` 变量就能实现主题色覆盖，例如: `--nt-primary-color`、`--nt-primary-color-light1`
+通常只需要覆盖 `--l-primary-color` 相关 `CSS` 变量就能实现主题色覆盖，例如: `--l-primary-color`、`--l-primary-color-light1`
 
 ```css
 :root {
-  --nt-primary-color: #722ed1;
-  --nt-primary-color-light1: #9254de;
-  --nt-primary-color-light2: #b37feb;
-  --nt-primary-color-light3: #d3adf7;
-  --nt-primary-color-light4: #efdbff;
-  --nt-primary-color-light5: #f9f0ff;
-  --nt-primary-color-dark1: #531dab;
+  --l-primary-color: #722ed1;
+  --l-primary-color-light1: #9254de;
+  --l-primary-color-light2: #b37feb;
+  --l-primary-color-light3: #d3adf7;
+  --l-primary-color-light4: #efdbff;
+  --l-primary-color-light5: #f9f0ff;
+  --l-primary-color-dark1: #531dab;
 }
 ```
 
@@ -113,4 +113,4 @@ import './style.css';
 
 ## 浏览器兼容性
 
-所有的组件尽量保证 `ios` 能够兼容到 `11`
+所有的组件尽量保证 `ios` 能够兼容到 `12`

@@ -1,4 +1,4 @@
-import type { Prop, PropType, Ref } from 'vue';
+import type { PropType, Ref } from 'vue';
 
 export const popoverProps = {
   /** 触发方式: hover - 渲染, click - 点击, manual - 非受控模式, 手动展开 */

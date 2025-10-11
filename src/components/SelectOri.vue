@@ -1,5 +1,5 @@
 <template>
-  <select v-model="value" class="nt-input">
+  <select v-model="value" class="l-input">
     <slot>
       <option v-for="n in options" :key="n.value" :value="n.value">
         {{ n.label }}

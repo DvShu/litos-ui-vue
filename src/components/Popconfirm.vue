@@ -25,21 +25,21 @@ export default defineComponent({
         {
           trigger: 'click',
           placement: 'top',
-          class: 'nt-popconfirm',
+          class: 'l-popconfirm',
           ref: $popover,
         },
         {
           trigger: () => (slots.trigger != null ? slots.trigger() : null),
           default: () => [
-            h('div', { class: 'nt-popconfirm-container' }, [
+            h('div', { class: 'l-popconfirm-container' }, [
               h(
                 'div',
-                { class: 'nt-popconfirm-icon-wrapper' },
+                { class: 'l-popconfirm-icon-wrapper' },
                 slots.icon != null ? slots.icon() : h(WarnIcon),
               ),
               slots.default != null ? slots.default() : h('span', props.title),
             ]),
-            h('div', { class: 'nt-popconfirm-footer' }, [
+            h('div', { class: 'l-popconfirm-footer' }, [
               h(
                 Button,
                 {

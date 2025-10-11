@@ -1,7 +1,7 @@
 <template>
   <input
     :type="type === 'datetime' ? 'datetime-local' : type"
-    :class="['nt-input', `nt-${type}-picker`]"
+    :class="['l-input', `l-${type}-picker`]"
     :value="modelValue"
     :min="min"
     :max="max"

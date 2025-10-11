@@ -1,79 +1,79 @@
-.nt-form {
+.l-form {
   display: grid;
-  grid-template-columns: var(--nt-form-label-width, auto) 1fr;
+  grid-template-columns: var(--l-form-label-width, auto) 1fr;
   row-gap: 20px;
 }
-.nt-form-item {
+.l-form-item {
   display: flex;
   font-size: 14px;
 }
-.nt-form .nt-form-item {
+.l-form .l-form-item {
   display: contents;
 }
-.nt-form-item__label {
+.l-form-item__label {
   text-align: right;
   display: inline-block;
-  width: var(--nt-form-label-width, auto);
-  height: var(--nt-form-edit-height, 32px);
-  line-height: var(--nt-form-edit-height, 32px);
+  width: var(--l-form-label-width, auto);
+  height: var(--l-form-control-height, 32px);
+  line-height: var(--l-form-control-height, 32px);
   color: #606266;
   padding: 0 10px 0 0;
 }
-.nt-form-item.is-required .nt-form-item__label::before {
+.l-form-item.is-required .l-form-item__label::before {
   content: '*';
   margin-right: 4px;
-  color: var(--nt-warn-color, #f56c6c);
+  color: var(--l-warn-color, #f56c6c);
   vertical-align: middle;
 }
-.nt-form-item__content {
+.l-form-item__content {
   flex: 1;
   position: relative;
   display: flex;
   align-items: center;
 }
-.nt-form-item__error {
+.l-form-item__error {
   font-size: 12px;
   line-height: 1;
   position: absolute;
   top: 100%;
   left: 0;
-  color: var(--nt-error-color, #ed3f13);
+  color: var(--l-error-color, #ed3f13);
   padding-top: 3px;
 }
-.nt-form-item.is-error .nt-input,
-.nt-form-item.is-error .nt-md-input .nt-md-input__inner {
-  border-color: var(--nt-error-color, #ed3f13);
+.l-form-item.is-error .l-input,
+.l-form-item.is-error .l-md-input .l-md-input__inner {
+  border-color: var(--l-error-color, #ed3f13);
 }
-.nt-form-item .nt-md-input,
-.nt-form-item .nt-input {
+.l-form-item .l-md-input,
+.l-form-item .l-input {
   width: 100%;
 }
 
-.nt-form--left .nt-form-item__label {
+.l-form--left .l-form-item__label {
   text-align: left;
 }
-.nt-form--top {
+.l-form--top {
   grid-template-columns: 1fr;
 }
-.nt-form--top .nt-form-item {
+.l-form--top .l-form-item {
   display: grid;
   grid-template-columns: 1fr;
 }
-.nt-form--top .nt-form-item__label {
+.l-form--top .l-form-item__label {
   text-align: left;
 }
-.nt-form--top .nt-form-item__label:empty {
+.l-form--top .l-form-item__label:empty {
   display: none;
 }
 
 /** 行内表单 */
-.nt-form-inline {
+.l-form-inline {
   display: flex;
   gap: 20px;
   flex-flow: row wrap;
 }
 
-.nt-form-inline .nt-form-item {
+.l-form-inline .l-form-item {
   display: inline-flex;
   vertical-align: middle;
 }

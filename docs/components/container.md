@@ -2,11 +2,11 @@
 
 容器布局，采用了 flex 布局，一般用于后台管理项目的一些常用排版，方便快速搭建页面的基本结构：
 
-- `nt-container`：外层容器，一般用于 `section` 标签，基本排版为水平左右排列，可以通过设置 `nt-layout-verticle` 调整为垂直上下排列。可以嵌套
-- `nt-header`：顶栏容器，一般用于 `header` 标签
-- `nt-aside`: 侧边栏容器，一般用于 `aside` 标签
-- `nt-main`: 主要区域容器，一般用于 `main` 标签
-- `nt-footer`: 底栏容器，一般用于 `footer` 标签
+- `l-container`：外层容器，一般用于 `section` 标签，基本排版为水平左右排列，可以通过设置 `l-layout-verticle` 调整为垂直上下排列。可以嵌套
+- `l-header`：顶栏容器，一般用于 `header` 标签
+- `l-aside`: 侧边栏容器，一般用于 `aside` 标签
+- `l-main`: 主要区域容器，一般用于 `main` 标签
+- `l-footer`: 底栏容器，一般用于 `footer` 标签
 
 通常用于后台管理系统的首页排版
 
@@ -29,9 +29,9 @@ import CodePreview from '../../src/app_components/CodePreview.vue';
 <ClientOnly>
   <CodePreview class="mt-15">
   <textarea lang="html">
-  <section class="nt-container nt-layout-vertical">
-    <header class="nt-header">Header</header>
-    <main class="nt-main">Main</main>
+  <section class="l-container l-layout-vertical">
+    <header class="l-header">Header</header>
+    <main class="l-main">Main</main>
   </section>
   </textarea>
   </CodePreview>
@@ -42,9 +42,9 @@ import CodePreview from '../../src/app_components/CodePreview.vue';
 <ClientOnly><CodePreview class="mt-15">
 <textarea lang="html">
 
-  <section class="nt-container">
-    <aside class="nt-aside">Aside</aside>
-    <main class="nt-main">Main</main>
+  <section class="l-container">
+    <aside class="l-aside">Aside</aside>
+    <main class="l-main">Main</main>
   </section>
   </textarea>
 </CodePreview></ClientOnly>
@@ -54,11 +54,11 @@ import CodePreview from '../../src/app_components/CodePreview.vue';
 <ClientOnly><CodePreview class="mt-15">
 <textarea lang="html">
 
-  <section class="nt-container nt-layout-vertical">
-    <header class="nt-header">Header</header>
-    <section class="nt-container">
-      <aside class="nt-aside">Aside</aside>
-      <main class="nt-main">Main</main>
+  <section class="l-container l-layout-vertical">
+    <header class="l-header">Header</header>
+    <section class="l-container">
+      <aside class="l-aside">Aside</aside>
+      <main class="l-main">Main</main>
     </section>
   </section>
   </textarea>
@@ -69,11 +69,11 @@ import CodePreview from '../../src/app_components/CodePreview.vue';
 <ClientOnly><CodePreview class="mt-15">
 <textarea lang="html">
 
-  <section class="nt-container">
-    <aside class="nt-aside">Aside</aside>
-    <section class="nt-container nt-layout-vertical">
-      <header class="nt-header">Header</header>
-      <main class="nt-main">Main</main>
+  <section class="l-container">
+    <aside class="l-aside">Aside</aside>
+    <section class="l-container l-layout-vertical">
+      <header class="l-header">Header</header>
+      <main class="l-main">Main</main>
     </section>
   </section>
   </textarea>
@@ -84,10 +84,10 @@ import CodePreview from '../../src/app_components/CodePreview.vue';
 <ClientOnly><CodePreview class="mt-15">
 <textarea lang="html">
 
-  <section class="nt-container nt-layout-vertical">
-    <header class="nt-header">Header</header>
-    <main class="nt-main">Main</main>
-    <footer class="nt-footer">Footer</footer>
+  <section class="l-container l-layout-vertical">
+    <header class="l-header">Header</header>
+    <main class="l-main">Main</main>
+    <footer class="l-footer">Footer</footer>
   </section>
   </textarea>
 </CodePreview></ClientOnly>
@@ -99,14 +99,14 @@ import CodePreview from '../../src/app_components/CodePreview.vue';
 <ClientOnly><CodePreview>
 <textarea lang="html">
 
-  <section class="nt-container nt-layout-vertical">
-    <header class="nt-header">
-      <a href="#">NEATUI</a>
+  <section class="l-container l-layout-vertical">
+    <header class="l-header">
+      <a href="#">LitosUI</a>
       <div>登录用户</div>
     </header>
-    <section class="nt-container">
-      <aside class="nt-aside">Aside</aside>
-      <main class="nt-main">Main</main>
+    <section class="l-container">
+      <aside class="l-aside">Aside</aside>
+      <main class="l-main">Main</main>
     </section>
   </section>
   </textarea>
@@ -116,8 +116,8 @@ import CodePreview from '../../src/app_components/CodePreview.vue';
 
 ### 样式变量
 
-| 名称                 | 描述       | 默认值                          |
-| -------------------- | ---------- | ------------------------------- |
-| `--nt-header-height` | header高度 | `50px`                          |
-| `--nt-aside-width`   | 侧边栏宽度 | `240px`                         |
-| `--nt-footer-height` | 底栏高度   | `var(--nt-header-height, 50px)` |
+| 名称                | 描述       | 默认值                         |
+| ------------------- | ---------- | ------------------------------ |
+| `--l-header-height` | header高度 | `50px`                         |
+| `--l-aside-width`   | 侧边栏宽度 | `240px`                        |
+| `--l-footer-height` | 底栏高度   | `var(--l-header-height, 50px)` |
