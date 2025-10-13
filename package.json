@@ -1,7 +1,7 @@
 {
   "name": "litos-ui-vue",
   "description": "基于 Vue3 的 UI 组件库",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "g:c": "node scripts/index.js template",
@@ -16,7 +16,6 @@
     "@eslint/js": "^9.37.0",
     "@eslint/markdown": "^7.4.0",
     "@floating-ui/dom": "^1.7.4",
-    "@floating-ui/vue": "^1.1.9",
     "@tanstack/vue-table": "^8.21.3",
     "@types/node": "^24.7.1",
     "@vitejs/plugin-vue": "^6.0.1",
@@ -38,8 +37,12 @@
     "vue-tsc": "^3.1.1"
   },
   "peerDependencies": {
+    "@floating-ui/dom": "^1.7.4",
+    "@tanstack/vue-table": "^8.21.3",
     "ph-utils": "^0.16.3",
-    "vue": "^3.5.22"
+    "qrcode-generator-es": "^1.1.4",
+    "vue": "^3.5.22",
+    "vue-router": "^4.5.1"
   },
   "files": [
     "lib",

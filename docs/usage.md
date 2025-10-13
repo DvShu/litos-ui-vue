@@ -21,18 +21,19 @@ npm install unplugin-vue-components unplugin-auto-import litosui-unplugin-resolv
 在 `vite.config.ts` 的 `plugins` 添加如下代码：
 
 ```ts
+import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
-import LitosUiResolver from 'litosui-unplugin-resolver';
+import { litosUIVueResolver } from 'litosui-unplugin-resolver';
 
 plugins: [
   // ...
   AutoImport({
-    resolvers: [LitosUiResolver()],
+    resolvers: [litosUIVueResolver()],
     dts: 'src/auto-imports.d.ts',
   }),
   Components({
     dts: 'src/components.d.ts',
-    resolvers: [LitosUiResolver()],
+    resolvers: [litosUIVueResolver()],
   }),
 ];
 ```
@@ -106,7 +107,7 @@ import './style.css';
 比如想修改 `Button` 样式, 只需要给根节点添加一个样式，例如: `#app`；然后就能修改样式，如下：
 
 ```css
-#app .nt-button {
+#app .l-button {
   background-color: red;
 }
 ```
