@@ -59,7 +59,7 @@
 
 你可以自定义加载中组件的文字，背景颜色。
 
-在绑定了 `v-loading` 指令的元素上添加 `nt-loading-text` 属性，其值会被渲染为加载文案，并显示在加载图标的下方；将其设置为空字符串可以用于取消文本。`nt-loading-background` 用来设定背景色值。
+在绑定了 `v-loading` 指令的元素上添加 `l-loading-text` 属性，其值会被渲染为加载文案，并显示在加载图标的下方；将其设置为空字符串可以用于取消文本。`l-loading-background` 用来设定背景色值。
 
 <ClientOnly>
   <CodePreview>
@@ -67,8 +67,8 @@
   <div
     class="loading-demo"
     v-loading="loading"
-    nt-loading-text="loading……"
-    nt-loading-background="rgba(255, 255, 255, .9)"
+    l-loading-text="loading……"
+    l-loading-background="rgba(255, 255, 255, .9)"
   >
     内容加载区域
   </div>
@@ -77,8 +77,8 @@
     <div
       class="loading-demo"
       v-loading="loading"
-      nt-loading-text="loading……"
-      nt-loading-background="rgba(255, 255, 255, .9)"
+      l-loading-text="loading……"
+      l-loading-background="rgba(255, 255, 255, .9)"
     >
       内容加载区域
     </div>
@@ -217,5 +217,5 @@ loadingInstance2.close();
 | 字段 | 说明 | 类型 |
 | --- | --- | --- |
 | `v-loading` | 是否显示加载组件 | `boolean` |
-| `nt-loading-text` | 显示在加载图标下方的加载文案 | `string` |
-| `nt-loading-background` | 遮罩层背景色 | `string` |
+| `l-loading-text` | 显示在加载图标下方的加载文案 | `string` |
+| `l-loading-background` | 遮罩层背景色 | `string` |

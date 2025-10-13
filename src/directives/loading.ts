@@ -7,18 +7,18 @@ function addLoading(
   modifiers: Record<string, boolean | string>,
   arg?: string,
 ) {
-  if (el.classList.contains('nt-loading')) return;
+  if (el.classList.contains('l-loading')) return;
   let $mask: HTMLElement;
   if (modifiers.fullscreen) {
     // 全屏组件唯一
-    $mask = elem('#nt-loading-mask')[0];
+    $mask = elem('#l-loading-mask')[0];
     if ($mask != null) return;
   }
-  el.classList.add('nt-loading');
+  el.classList.add('l-loading');
   $mask = document.createElement('div');
-  $mask.className = 'nt-loading-mask';
+  $mask.className = 'l-loading-mask';
 
-  let bg = el.getAttribute('nt-loading-background');
+  let bg = el.getAttribute('l-loading-background');
   if (bg == null) {
     bg = modifiers.bg as string;
   }
@@ -27,10 +27,10 @@ function addLoading(
   }
 
   const $spinner = document.createElement('div');
-  $spinner.className = 'nt-loading-spinner';
+  $spinner.className = 'l-loading-spinner';
 
   if (arg === 'bar') {
-    $mask.classList.add('nt-loading-bar');
+    $mask.classList.add('l-loading-bar');
   } else {
     const $circular = document.createElementNS(
       'http://www.w3.org/2000/svg',
@@ -50,7 +50,7 @@ function addLoading(
     $circular.appendChild($path);
     $spinner.appendChild($circular);
 
-    let text = el.getAttribute('nt-loading-text');
+    let text = el.getAttribute('l-loading-text');
     if (text == null) {
       text = modifiers.text as string;
     }
@@ -59,7 +59,7 @@ function addLoading(
     }
     if (text !== '' && text !== 'false' && text !== '0') {
       const $text = document.createElement('p');
-      $text.className = 'nt-loading-text';
+      $text.className = 'l-loading-text';
       $text.textContent = text;
       $spinner.appendChild($text);
     }
@@ -69,19 +69,19 @@ function addLoading(
 
   // 全屏加载
   if (modifiers.fullscreen) {
-    const fullClasses = ['nt-loading-fullscreen'];
+    const fullClasses = ['l-loading-fullscreen'];
     if (modifiers.unlock !== true) {
-      fullClasses.push('nt-loading-lock');
+      fullClasses.push('l-loading-lock');
     }
     el.classList.add(...fullClasses);
     // 全屏保证唯一, 设置id用于区分
-    $mask.id = 'nt-loading-mask';
+    $mask.id = 'l-loading-mask';
   }
   el.appendChild($mask);
 
   setTimeout(() => {
     if (arg === 'bar') {
-      $mask.classList.add('nt-loading-bar--start');
+      $mask.classList.add('l-loading-bar--start');
     } else {
       $mask.style.opacity = '1';
     }
@@ -94,15 +94,15 @@ function removeLoading(
   arg?: string,
 ) {
   const selectorPrefix = modifiers.fullscreen ? '#' : '.';
-  let $mask = elem(`${selectorPrefix}nt-loading-mask`, el)[0];
+  let $mask = elem(`${selectorPrefix}l-loading-mask`, el)[0];
   if ($mask) {
     function transitionEnd() {
       el.classList.remove(
-        'nt-loading',
-        'nt-loading-lock',
-        'nt-loading-fullscreen',
-        'nt-loading-bar--finish',
-        'nt-loading-bar--start',
+        'l-loading',
+        'l-loading-lock',
+        'l-loading-fullscreen',
+        'l-loading-bar--finish',
+        'l-loading-bar--start',
       );
       if ($mask != null) {
         el.removeChild($mask);
@@ -117,7 +117,7 @@ function removeLoading(
       { once: true },
     );
     if (arg === 'bar') {
-      el.classList.add('nt-loading-bar--finish');
+      el.classList.add('l-loading-bar--finish');
     } else {
       $mask.style.opacity = '0';
     }
