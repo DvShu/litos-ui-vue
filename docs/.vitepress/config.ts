@@ -135,6 +135,10 @@ export default defineConfig({
             text: 'Select 选择器',
             link: '/components/select',
           },
+          {
+            text: 'Check 选择',
+            link: '/components/check',
+          },
         ],
       },
       {

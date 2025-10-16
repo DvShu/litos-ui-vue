@@ -42,6 +42,8 @@ export { default as ImagePreview } from './components/ImagePreview.vue';
 export { default as SelectOri } from './components/SelectOri.vue';
 export { default as DatePickerOri } from './components/DatePickerOri.vue';
 export { default as ColorPicker } from './components/ColorPicker.vue';
+export { default as Select } from './components/Select.vue';
+export { default as Check } from "./components/check/Check.vue";
 
 export { default as Table } from './components/table/Table.vue';
 export { default as TanstackTable } from './components/table/TanstackTable.vue';
@@ -85,4 +87,4 @@ export { default as ThemeSelect } from './components/theme/ThemeSelect.vue';
 export { default as ThemeSwitch } from './components/theme/ThemeSwitch.vue';
 export { default as ThemeRadio } from './components/theme/ThemeRadio.vue';
 export { default as ThemeColor } from './components/theme/ThemeColor.vue';
-export { default as Select } from './components/Select.vue';
+

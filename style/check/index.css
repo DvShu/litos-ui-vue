@@ -1,0 +1,12 @@
+.l-check {
+  display: inline-grid;
+  gap: 5px;
+  grid-template-columns: auto auto;
+  position: relative;
+}
+
+.l-check__inner {
+  position: absolute;
+  top: -99999px;
+  left: -99999px;
+}
