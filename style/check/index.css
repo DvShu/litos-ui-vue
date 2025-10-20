@@ -1,12 +1,64 @@
 .l-check {
+  --l-check-size: 16px;
+  --l-check-font-size: 14px;
   display: inline-grid;
-  gap: 5px;
+  width: auto;
+  gap: 7px;
   grid-template-columns: auto auto;
-  position: relative;
+  align-items: center;
+  font-size: var(--l-check-font-size);
+  cursor: pointer;
+  vertical-align: middle;
 }
 
-.l-check__inner {
+.l-check:hover .l-check--input {
+  border-color: var(--l-primary-color-light1);
+}
+
+.l-check--checked .l-check--input {
+  background-color: var(--l-primary-color);
+  border-color: var(--l-primary-color);
+}
+.l-check--checked .l-check--inner {
+  background-color: #ffffff;
+}
+
+.l-check--input {
+  display: inline-flex;
+  width: var(--l-check-size);
+  height: var(--l-check-size);
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #d9d9d9;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  transition:
+    border-color 0.3s,
+    background-color 0.3s;
+}
+
+.l-check--original {
+  margin: 0;
   position: absolute;
-  top: -99999px;
-  left: -99999px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.l-check--inner {
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.3s;
+}
+
+/* 复选框 */
+.l-check--checkbox .l-check--input {
+  border-radius: 3px;
 }
