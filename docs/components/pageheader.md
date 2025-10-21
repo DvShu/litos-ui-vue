@@ -17,13 +17,13 @@
   <textarea lang="vue-html">
   <lv-page-header title="标题" sub-title="副标题">
     <template #extra>
-      <lt-more-icon />
+      <lv-more-icon />
     </template>
   </lv-page-header>
   <hr />
   <lv-page-header title="标题" title-align="center" height="44px">
     <template #extra>
-      <lt-more-icon />
+      <lv-more-icon />
     </template>
   </lv-page-header>
   </textarea>

@@ -9,13 +9,17 @@
   font-size: var(--l-check-font-size);
   cursor: pointer;
   vertical-align: middle;
+  line-height: 1;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .l-check:hover .l-check--input {
   border-color: var(--l-primary-color-light1);
 }
 
-.l-check--checked .l-check--input {
+.l-check--checked .l-check--input,
+.l-check--indeterminate .l-check--input {
   background-color: var(--l-primary-color);
   border-color: var(--l-primary-color);
 }
@@ -40,12 +44,9 @@
 }
 
 .l-check--original {
-  margin: 0;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   opacity: 0;
   cursor: pointer;
 }
@@ -55,10 +56,107 @@
   height: 40%;
   border-radius: 50%;
   background-color: transparent;
-  transition: background-color 0.3s;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+
+.l-check--label {
+  display: inline-flex;
+  align-items: center;
+  color: initial;
+  background-color: transparent;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
 }
 
 /* 复选框 */
 .l-check--checkbox .l-check--input {
-  border-radius: 3px;
+  border-radius: 2px;
+}
+
+.l-check--checkbox .l-check--inner {
+  border-radius: 1px;
+  width: calc(var(--l-check-size) * 0.6);
+  height: calc(var(--l-check-size) * 0.3);
+  display: block;
+  border: solid 2px transparent;
+  border-right: none;
+  border-top: none;
+  transform: rotate(-45deg);
+  transition: border-color 0.2s ease-in-out;
+  margin-top: -20%;
+}
+
+.l-check--checkbox.l-check--checked .l-check--inner {
+  background-color: transparent;
+  border-color: #ffffff;
+}
+
+/* 复选框中间状态 */
+.l-check--checkbox.l-check--indeterminate .l-check--inner {
+  width: calc(var(--l-check-size) * 0.6);
+  height: 2px;
+  background-color: #ffffff;
+  transform: rotate(0deg);
+  margin-top: 0;
+  border: none;
+}
+
+/* 禁用状态 */
+.l-check--disabled {
+  color: var(--l-disabled-color, #e6e6e6);
+  cursor: not-allowed;
+}
+.l-check--disabled .l-check--input,
+.l-check--disabled .l-check--original {
+  cursor: not-allowed;
+}
+.l-check--disabled .l-check--input,
+.l-check--disabled:hover .l-check--input {
+  border-color: var(--l-disabled-color, #e6e6e6);
+}
+
+/** 选择框组 */
+.l-check-group {
+  --l-check-group-gap: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.l-check-group .l-check:not(:first-child) {
+  margin-left: var(--l-check-group-gap, 0);
+}
+
+/* 按钮组 */
+.l-check--button .l-check--input {
+  display: none;
+}
+.l-check--button {
+  height: var(--l-form-control-height, 32px);
+  gap: 0;
+}
+.l-check--button .l-check--label {
+  height: var(--l-form-control-height, 32px);
+  padding: 0 15px;
+  border: 1px solid #c0c4cc;
+  border-left-width: 0;
+  margin-left: 0;
+}
+.l-check--button:first-child .l-check--label {
+  border-left-width: 1px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.l-check--button:last-child .l-check--label {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.l-check--button.l-check--checked .l-check--label {
+  background-color: var(--l-primary-color);
+  border-top-color: var(--l-primary-color);
+  border-bottom-color: var(--l-primary-color);
+  border-left-color: var(--l-primary-color);
+  color: #fff;
 }
