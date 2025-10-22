@@ -38,7 +38,7 @@ export default defineComponent({
     label: String,
   },
   emits: ['change', 'update:modelValue'],
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
     const { checkedList, updateCheck, name, type, appearance } = inject<any>(
       CHECK_KEY,
       {},
@@ -48,7 +48,6 @@ export default defineComponent({
       const target = e.target as HTMLInputElement;
       const checked = target.checked;
       const value = props.value == null ? checked : props.value;
-      console.log(value);
       if (updateCheck) {
         updateCheck(value);
       }
@@ -80,7 +79,7 @@ export default defineComponent({
             'l-check',
             `l-check--${type || props.type}`,
             `l-check--${appearance || props.appearance}`,
-            isCheck.value && !props.indeterminate ? 'l-check--checked' : '',
+            isCheck.value ? 'l-check--checked' : '',
             props.indeterminate ? 'l-check--indeterminate' : '',
             props.disabled ? 'l-check--disabled' : '',
           ],
@@ -98,7 +97,11 @@ export default defineComponent({
           h('span', { class: 'l-check--input' }, [
             h('span', { class: 'l-check--inner' }),
           ]),
-          h('span', { class: 'l-check--label' }, props.label),
+          h(
+            'span',
+            { class: 'l-check--label' },
+            slots.default ? slots.default() : props.label,
+          ),
         ],
       );
   },
