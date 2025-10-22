@@ -1,0 +1,9 @@
+import{n as i}from"./chunks/theme.DrcBp2Zx.js";import{B as r,c as s,o as _,at as n,G as a,w as o,j as t}from"./chunks/framework.DUND-OMv.js";const P=JSON.parse('{"title":"FloatingPopover","description":"","frontmatter":{},"headers":[],"relativePath":"components/floating_popover.md","filePath":"components/floating_popover.md","lastUpdated":1760171877000}'),d={name:"components/floating_popover.md"},h=Object.assign(d,{setup(m){return(u,e)=>{const p=r("CodePreview"),l=r("ClientOnly");return _(),s("div",null,[e[3]||(e[3]=n('<h1 id="floatingpopover" tabindex="-1">FloatingPopover <a class="header-anchor" href="#floatingpopover" aria-label="Permalink to &quot;FloatingPopover&quot;">​</a></h1><p>基于 <a href="https://floating-ui.com/docs/getting-started" target="_blank" rel="noreferrer">floating-u</a> 实现的 <code>popover</code> 组件。</p><h2 id="演示" tabindex="-1">演示 <a class="header-anchor" href="#演示" aria-label="Permalink to &quot;演示&quot;">​</a></h2><h3 id="基础使用" tabindex="-1">基础使用 <a class="header-anchor" href="#基础使用" aria-label="Permalink to &quot;基础使用&quot;">​</a></h3><p>鼠标悬浮显示浮窗</p>',5)),a(l,null,{default:o(()=>[a(p,null,{preview:o(()=>[a(i,null,{trigger:o(()=>[...e[0]||(e[0]=[t("a",null,"悬浮",-1)])]),default:o(()=>[e[1]||(e[1]=t("span",null,"悬浮内容",-1))]),_:1})]),default:o(()=>[e[2]||(e[2]=t("textarea",{lang:"vue"},`  <template>
+    <lv-floating-popover>
+      <template #trigger>
+        <a>悬浮</a>
+      </template>
+      <span>悬浮内容</span>
+    </lv-floating-popover>
+  </template>
+  `,-1))]),_:1})]),_:1}),e[4]||(e[4]=n('<h2 id="api" tabindex="-1">API <a class="header-anchor" href="#api" aria-label="Permalink to &quot;API&quot;">​</a></h2><h3 id="popover-props" tabindex="-1">Popover Props <a class="header-anchor" href="#popover-props" aria-label="Permalink to &quot;Popover Props&quot;">​</a></h3><p><a href="/litos-ui-vue/components/popover#popover-props">同 Popover Props 相同</a></p>',3))])}}});export{P as __pageData,h as default};

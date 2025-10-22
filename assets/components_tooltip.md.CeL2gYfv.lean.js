@@ -1,0 +1,4 @@
+import{v as i}from"./chunks/theme.DrcBp2Zx.js";import{B as a,c as s,o as d,at as l,G as e,w as o,j as r,k as _}from"./chunks/framework.DUND-OMv.js";const T=JSON.parse('{"title":"Tooltip 文字提示","description":"","frontmatter":{},"headers":[],"relativePath":"components/tooltip.md","filePath":"components/tooltip.md","lastUpdated":1760171877000}'),h={name:"components/tooltip.md"},b=Object.assign(h,{setup(c){return(u,t)=>{const n=a("CodePreview"),p=a("ClientOnly");return d(),s("div",null,[t[2]||(t[2]=l("",7)),e(p,null,{default:o(()=>[e(n,null,{preview:o(()=>[e(_(i),{content:"提示内容"},{default:o(()=>[...t[0]||(t[0]=[r("span",null,"显示提示",-1)])]),_:1})]),default:o(()=>[t[1]||(t[1]=r("textarea",{lang:"vue-html"},`  <lv-tooltip content="提示内容">
+      <span>显示提示</span>
+  </lv-tooltip>
+  `,-1))]),_:1})]),_:1}),t[3]||(t[3]=l("",5))])}}});export{T as __pageData,b as default};
