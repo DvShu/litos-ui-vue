@@ -1,20 +1,30 @@
-.l-message {
+.l-message-wrapper {
   position: fixed;
-  left: 50%;
-  top: 20px;
-  padding: 10px;
-  transform: translate3d(-50%, 0, 0);
-  transition:
-    opacity 0.3s,
-    transform 0.3s,
-    top 0.3s;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  pointer-events: none;
+  padding-top: 10px;
+}
+
+.l-message {
+  padding: 10px;
+  display: inline-flex;
   align-items: center;
   border-radius: 5px;
   font-size: 14px;
   background: #f0faff;
   color: var(--l-primary-color);
   border: 1px solid #d4eeff;
+  margin-top: 10px;
+  box-sizing: border-box;
+  pointer-events: auto;
 }
 .l-message .l-message-icon {
   margin-right: 5px;
@@ -34,15 +44,20 @@
   color: var(--l-warn-color);
   border-color: #ffe7a3;
 }
-.l-message-container {
-  display: flex;
-  align-items: center;
-}
 
+/* 动画 */
+.l-message-fade-enter-active,
+.l-message-fade-leave-active {
+  transition: all 0.3s;
+}
 .l-message-fade-enter-from,
 .l-message-fade-leave-to {
   opacity: 0;
-  transform: translate3d(-50%, -100%, 0);
+  transform: translateY(-20px);
+}
+.l-message-fade-leave-active {
+  position: absolute;
+  top: 100%;
 }
 
 @media screen and (max-width: 768px) {

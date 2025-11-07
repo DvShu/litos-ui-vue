@@ -1,114 +1,69 @@
 import { h, render } from 'vue';
 import type { VNode } from 'vue';
-import MessageTemplate from './index.vue';
+import MessageTemplate from './MessageList.vue';
+import type { MessageType, MessageOption, ShowMessageInstance } from './types';
 
-const messageFns = ['info', 'success', 'error', 'warn', 'show'];
-const instances: VNode[] = []; // 保存所有的消息体
+let instance: VNode | null = null;
 let seed = 0; // 用于构建多个消息时，构建消息的id，避免重复
 
-/** 消息配置 */
-interface MessageOption {
-  /** 显示时间，单位为毫秒，默认为：3000。 设为 0 则不会自动关闭 */
-  duration?: number;
-  /** 显示的消息 */
-  message: string;
-  /** 消息类型：error、warning、success、info */
-  type?: string;
-  /** 宽度 */
-  width?: string;
-  /** 自定义类名 */
-  'custom-class'?: string;
-}
+function createInstance() {
+  if (!instance) {
+    let container = document.createElement('div');
+    container.className = 'l-message-wrapper';
+    document.body.appendChild(container);
 
-interface MessageInstance {
-  (option: string | MessageOption): string;
-  info: (msg: string | MessageOption) => string;
-  warn: (msg: string | MessageOption) => string;
-  success: (msg: string | MessageOption) => string;
-  error: (msg: string | MessageOption) => string;
-  show: (msg: string | MessageOption) => string;
-  close: (id: string) => void;
-  [index: string]: any;
-}
-
-/** 关闭消息 */
-function close(id: string) {
-  // 查询需要删除的消息节点
-  const idx = instances.findIndex((vm) => {
-    return vm.component != null && vm.component.props.id === id;
-  });
-  if (idx === -1) return;
-  // 从消息列表中移除消息
-  const removedVm = instances.splice(idx, 1)[0];
-  if (removedVm == null) return;
-  let removedHeight = 15;
-  if (removedVm.el != null) {
-    removedHeight = removedVm.el.offsetHeight;
-  }
-  const len = instances.length;
-  if (len === 0) return;
-  // 消息移除后，重新构建后续消息的 top
-  for (let i = idx; i < len; i++) {
-    const instance = instances[i];
-    if (instance.el != null && instance.component != null) {
-      const offset = parseInt(instance.el.style.top, 10) - removedHeight - 15;
-      instance.component.props.offset = offset;
-    }
+    instance = h(MessageTemplate, {
+      onEmpty: () => {
+        instance = null;
+        render(null, container);
+        container.remove();
+        container = undefined as any;
+      },
+    });
+    render(instance, container);
   }
 }
 
-const Message: MessageInstance = ((option: string | MessageOption) => {
-  // 构建一个新的节点用来渲染提示信息
-  let container = document.createElement('div');
-  // 计算消息的位置
-  let offset = 15;
-  for (const vm of instances) {
-    if (vm.el != null) {
-      offset += vm.el.offsetHeight + 15;
-    }
+function addMessage(option: MessageOption | string, type?: MessageType) {
+  createInstance();
+  const opts = typeof option === 'string' ? { content: option } : option;
+  opts.id = opts.id || `l-message${++seed}`;
+  if (opts.duration == null) {
+    opts.duration = 3000;
   }
-
-  // 消息id
-  const id = `message${++seed}`;
-  const props: any = typeof option === 'string' ? { message: option } : option;
-  props.id = id;
-  props.offset = offset;
-  props.onClose = () => {
-    close(id);
-  };
-  props.onDestroy = () => {
-    // 动画结束后，节点已经隐藏，同时将节点移除
-    render(null, container);
-    container = null as any;
-  };
-
-  const vm = h(MessageTemplate, props);
-  render(vm, container);
-  instances.push(vm);
-  document.body.appendChild(container.firstElementChild as any);
-  return id;
-}) as any;
-
-for (const type of messageFns) {
-  Message[type] = (options: string | MessageOption) => {
-    const opts: MessageOption =
-      typeof options === 'string' ? { message: options } : options;
-    opts.type = type as any;
-    if (opts.type === 'show') {
-      opts.type = 'info';
-    }
-    return Message(opts);
-  };
+  opts.type = type || opts.type || 'info';
+  if (instance && instance.component) {
+    (instance.component as any).exposed.insertMessage(opts);
+  }
+  return opts.id;
 }
 
-/** 手动关闭消息 */
-Message.close = (id: string) => {
-  const ist = instances.find((vm) => {
-    return vm.component != null && vm.component.props.id === id;
-  });
-  if (ist != null) {
-    (ist.component as any).exposed.close();
+function removeMessage(msgId: string) {
+  if (instance && instance.component) {
+    (instance.component as any).exposed.removeMessage(msgId);
   }
+}
+
+function closeAll() {
+  if (instance && instance.component) {
+    (instance.component as any).exposed.removeAllMessages();
+  }
+}
+
+function updateMessage(id: string, message: MessageOption) {
+  if (instance && instance.component) {
+    (instance.component as any).exposed.updateMessage(id, message);
+  }
+}
+
+export default {
+  show: (option: MessageOption | string) => addMessage(option),
+  info: (option: MessageOption | string) => addMessage(option, 'info'),
+  success: (option: MessageOption | string) => addMessage(option, 'success'),
+  error: (option: MessageOption | string) => addMessage(option, 'error'),
+  warn: (option: MessageOption | string) => addMessage(option, 'warn'),
+  loading: (option: MessageOption | string) => addMessage(option, 'loading'),
+  close: removeMessage,
+  closeAll,
+  update: updateMessage,
 };
-
-export default Message;
