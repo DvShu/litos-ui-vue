@@ -1,7 +1,7 @@
 import { h, render } from 'vue';
 import type { VNode } from 'vue';
 import MessageTemplate from './MessageList.vue';
-import type { MessageType, MessageOption, ShowMessageInstance } from './types';
+import type { MessageType, MessageOption } from './types';
 
 let instance: VNode | null = null;
 let seed = 0; // 用于构建多个消息时，构建消息的id，避免重复
