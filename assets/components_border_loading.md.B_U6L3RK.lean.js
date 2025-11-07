@@ -1,0 +1,21 @@
+import{B as s}from"./chunks/theme.CQafP7Fx.js";import{p,B as u,c as r,o as i,au as f,G as t,j as o,w as a,a5 as m,a as n,k as v}from"./chunks/framework.B8v7S4uB.js";const _={class:"loading-demo"},b={class:"loading-demo"},C=JSON.parse('{"title":"BorderLoadingDirective 边框加载动画","description":"","frontmatter":{},"headers":[],"relativePath":"components/border_loading.md","filePath":"components/border_loading.md","lastUpdated":1729613669000}'),h={name:"components/border_loading.md"},q=Object.assign(h,{setup(x){const c=p(!0),g=p(15);return(P,e)=>{const l=u("CodePreview"),d=u("ClientOnly");return i(),r("div",null,[e[4]||(e[4]=f("",5)),t(d,null,{default:a(()=>[t(l,null,{preview:a(()=>[m((i(),r("div",_,[...e[0]||(e[0]=[n(" 内容加载区域 ",-1)])])),[[v(s),c.value]])]),default:a(()=>[e[1]||(e[1]=o("textarea",{lang:"vue"},`  <script setup>
+    import { ref } from 'vue';
+    //-
+    const loading = ref(true);
+  <\/script>
+  <template>
+    <div class="loading-demo" v-border-loading="loading">
+      内容加载区域
+    </div>
+  </template>
+`,-1))]),_:1})]),_:1}),e[5]||(e[5]=o("h3",{id:"更改动画时长",tabindex:"-1"},[n("更改动画时长 "),o("a",{class:"header-anchor",href:"#更改动画时长","aria-label":'Permalink to "更改动画时长"'},"​")],-1)),e[6]||(e[6]=o("p",null,[n("只需要将 "),o("code",null,"v-border-loading"),n(" 指向一个数字即可。")],-1)),t(d,null,{default:a(()=>[t(l,null,{preview:a(()=>[m((i(),r("div",b,[...e[2]||(e[2]=[n(" 内容加载区域 ",-1)])])),[[v(s),g.value]])]),default:a(()=>[e[3]||(e[3]=o("textarea",{lang:"vue"},`  <script setup>
+    import { ref } from 'vue';
+    //-
+    const loading1 = ref(15)
+  <\/script>
+  <template>
+    <div class="loading-demo" v-border-loading="loading1">
+      内容加载区域
+    </div>
+  </template>
+  `,-1))]),_:1})]),_:1}),e[7]||(e[7]=o("blockquote",null,[o("p",null,[n("指令需要设置相对定位: "),o("code",null,"position: relative")])],-1))])}}});export{C as __pageData,q as default};
