@@ -1,0 +1,84 @@
+.l-carousel {
+  display: block;
+  width: 100%;
+  height: 180px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.l-carousel-container {
+  min-width: 900%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+}
+
+.l-carousel-item {
+  width: var(--carousel-width, 100%);
+  height: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+.l-carousel--nav {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+.l-carousel--nav-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  background-color: rgba(41, 45, 61, 0.3);
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  transition: background-color 0.3s, opacity 0.3s, transform 0.3s;
+}
+.l-carousel--nav-button:hover {
+  background-color: rgba(41, 45, 61, 0.4);
+}
+.l-carousel--nav-button:active {
+  background-color: rgba(41, 45, 61, 0.5);
+}
+
+/* 箭头显示/隐藏过渡效果 */
+.l-carousel-nav-enter-active,
+.l-carousel-nav-leave-active {
+  transition: opacity 0.3s;
+}
+
+.l-carousel-nav-enter-from,
+.l-carousel-nav-leave-to {
+  opacity: 0;
+}
+
+.l-carousel-nav-enter-from .l-carousel--nav-prev,
+.l-carousel-nav-leave-to .l-carousel--nav-prev {
+  transform: translateX(-10px);
+  opacity: 0;
+}
+.l-carousel-nav-enter-from .l-carousel--nav-next,
+.l-carousel-nav-leave-to .l-carousel--nav-next {
+  transform: translateX(10px);
+  opacity: 0;
+}
