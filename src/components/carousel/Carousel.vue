@@ -36,7 +36,7 @@ export default defineComponent({
     let allIndex = -1;
     const rootEl = useTemplateRef<HTMLElement>('root');
     const containerEl = useTemplateRef<HTMLDivElement>('container');
-    let currentIndex = props.currentIndex || 0;
+    let currentIndex = props.loop ? props.currentIndex + 1 : props.currentIndex;
     let clientWidth = -1; // 容器宽度
     let tranlateX = 0; // 当前偏移量
     /* 手势 */
@@ -49,8 +49,7 @@ export default defineComponent({
     function initContainerStyle() {
       if (allIndex > 0 && clientWidth > 0 && containerEl.value) {
         let containerStyle = "";
-        const offsetIndex = props.loop ? currentIndex + 1 : currentIndex;
-        const offset = Math.floor(offsetIndex * clientWidth * -1);
+        const offset = Math.floor(currentIndex * clientWidth * -1);
         containerStyle = `transform:translateX(${offset}px);`;
         const containerWidth = Math.floor(clientWidth * (allIndex + 1));
         containerStyle += `min-width:${containerWidth}px;`;
@@ -86,6 +85,87 @@ export default defineComponent({
         initContainerStyle();
       }
     });
+
+    function restoreTranslate() {
+      if (containerEl.value) {
+        containerEl.value.style.transition = "transform 0.3s";
+        requestAnimationFrame(() => {
+          (containerEl.value as any).style.transform = `translateX(${tranlateX}px)`;
+        });
+        containerEl.value.addEventListener(
+          "transitionend",
+          () => {
+            (containerEl.value as any).style.transition = "";
+          },
+          { once: true }
+        );
+      }
+
+    }
+
+    function toggleContent(newIndex: number) {
+      if (containerEl.value) {
+        containerEl.value.style.transition = "transform 0.3s";
+        const offset = Math.floor(newIndex * clientWidth * -1);
+        requestAnimationFrame(() => {
+          (containerEl.value as any).style.transform = `translateX(${offset}px)`;
+        });
+        containerEl.value.addEventListener(
+          "transitionend",
+          () => {
+            (containerEl.value as any).style.transition = "";
+            let o = offset;
+            if (props.loop && newIndex === allIndex + 2) {
+              // 无缝轮播，最右边跳到开头
+              o = Math.floor(clientWidth * -1); // 计算偏移量
+            } else if (props.loop && newIndex === 0) {
+              // 无缝轮播，最左边跳到末尾
+              o = Math.floor(clientWidth * (allIndex - 1) * -1); // 计算偏移量
+            }
+            tranlateX = o;
+            if (o !== offset) {
+              (containerEl.value as any).style.transform = `translateX(${o}px)`;
+            }
+          },
+          { once: true }
+        );
+      }
+      // 重新计算索引
+      if (props.loop && allIndex > 0 && newIndex === allIndex) {
+        currentIndex = 0;
+      } else if (props.loop && allIndex > 0 && newIndex === 0) {
+        currentIndex = allIndex - 2;
+      } else {
+        currentIndex = props.loop ? newIndex - 1 : newIndex;
+      }
+      console.log(currentIndex)
+    }
+
+    function togglePage(page: string) {
+      let nextIndex = currentIndex;
+      if (page === "prev") {
+        nextIndex--;
+        if (nextIndex < 0) {
+          nextIndex = 0;
+        }
+      } else if (page === "next") {
+        nextIndex++;
+        if (nextIndex > allIndex) {
+          nextIndex = allIndex;
+        }
+      } else {
+        const pageNum = Number(page);
+        if (pageNum !== currentIndex) {
+          nextIndex = props.loop ? pageNum + 1 : pageNum;
+        }
+      }
+      if (nextIndex !== currentIndex) {
+        toggleContent(nextIndex);
+      }
+      requestAnimationFrame(() => {
+        // this.#startTimer();
+      });
+    }
 
     function handleMouseenter() {
       if (props.arrows === 'hover') {
@@ -128,9 +208,9 @@ export default defineComponent({
       }
 
       if (page === "cancel") {
-        // this.#restoreTranslate();
+        restoreTranslate();
       } else {
-        // this.#togglePage(page);
+        togglePage(page);
       }
     }
     function handlePointerMove(e: PointerEvent) {
