@@ -1,42 +1,59 @@
 <script lang="ts">
-import { defineComponent, h, ref, useTemplateRef, onMounted, VNode, PropType, Transition, withDirectives, vShow } from "vue";
-import ArrowLeft from "../icon/ArrowLeft.vue";
-import ArrowRight from "../icon/ArrowRight.vue";
-import { shouldEventNext } from 'ph-utils/dom'
+import {
+  defineComponent,
+  h,
+  ref,
+  useTemplateRef,
+  onMounted,
+  VNode,
+  PropType,
+  Transition,
+  withDirectives,
+  vShow,
+} from 'vue';
+import ArrowLeft from '../icon/ArrowLeft.vue';
+import ArrowRight from '../icon/ArrowRight.vue';
+import { shouldEventNext } from 'ph-utils/dom';
 
 export default defineComponent({
-
   props: {
     /** 轮播高度 */
     height: {
       type: String,
-      required: false
+      required: false,
     },
     /** 是否无缝轮播 */
     loop: {
       type: Boolean,
       required: false,
-      default: true
+      default: true,
     },
     /** 箭头显示方式 */
     arrows: {
       type: String as PropType<'always' | 'hover' | 'never'>,
       required: false,
-      default: 'hover'
+      default: 'hover',
     },
     /** 当前索引 */
     currentIndex: {
       type: Number,
       required: false,
-      default: 0
-    }
+      default: 0,
+    },
+    /** 是否展示指示点 */
+    showBullet: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
   },
   setup(props, { slots }) {
-
     let allIndex = -1;
     const rootEl = useTemplateRef<HTMLElement>('root');
     const containerEl = useTemplateRef<HTMLDivElement>('container');
-    let currentIndex = props.loop ? props.currentIndex + 1 : props.currentIndex;
+    let currentIndex = ref(
+      props.loop ? props.currentIndex + 1 : props.currentIndex,
+    );
     let clientWidth = -1; // 容器宽度
     let tranlateX = 0; // 当前偏移量
     /* 手势 */
@@ -48,8 +65,8 @@ export default defineComponent({
 
     function initContainerStyle() {
       if (allIndex > 0 && clientWidth > 0 && containerEl.value) {
-        let containerStyle = "";
-        const offset = Math.floor(currentIndex * clientWidth * -1);
+        let containerStyle = '';
+        const offset = Math.floor(currentIndex.value * clientWidth * -1);
         containerStyle = `transform:translateX(${offset}px);`;
         const containerWidth = Math.floor(clientWidth * (allIndex + 1));
         containerStyle += `min-width:${containerWidth}px;`;
@@ -68,7 +85,11 @@ export default defineComponent({
         const itemsLen = items.length;
         if (props.loop && itemsLen > 1) {
           allIndex = items.length + 1;
-          resItems = [{...items[itemsLen - 1], key: null}, ...items, {...items[0], key: null}]
+          resItems = [
+            { ...items[itemsLen - 1], key: null },
+            ...items,
+            { ...items[0], key: null },
+          ];
         } else {
           allIndex = items.length - 1;
           resItems = items;
@@ -81,41 +102,45 @@ export default defineComponent({
     onMounted(() => {
       if (rootEl.value) {
         clientWidth = rootEl.value.clientWidth;
-        rootEl.value.style.setProperty("--carousel-width", `${rootEl.value.clientWidth}px`);
+        rootEl.value.style.setProperty(
+          '--carousel-width',
+          `${rootEl.value.clientWidth}px`,
+        );
         initContainerStyle();
       }
     });
 
     function restoreTranslate() {
       if (containerEl.value) {
-        containerEl.value.style.transition = "transform 0.3s";
+        containerEl.value.style.transition = 'transform 0.3s';
         requestAnimationFrame(() => {
-          (containerEl.value as any).style.transform = `translateX(${tranlateX}px)`;
+          (containerEl.value as any).style.transform =
+            `translateX(${tranlateX}px)`;
         });
         containerEl.value.addEventListener(
-          "transitionend",
+          'transitionend',
           () => {
-            (containerEl.value as any).style.transition = "";
+            (containerEl.value as any).style.transition = '';
           },
-          { once: true }
+          { once: true },
         );
       }
-
     }
 
     function toggleContent(newIndex: number) {
       if (containerEl.value) {
-        containerEl.value.style.transition = "transform 0.3s";
+        containerEl.value.style.transition = 'transform 0.3s';
         const offset = Math.floor(newIndex * clientWidth * -1);
         requestAnimationFrame(() => {
-          (containerEl.value as any).style.transform = `translateX(${offset}px)`;
+          (containerEl.value as any).style.transform =
+            `translateX(${offset}px)`;
         });
         containerEl.value.addEventListener(
-          "transitionend",
+          'transitionend',
           () => {
-            (containerEl.value as any).style.transition = "";
+            (containerEl.value as any).style.transition = '';
             let o = offset;
-            if (props.loop && newIndex === allIndex + 2) {
+            if (props.loop && newIndex === allIndex) {
               // 无缝轮播，最右边跳到开头
               o = Math.floor(clientWidth * -1); // 计算偏移量
             } else if (props.loop && newIndex === 0) {
@@ -127,39 +152,38 @@ export default defineComponent({
               (containerEl.value as any).style.transform = `translateX(${o}px)`;
             }
           },
-          { once: true }
+          { once: true },
         );
       }
       // 重新计算索引
       if (props.loop && allIndex > 0 && newIndex === allIndex) {
-        currentIndex = 0;
+        currentIndex.value = 1;
       } else if (props.loop && allIndex > 0 && newIndex === 0) {
-        currentIndex = allIndex - 2;
+        currentIndex.value = allIndex - 1;
       } else {
-        currentIndex = props.loop ? newIndex - 1 : newIndex;
+        currentIndex.value = newIndex;
       }
-      console.log(currentIndex)
     }
 
     function togglePage(page: string) {
-      let nextIndex = currentIndex;
-      if (page === "prev") {
+      let nextIndex = currentIndex.value;
+      if (page === 'prev') {
         nextIndex--;
         if (nextIndex < 0) {
           nextIndex = 0;
         }
-      } else if (page === "next") {
+      } else if (page === 'next') {
         nextIndex++;
         if (nextIndex > allIndex) {
           nextIndex = allIndex;
         }
       } else {
         const pageNum = Number(page);
-        if (pageNum !== currentIndex) {
+        if (pageNum !== currentIndex.value) {
           nextIndex = props.loop ? pageNum + 1 : pageNum;
         }
       }
-      if (nextIndex !== currentIndex) {
+      if (nextIndex !== currentIndex.value) {
         toggleContent(nextIndex);
       }
       requestAnimationFrame(() => {
@@ -190,24 +214,23 @@ export default defineComponent({
       const deltaX = e.clientX - startX;
       isDragging = false;
       if (deltaX === 0) return;
-      let page = "cancel";
+      let page = 'cancel';
       // 快速滚动
       if (duration <= 200) {
         if (deltaX >= 20) {
-          page = "prev";
+          page = 'prev';
         } else if (deltaX <= -20) {
-          page = "next";
+          page = 'next';
         }
       } else {
         // 滑动慢速
         if (deltaX >= clientWidth / 2) {
-          page = "prev";
+          page = 'prev';
         } else if (deltaX <= -clientWidth / 2) {
-          page = "next";
+          page = 'next';
         }
       }
-
-      if (page === "cancel") {
+      if (page === 'cancel') {
         restoreTranslate();
       } else {
         togglePage(page);
@@ -221,8 +244,8 @@ export default defineComponent({
       movingT = requestAnimationFrame(() => {
         const deltaX = Math.floor(e.clientX - startX);
         if (!props.loop) {
-          if (deltaX < 0 && currentIndex === allIndex) return;
-          if (deltaX > 0 && currentIndex === 0) return;
+          if (deltaX < 0 && currentIndex.value === allIndex) return;
+          if (deltaX > 0 && currentIndex.value === 0) return;
         }
         const offset = tranlateX + deltaX;
         if (containerEl.value) {
@@ -231,20 +254,28 @@ export default defineComponent({
       });
       e.preventDefault();
     }
-    function handlePointerLeave() {}
-    function handlePointerCancel() {}
 
-    function renderArrowIcon(dir: "prev" | "next" = "prev") {
+    function handlePointerCancel() {
+      if (!isDragging) return;
+      isDragging = false;
+      restoreTranslate();
+    }
+
+    function renderArrowIcon(dir: 'prev' | 'next' = 'prev') {
       return dir === 'prev' ? h(ArrowLeft) : h(ArrowRight);
     }
 
-    function renderNavigationButton(dir: "prev" | "next" = "prev") {
-      return h('button', {
-        class: `l-carousel--nav-button l-carousel--nav-${dir}`,
-        type: 'button',
-        "aria-label": dir,
-        "data-page": dir,
-      }, renderArrowIcon(dir))
+    function renderNavigationButton(dir: 'prev' | 'next' = 'prev') {
+      return h(
+        'button',
+        {
+          class: `l-carousel--nav-button l-carousel--nav-${dir}`,
+          type: 'button',
+          'aria-label': dir,
+          'data-page': dir,
+        },
+        renderArrowIcon(dir),
+      );
     }
 
     function renderNavigation() {
@@ -253,20 +284,46 @@ export default defineComponent({
       }
       const navN = h('div', { class: 'l-carousel--nav' }, [
         renderNavigationButton('prev'),
-        renderNavigationButton('next')
+        renderNavigationButton('next'),
       ]);
       if (props.arrows === 'always') {
         return navN;
       }
-      return h(Transition, { name: 'l-carousel-nav' }, {
-        default: () => withDirectives(h(navN), [[vShow, showArrows.value]])
-      });
+      return h(
+        Transition,
+        { name: 'l-carousel-nav' },
+        {
+          default: () => withDirectives(h(navN), [[vShow, showArrows.value]]),
+        },
+      );
+    }
+
+    function renderBullets() {
+      const max = props.loop ? allIndex - 2 : allIndex;
+      const bullets: VNode[] = [];
+      for (let i = 0; i <= max; i++) {
+        bullets.push(
+          h('div', {
+            class: [
+              'l-carousel--bullet-item',
+              i === currentIndex.value ? 'active' : '',
+            ],
+            'aria-label': `第 ${i + 1} 页`,
+            'data-page': `${i}`,
+          }),
+        );
+      }
+      return h('div', { class: 'l-carousel--bullet' }, bullets);
     }
 
     function handleClick(e: Event) {
-      const [isNext, page] = shouldEventNext(e, "data-page", e.currentTarget as HTMLElement);
+      const [isNext, page] = shouldEventNext(
+        e,
+        'data-page',
+        e.currentTarget as HTMLElement,
+      );
       if (isNext) {
-        console.log(page)
+        togglePage(page);
       }
     }
 
@@ -281,26 +338,33 @@ export default defineComponent({
             onPointerdown: handlePointerDown,
             onPointermove: handlePointerMove,
             onPointerup: handlePointerUp,
-            onPointerleave: handlePointerLeave,
+            onPointerleave: handlePointerCancel,
           },
-          renderItems(slots.default)
-        )
+          renderItems(slots.default),
+        ),
       ];
       if (props.arrows !== 'never') {
         container.push(renderNavigation());
       }
-      return h('div', {
-        class: 'l-carousel',
-        ref: 'root',
-        style: {
-          height: props.height
+      if (props.showBullet) {
+        container.push(renderBullets());
+      }
+      return h(
+        'div',
+        {
+          class: 'l-carousel',
+          ref: 'root',
+          style: {
+            height: props.height,
+          },
+          'data-page': '__stop__',
+          onMouseenter: props.arrows === 'hover' ? handleMouseenter : undefined,
+          onMouseleave: props.arrows === 'hover' ? handleMouseleave : undefined,
+          onClick: handleClick,
         },
-        'data-page': '__stop__',
-        onMouseenter: props.arrows === 'hover' ? handleMouseenter : undefined,
-        onMouseleave: props.arrows === 'hover' ? handleMouseleave : undefined,
-        onClick: handleClick
-      }, container);
-    }
-  }
+        container,
+      );
+    };
+  },
 });
 </script>

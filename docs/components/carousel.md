@@ -26,7 +26,7 @@
   </lv-carousel>
   </textarea>
   <template #preview>
-  <Carousel>
+  <Carousel :loop="true" autoplay>
     <CarouselItem v-for="(item, i) in items" :key="item" :class="['demo-carousel-item', 'carousel' + item]">{{item}}</CarouselItem>
   </Carousel>
   </template>
