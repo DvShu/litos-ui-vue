@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 4px 10px;
-  border-radius: 4px;
+  border-radius: var(--l-form-control-border-radius, 3px);
   gap: 5px;
 }
 .l-select--active,

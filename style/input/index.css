@@ -9,7 +9,7 @@
   transition: border-color 0.3s;
   text-align: inherit;
   padding: 0 5px;
-  border-radius: 3px;
+  border-radius: var(--l-form-control-border-radius, 3px);
   vertical-align: middle;
 }
 .l-input.is-autosize {

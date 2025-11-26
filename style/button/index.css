@@ -28,7 +28,7 @@
   padding: 0 15px;
   line-height: 1;
   height: var(--l-form-control-height, 32px);
-  border-radius: 3px;
+  border-radius: var(--l-form-control-border-radius, 3px);
   font-size: 14px;
   color: var(--l-btn-text-color);
   background: var(--l-btn-background);
