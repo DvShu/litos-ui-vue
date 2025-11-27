@@ -1,15 +1,15 @@
 <template>
-  <RadioGroup v-model="theme">
-    <Radio label="跟随系统" value="auto" type="button" />
-    <Radio label="浅色主题" value="light" type="button" />
-    <Radio label="深色主题" value="dark" type="button" />
-  </RadioGroup>
+  <CheckGroup v-model="theme" type="radio" appearance="button">
+    <Check label="跟随系统" value="auto" />
+    <Check label="浅色主题" value="light" />
+    <Check label="深色主题" value="dark" />
+  </CheckGroup>
 </template>
 
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-import Radio from '../radio/Radio.vue';
-import RadioGroup from '../radio/RadioGroup.vue';
+import Check from '../check/Check.vue';
+import CheckGroup from '../check/CheckGroup.vue';
 import { applyTheme, getTheme } from 'ph-utils/theme';
 
 const theme = ref(getTheme());

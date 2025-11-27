@@ -5,15 +5,19 @@ import {
   ref,
   useTemplateRef,
   onMounted,
+  onUnmounted,
   VNode,
   PropType,
   Transition,
   withDirectives,
   vShow,
+  watch,
 } from 'vue';
 import ArrowLeft from '../icon/ArrowLeft.vue';
 import ArrowRight from '../icon/ArrowRight.vue';
 import { shouldEventNext } from 'ph-utils/dom';
+import AutoPlayTimer from './timer';
+import type { AutoPlayTimerT } from './timer';
 
 export default defineComponent({
   props: {
@@ -46,6 +50,18 @@ export default defineComponent({
       required: false,
       default: true,
     },
+    /** 是否自动播放 */
+    autoplay: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    /** 自动播放间隔时间 */
+    interval: {
+      type: Number,
+      required: false,
+      default: 3000,
+    },
   },
   setup(props, { slots }) {
     let allIndex = -1;
@@ -61,7 +77,15 @@ export default defineComponent({
     let isDragging = false; // 是否正在拖动
     let startTime = 0; // 拖动开始时间
     let movingT = 0; // 滑动定时, 避免抖动
+    let _autoplayTimer: AutoPlayTimerT | null = null;
     const showArrows = ref(false);
+
+    watch(
+      () => props.autoplay,
+      () => {
+        toggerTimer();
+      },
+    );
 
     function initContainerStyle() {
       if (allIndex > 0 && clientWidth > 0 && containerEl.value) {
@@ -107,7 +131,12 @@ export default defineComponent({
           `${rootEl.value.clientWidth}px`,
         );
         initContainerStyle();
+        toggerTimer();
       }
+    });
+
+    onUnmounted(() => {
+      toggerTimer();
     });
 
     function restoreTranslate() {
@@ -125,6 +154,7 @@ export default defineComponent({
           { once: true },
         );
       }
+      startTimer();
     }
 
     function toggleContent(newIndex: number) {
@@ -151,21 +181,22 @@ export default defineComponent({
             if (o !== offset) {
               (containerEl.value as any).style.transform = `translateX(${o}px)`;
             }
+            // 重新计算索引
+            if (props.loop && allIndex > 0 && newIndex === allIndex) {
+              currentIndex.value = 1;
+            } else if (props.loop && allIndex > 0 && newIndex === 0) {
+              currentIndex.value = allIndex - 1;
+            } else {
+              currentIndex.value = newIndex;
+            }
           },
           { once: true },
         );
       }
-      // 重新计算索引
-      if (props.loop && allIndex > 0 && newIndex === allIndex) {
-        currentIndex.value = 1;
-      } else if (props.loop && allIndex > 0 && newIndex === 0) {
-        currentIndex.value = allIndex - 1;
-      } else {
-        currentIndex.value = newIndex;
-      }
     }
 
     function togglePage(page: string) {
+      stopTimer();
       let nextIndex = currentIndex.value;
       if (page === 'prev') {
         nextIndex--;
@@ -180,14 +211,14 @@ export default defineComponent({
       } else {
         const pageNum = Number(page);
         if (pageNum !== currentIndex.value) {
-          nextIndex = props.loop ? pageNum + 1 : pageNum;
+          nextIndex = pageNum;
         }
       }
       if (nextIndex !== currentIndex.value) {
         toggleContent(nextIndex);
       }
       requestAnimationFrame(() => {
-        // this.#startTimer();
+        startTimer();
       });
     }
 
@@ -207,13 +238,17 @@ export default defineComponent({
       startX = e.clientX;
       isDragging = true;
       startTime = Date.now();
+      stopTimer();
     }
     function handlePointerUp(e: PointerEvent) {
       if (!isDragging) return;
       const duration = Date.now() - startTime;
       const deltaX = e.clientX - startX;
       isDragging = false;
-      if (deltaX === 0) return;
+      if (deltaX === 0) {
+        startTimer();
+        return;
+      }
       let page = 'cancel';
       // 快速滚动
       if (duration <= 200) {
@@ -230,6 +265,7 @@ export default defineComponent({
           page = 'next';
         }
       }
+      console.log('up');
       if (page === 'cancel') {
         restoreTranslate();
       } else {
@@ -300,16 +336,14 @@ export default defineComponent({
 
     function renderBullets() {
       const max = props.loop ? allIndex - 2 : allIndex;
+      const curr = props.loop ? currentIndex.value - 1 : currentIndex.value;
       const bullets: VNode[] = [];
       for (let i = 0; i <= max; i++) {
         bullets.push(
           h('div', {
-            class: [
-              'l-carousel--bullet-item',
-              i === currentIndex.value ? 'active' : '',
-            ],
+            class: ['l-carousel--bullet-item', i === curr ? 'active' : ''],
             'aria-label': `第 ${i + 1} 页`,
-            'data-page': `${i}`,
+            'data-page': props.loop ? `${i + 1}` : `${i}`,
           }),
         );
       }
@@ -324,6 +358,32 @@ export default defineComponent({
       );
       if (isNext) {
         togglePage(page);
+      }
+    }
+
+    function startTimer() {
+      if (props.autoplay) {
+        if (!_autoplayTimer) {
+          _autoplayTimer = AutoPlayTimer(() => {
+            togglePage('next');
+          }, props.interval || 3000);
+        }
+        _autoplayTimer.start();
+      }
+    }
+
+    function stopTimer() {
+      if (_autoplayTimer) {
+        _autoplayTimer.stop();
+        _autoplayTimer = null;
+      }
+    }
+
+    function toggerTimer() {
+      if (props.autoplay) {
+        startTimer();
+      } else {
+        stopTimer();
       }
     }
 

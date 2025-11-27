@@ -27,7 +27,7 @@ const props = withDefaults(
   },
 );
 
-const checkList = defineModel({
+const checkList = defineModel<any>({
   default: () => '' as any,
 });
 const emits = defineEmits(['change']);

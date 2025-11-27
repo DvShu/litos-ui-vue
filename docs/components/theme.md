@@ -28,8 +28,8 @@ createApp(App).use(router).mount('#app');
     SunIcon,
     MoonIcon,
     ThemeDefaultIcon,
-    Radio,
-    RadioGroup,
+    Check,
+    CheckGroup,
     ThemeColor
   } from '../../src';
   import SourceCode from '../../src/app_components/SourceCode.vue'
@@ -113,31 +113,31 @@ initTheme().then();
     });
   </script>
   <template>
-    <lv-radio-group v-model="theme">
-      <lv-radio value="auto" type="button">
+    <lv-check-group v-model="theme" type="radio" appearance="button">
+      <lv-check value="auto">
         <lv-theme-default-icon></lv-theme-default-icon>
-      </lv-radio>
-      <lv-radio value="light" type="button">
+      </lv-check>
+      <lv-check value="light">
         <lt-sun-icon></lt-sun-icon>
       </lv-radio>
-      <lv-radio value="dark" type="button">
+      <lv-check value="dark">
         <lt-moon-icon></lt-moon-icon>
-      </lv-radio>
-    </lv-radio-group>
+      </lv-check>
+    </lv-check-group>
   </template>
   </textarea>
   <template #preview>
-  <RadioGroup v-model="theme">
-    <Radio value="auto" type="button">
+  <CheckGroup v-model="theme" type="radio" appearance="button">
+    <Check value="auto">
       <ThemeDefaultIcon></ThemeDefaultIcon>
-    </Radio>
-    <Radio value="light" type="button">
+    </Check>
+    <Check value="light">
       <SunIcon></SunIcon>
-    </Radio>
-    <Radio value="dark" type="button">
+    </Check>
+    <Check value="dark">
       <MoonIcon></MoonIcon>
-    </Radio>
-  </RadioGroup>
+    </Check>
+  </CheckGroup>
   </template>
   </CodePreview>
 </ClientOnly>

@@ -89,11 +89,11 @@ import type {
   Table,
   ColumnSort,
   HeaderGroup,
+  Row,
 } from '@tanstack/vue-table';
 import type { VNode, CSSProperties } from 'vue';
 import { computed, shallowRef, h } from 'vue';
-import Radio from '../radio/Radio.vue';
-import Checkbox from '../checkbox/Checkbox.vue';
+import Check from '../check/Check.vue';
 import Button from '../Button.vue';
 import ArrowRight from '../icon/ArrowRight.vue';
 
@@ -210,7 +210,7 @@ function createColumns(
           colOpts.size = 40;
           if (props.multiSelection === false) {
             colOpts.cell = (({ row }: CellContext<T, unknown>) => {
-              return h(Radio, {
+              return h(Check, {
                 disabled: !row.getCanSelect(),
                 checked: row.getIsSelected(),
                 onChange: (v) => row.toggleSelected(v),
@@ -218,14 +218,16 @@ function createColumns(
             }) as any;
           } else {
             colOpts.header = ({ table }: { table: Table<T> }) => {
-              return h(Checkbox, {
+              return h(Check, {
+                type: 'checkbox',
                 checked: table.getIsAllRowsSelected(),
                 indeterminate: table.getIsSomeRowsSelected(),
                 onChange: (v) => table.toggleAllRowsSelected(v),
               });
             };
             colOpts.cell = (({ row }: CellContext<T, unknown>) => {
-              return h(Checkbox, {
+              return h(Check, {
+                type: 'checkbox',
                 checked: row.getIsSelected(),
                 disabled: !row.getCanSelect(),
                 indeterminate: row.getIsSomeSelected(),
@@ -386,6 +388,11 @@ const props = withDefaults(
       /** 展开行渲染内容 */
       expandedRowRender: (row: T) => VNode | VNode[];
     };
+    getRowId?: (
+      originalRow: T,
+      index: number,
+      parent?: Row<T>,
+    ) => string;
   }>(),
   {
     stripe: true,
@@ -415,6 +422,7 @@ const table = useVueTable<T>({
   },
   columns: cols.value,
   getSubRows: (row) => (row as any).children,
+  getRowId: props.getRowId,
   enableMultiRowSelection: props.multiSelection === true,
   getCoreRowModel: getCoreRowModel(),
   getRowCanExpand: (row) => {
