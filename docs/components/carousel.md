@@ -32,3 +32,18 @@
   </template>
   </CodePreview>
 </ClientOnly>
+
+## API
+
+### Props
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| `loop` | 是否循环播放 | `boolean` | `true` |
+| `autoplay` | 是否自动播放 | `boolean` | `false` |
+| `interval` | 自动播放间隔时间 | `number` | `3000` |
+| `arrow` | 切换箭头显示 | `always`、`hover`、`never` | `always` |
+| `height` | 轮播高度 | `string` | `auto` |
+| `current-index` | 当前轮播项索引 | `number` | `0` |
+| `show-bullet` | 是否显示圆点 | `boolean` | `true` |
+

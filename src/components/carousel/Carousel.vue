@@ -240,6 +240,7 @@ export default defineComponent({
       startTime = Date.now();
       stopTimer();
     }
+
     function handlePointerUp(e: PointerEvent) {
       if (!isDragging) return;
       const duration = Date.now() - startTime;
@@ -265,7 +266,6 @@ export default defineComponent({
           page = 'next';
         }
       }
-      console.log('up');
       if (page === 'cancel') {
         restoreTranslate();
       } else {
