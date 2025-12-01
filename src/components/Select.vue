@@ -338,9 +338,13 @@ export default defineComponent({
           },
           [
             option.render == null
-              ? h('span', option[props.labelField])
+              ? h(
+                  'span',
+                  { class: 'l-select-option-label' },
+                  option[props.labelField],
+                )
               : option.render(option, isSelect, props.modelValue),
-            isSelect ? h(SelectIcon) : undefined,
+            isSelect ? h(SelectIcon, { class: 'l-select-option-selected-icon' }) : undefined,
           ],
         );
       });
@@ -508,7 +512,7 @@ export default defineComponent({
             h(ArrowDown, {
               class: [
                 'l-select--arrow',
-                expand.value ? 'nt-expanded' : undefined,
+                expand.value ? 'l-expanded' : undefined,
               ],
             }),
             showClear.value
@@ -542,7 +546,7 @@ export default defineComponent({
           default: () =>
             h(
               'div',
-              { class: 'l-select-list nt-scrollbar' },
+              { class: 'l-select-list l-scrollbar' },
               h('ul', optionNodes()),
             ),
         },

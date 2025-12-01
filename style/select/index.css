@@ -62,7 +62,7 @@
   transition: transform 0.3s ease-in-out;
   transform: rotate3d(0, 0, 1, 0deg);
 }
-.l-select--arrow.nt-expanded {
+.l-select--arrow.l-expanded {
   transform: rotate3d(0, 0, 1, 180deg);
 }
 .l-select-list {
@@ -97,6 +97,17 @@
 }
 .l-select-option--selected {
   color: var(--l-primary-color-light1, #9254de);
+}
+.l-select-option-label {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+.l-select-option-selected-icon {
+  flex-shrink: 0;
 }
 .l-select--input {
   min-width: 15px;
