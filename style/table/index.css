@@ -3,6 +3,7 @@
   display: inline-block;
   width: 100%;
   overflow: auto;
+  max-height: 100%;
 }
 .l-table {
   width: 100%;

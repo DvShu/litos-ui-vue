@@ -15,6 +15,7 @@
   align-items: center;
   transition: opacity 0.3s ease-in-out;
   opacity: 0;
+  z-index: 10;
 }
 .l-loading-spinner {
   text-align: center;

@@ -6,6 +6,7 @@
   line-height: 1;
   color: #333333;
   list-style: none;
+  box-sizing: border-box;
 }
 .l-pagination.l-pagination-start {
   justify-content: flex-start;
@@ -18,6 +19,7 @@
 }
 .l-pagination-item {
   height: 30px;
+  box-sizing: border-box;
 }
 .l-pagination-item:not(:first-child) {
   margin-left: 5px;
