@@ -71,6 +71,9 @@ export { default as TabbarItem } from './components/tabbar/TabbarItem.vue';
 export { default as List } from './components/List.vue';
 export { default as Carousel } from './components/carousel/Carousel.vue';
 export { default as CarouselItem } from './components/carousel/Item.vue';
+export { default as Menu } from './components/menu/Menu.vue';
+export { default as MenuItem } from './components/menu/MenuItem.vue';
+export { default as SubMenu } from './components/menu/SubMenu.vue';
 
 export { default as Clickoutside } from './directives/clickoutside';
 export { default as Loading } from './directives/loading';

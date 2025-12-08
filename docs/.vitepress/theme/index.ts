@@ -50,6 +50,7 @@ import "../../../style/color-picker";
 import "../../../style/select";
 import "../../../style/check";
 import "../../../style/carousel";
+import '../../../style/menu';
 
 export default {
   extends: DefaultTheme,

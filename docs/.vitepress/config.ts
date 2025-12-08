@@ -211,6 +211,10 @@ export default defineConfig({
             text: 'Tabbar 标签栏',
             link: '/components/tabbar',
           },
+          {
+            text: 'Menu 菜单',
+            link: '/components/menu',
+          },
         ],
       },
       {
