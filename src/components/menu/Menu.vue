@@ -18,8 +18,9 @@ export default defineComponent({
     },
   },
   setup(props) {
+    console.log(props);
     return () => {
-      return h('div', 'Menu');
+      return h('div', { class: 'l-menu' }, 'Menu');
     };
   },
 });

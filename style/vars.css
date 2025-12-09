@@ -2,36 +2,43 @@
   /* button、input 元素高度 */
   --l-form-control-height: 32px;
   --l-form-control-border-radius: 3px;
+
   /** 禁用状态颜色 */
-  --l-disabled-color: #e6e6e6;
-  /* 主题(primary)颜色 */
-  --l-primary-color: #8153ff;
-  --l-primary-color-light1: #9a75ff;
-  --l-primary-color-light2: #b397ff;
-  --l-primary-color-light3: #cdb9ff;
-  --l-primary-color-light4: #e6dbff;
-  --l-primary-color-light5: #f3eeff;
-  --l-primary-color-dark1: #6a42d6;
-  --l-primary-color-dark2: #5331ad;
-  /* 表示错误(error)的颜色 */
-  --l-error-color: #e73f4f;
-  --l-error-color-light3: #f5a2a9;
+  --l-disabled-color: #e6e6e6; /* 保持灰色，通常禁用状态不会随主题色改变 */
+
+  /* 主题(primary)颜色 - 明亮蓝系列 */
+  --l-primary-color: #007bff; /* 主色调：明亮蓝 */
+  --l-primary-color-light1: #3399ff; /* 浅 1 */
+  --l-primary-color-light2: #66b3ff; /* 浅 2 */
+  --l-primary-color-light3: #99ccff; /* 浅 3 */
+  --l-primary-color-light4: #cce6ff; /* 浅 4 */
+  --l-primary-color-light5: #e6f2ff; /* 浅 5 (极浅) */
+  --l-primary-color-dark1: #0066cc; /* 深 1 */
+  --l-primary-color-dark2: #004c99; /* 深 2 */
+
+  /* 表示错误(error)的颜色 - 保持红色，颜色不变 */
+  --l-error-color: #dc3545; /* 略微调整为更通用的红色 */
+  --l-error-color-light3: #f8a0a8;
   --l-error-color-light5: #fce8ea;
-  /* 表示成功(success)的颜色 */
-  --l-success-color: #94db24;
-  --l-success-color-light1: #a5e04a;
-  --l-success-color-light2: #b7e670;
-  --l-success-color-light3: #c9ec96;
-  --l-success-color-light4: #dbf2bc;
-  --l-success-color-light5: #edf9e2;
-  --l-success-color-dark1: #7bb81e;
-  /* 表示警告(warn)的颜色 */
-  --l-warn-color: #f90;
-  /* 表示信息(info)的颜色 */
-  --l-info-color: #999;
-  --l-info-color-light9: #f5f5f5;
+
+  /* 表示成功(success)的颜色 - 保持绿色，颜色不变 */
+  --l-success-color: #28a745;
+  --l-success-color-light1: #55c572;
+  --l-success-color-light2: #82e29e;
+  --l-success-color-light3: #afeecc;
+  --l-success-color-light4: #dcfbe4;
+  --l-success-color-light5: #f0fdf5;
+  --l-success-color-dark1: #1e7e34;
+
+  /* 表示警告(warn)的颜色 - 保持橙色，颜色不变 */
+  --l-warn-color: #ffc107;
+
+  /* 表示信息(info)的颜色 - 明亮蓝/灰色系列 */
+  --l-info-color: #6c757d; /* 保持中性灰色 */
+  --l-info-color-light9: #f5f5f5; /* 保持极浅灰色 */
+
   /* 边框颜色 */
-  --l-border-color: #dedede;
+  --l-border-color: #cccccc; /* 略微调整为较浅的灰色 */
   --l-border-radius: 3px;
 }
 html.dark {
