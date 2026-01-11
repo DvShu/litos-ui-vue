@@ -481,7 +481,7 @@ export default defineComponent({
                 ? h(
                     'td',
                     {
-                      class: 'l-table__none-col',
+                      class: 'l-table__empty-col',
                       colspan: props.columns.length,
                     },
                     '暂无数据记录!',
