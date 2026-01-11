@@ -241,3 +241,12 @@ select {
 .virtual-list-demo-container {
   height: 240px;
 }
+
+.vp-doc .l-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.vp-doc .l-menu li + li {
+  margin-top: 0;
+}

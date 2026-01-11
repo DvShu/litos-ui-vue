@@ -730,3 +730,23 @@
 | ------- | ---------------------- | --------------------------- |
 | `key`   | 列标识, 自动排序时必传 | `string`                    |
 | `order` | 排序方式               | `asc` - 升序、`desc` - 降序 |
+
+### Table CSS Variables
+
+<!-- prettier-ignore -->
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--l-table-max-height` | 表格最大高度 | `100%` |
+| `--l-table-font-size` | 表格字体大小 | `14px` |
+| `--l-table-td-padding` | 单元格内边距 | `10px` |
+| `--l-table-th-padding` | 表头单元格内边距 | `10px` |
+| `--l-table-layout` | 表格布局；`auto` 或 `fixed` | `auto` |
+| `--l-table-border-color` | 表格边框颜色（包括单元格底部和边框表格） | `#e6e6e6` |
+| `--l-table-th-bg` | 表头背景色 | `#f2f2f2` |
+| `--l-table-th-color` | 表头文字颜色 | `#000000` |
+| `--l-table-td-bg` | 单元格背景色 | `#ffffff` |
+| `--l-table-td-color` | 单元格文字颜色 | `#000000` |
+| `--l-table-row-hover-bg` | 行悬停时单元格背景色 | `#f2f2f2` |
+| `--l-table-empty-color` | 空状态文字颜色 | `#999999` |
+| `--l-table-stripe-bg` | 斑马纹偶数行背景色 | `#fafafa` |
+| `--l-table-sort-inactive-color` | 排序图标未激活状态颜色 | `#c0c4cc` |

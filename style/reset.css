@@ -1,4 +1,7 @@
 /* 一般开发网页的时候，都是按照100%来开发 */
+html {
+  font-size: 62.5%;
+}
 html,
 body {
   height: 100%;

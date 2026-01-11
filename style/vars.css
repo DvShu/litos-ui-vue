@@ -41,6 +41,4 @@
   --l-border-color: #cccccc; /* 略微调整为较浅的灰色 */
   --l-border-radius: 3px;
 }
-html.dark {
-  --l-disabled-color: #262727;
-}
+

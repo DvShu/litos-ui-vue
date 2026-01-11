@@ -11,6 +11,7 @@
   padding: 0 5px;
   border-radius: var(--l-form-control-border-radius, 3px);
   vertical-align: middle;
+  background-color: transparent;
 }
 .l-input.is-autosize {
   width: auto;

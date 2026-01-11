@@ -6,10 +6,32 @@
 
 <script setup>
   import { Menu, MenuItem, SubMenu } from "../../src";
+  import { h } from 'vue';
+  import { Icon } from '@iconify/vue';
+
+  function renderIcon(icon) {
+    return () => h(Icon, { icon });
+  }
 
   const items = [
     {
-      label: '选项2',
+      label: '导航一',
+      icon: renderIcon('tdesign:app'),
+      key: 'N1',
+      children: [{
+        label: '选项1',
+        key: 'A1'
+      }, {
+        label: '选项2',
+        key: 'A2'
+      }, {
+        label: '选项3',
+        key: 'A3'
+      }]
+    },
+    {
+      label: '选项四',
+      icon: renderIcon('solar:book-linear'),
       key: 'N4'
     },
   ];
