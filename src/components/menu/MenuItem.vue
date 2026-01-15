@@ -1,12 +1,23 @@
-<script lang="ts">
-import { defineComponent, h } from 'vue';
+<template>
+  <li class="l-menu-item">
+    <div><slot></slot></div>
+    <ul v-if="children && children.length > 0" class="l-menu">
+      <MenuItem v-for="item in children" :key="item.key" :item-key="item.key">{{
+        item.title
+      }}</MenuItem>
+    </ul>
+  </li>
+</template>
 
-export default defineComponent({
-  name: 'MenuItem',
-  setup() {
-    return () => {
-      return h('div', 'MenuItem');
-    };
-  },
-});
+<script setup lang="ts">
+import type { MenuItem as MenuItemType } from './types';
+const props = withDefaults(
+  defineProps<{
+    itemKey: string;
+    children?: MenuItemType[];
+  }>(),
+  {},
+);
 </script>
+
+<style lang="less"></style>

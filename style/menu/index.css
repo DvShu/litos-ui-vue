@@ -1,79 +1,10 @@
 .l-menu {
-	--l-menu-width: 240px;
-	--l-menu-height: auto;
-	--l-menu-color: #333333;
-	--l-menu-background: #ffffff;
-	--l-menu-content-padding: 0;
-	--l-menu-item-height: 40px;
-	--l-menu-active-color: var(--l-primary-color, #722ed1);
-	--l-menu-active-background: var(--l-primary-color-light5, #f9f0ff);
-
-
-
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	display: block;
-	width: var(--l-menu-width);
-	height: var(--l-menu-height);
-	font-size: 14px;
-	position: relative;
-	color: var(--l-menu-color);
-	background: var(--l-menu-background);
-	box-sizing: border-box;
-	transition:
-		height 0.3s,
-		width 0.3s;
-	overflow: hidden;
-	border-right: 1px solid var(--l-border-color, #dedede);
-}
-
-.l-menu-sub {
-	display: block;
-
-	width: var(--l-menu-width);
-
-	height: var(--l-menu-height);
-	font-size: 14px;
-	position: relative;
-	color: var(--l-menu-color);
-	background: var(--l-menu-background);
-	box-sizing: border-box;
-	transition:
-		height 0.3s,
-		width 0.3s;
-	overflow: hidden;
-	border-right: 1px solid var(--l-border-color, #dedede);
-}
-
-.l-menu-item,
-.l-menu-submenu-title {
-	display: flex;
-	align-items: center;
-	padding: 0 10px 0 var(--l-menu-content-padding);
-	height: var(--l-menu-item-height);
-	cursor: pointer;
-	box-sizing: border-box;
-	white-space: nowrap;
-	position: relative;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	border-right: 2px solid transparent;
-	transition:
-		color 0.3s,
-		background-color 0.3s,
-		border-color 0.3s;
-}
-
-.l-menu-icon-wrapper {
-	display: inline-flex;
-	font-size: 14px;
-	margin-right: 5px;
-}
-
-.l-menu-submenu {
-	display: block;
-	box-sizing: border-box;
-	width: 100%;
-	overflow: hidden;
+  --l-menu-width: 240px;
+  --l-menu-height: auto;
+  --l-menu-color: #333333;
+  --l-menu-background: #ffffff;
+  --l-menu-content-padding: 0;
+  --l-menu-item-height: 40px;
+  --l-menu-active-color: var(--l-primary-color, #722ed1);
+  --l-menu-active-background: var(--l-primary-color-light5, #f9f0ff);
 }

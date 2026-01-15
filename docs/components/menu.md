@@ -14,27 +14,45 @@
   }
 
   const items = [
-    {
-      label: '导航一',
-      icon: renderIcon('tdesign:app'),
-      key: 'N1',
-      children: [{
-        label: '选项1',
-        key: 'A1'
-      }, {
-        label: '选项2',
-        key: 'A2'
-      }, {
-        label: '选项3',
-        key: 'A3'
-      }]
-    },
-    {
-      label: '选项四',
-      icon: renderIcon('solar:book-linear'),
-      key: 'N4'
-    },
-  ];
+  {
+    "key": "1",
+    "title": "首页"
+  },
+  {
+    "key": "2",
+    "title": "产品",
+    "children": [
+      {
+        "key": "2-1",
+        "title": "前端工具",
+        "children": [
+          {
+            "key": "2-1-1",
+            "title": "组件库"
+          },
+          {
+            "key": "2-1-2",
+            "title": "构建工具"
+          }
+        ]
+      },
+      {
+        "key": "2-2",
+        "title": "后端服务",
+        "children": [
+          {
+            "key": "2-2-1",
+            "title": "API 网关"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "3",
+    "title": "关于我们"
+  }
+]
 </script>
 
 ### 侧栏
