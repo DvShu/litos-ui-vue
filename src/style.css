@@ -93,8 +93,7 @@
     max(0%, var(--p) - var(--b) / 2) 0
   );
   background: var(--c);
-  border-image: conic-gradient(var(--c) 0 0) fill 0/ 0
-    calc(100% - var(--p) - var(--b) / 2) var(--r)
+  border-image: conic-gradient(var(--c) 0 0) fill 0/ 0 calc(100% - var(--p) - var(--b) / 2) var(--r)
     calc(var(--p) - var(--b) / 2) / var(--h) 0 0 0;
 }
 .l-tooltip-bottom.l-tooltip--demo {
@@ -242,11 +241,12 @@ select {
   height: 240px;
 }
 
-.vp-doc .l-menu {
+.vp-doc .l-menu,
+.vp-doc .l-menu .l-submenu {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.vp-doc .l-menu li + li {
+.vp-doc .l-menu .l-menu-item {
   margin-top: 0;
 }

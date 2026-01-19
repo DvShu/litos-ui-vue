@@ -5,7 +5,7 @@
 ## 演示
 
 <script setup>
-  import { Menu, MenuItem, SubMenu } from "../../src";
+  import { Menu, MenuItem } from "../../src";
   import { h } from 'vue';
   import { Icon } from '@iconify/vue';
 
@@ -16,11 +16,13 @@
   const items = [
   {
     "key": "1",
-    "title": "首页"
+    "title": "首页",
+    icon: renderIcon('mdi:home')
   },
   {
     "key": "2",
     "title": "产品",
+    icon: renderIcon('mdi:package'),
     "children": [
       {
         "key": "2-1",
@@ -50,7 +52,8 @@
   },
   {
     "key": "3",
-    "title": "关于我们"
+    "title": "关于我们",
+    icon: renderIcon('mdi:account'),
   }
 ]
 </script>
